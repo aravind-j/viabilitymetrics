@@ -91,7 +91,12 @@ from the 'improved seed viability equation' of Ellis and Roberts (1980)." />
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/aravind-j/viabilitymetrics">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -104,7 +109,7 @@ from the 'improved seed viability equation' of Ellis and Roberts (1980)." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Viability constants.</h1>
-    
+    <small>Source: <a href='https://github.com/aravind-j/viabilitymetrics/blob/master/R/viabilityconstants.R'><code>R/viabilityconstants.R</code></a></small>
     </div>
 
     
@@ -163,13 +168,13 @@ International Plant Genetic Resources Institute (IPGRI), Rome, Italy.</p>
     <pre class="examples"><div class='input'>
 <span class='co'># Soybean</span>
 <span class='no'>viabilityconstants</span>[<span class='fu'>grepl</span>(<span class='st'>"glycine"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>viabilityconstants</span>$<span class='no'>Species</span>,
-                         <span class='kw'>ignore.case</span> <span class='kw'>=</span> <span class='no'>T</span>),]</div><div class='output co'>#&gt; # A tibble: 2 x 7
+                         <span class='kw'>ignore.case</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>),]</div><div class='output co'>#&gt; # A tibble: 2 x 7
 #&gt;   Index Species        Ke    Cw     Ch       Cq Reference                      
 #&gt;   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;                          
 #&gt; 1   59. Glycine max  7.52  4.09 0.0329 0.000478 Ellis et al., 1982; Dickie et ~
 #&gt; 2   60. Glycine max  7.29  4.00 0.0295 0.000491 Ellis, 1988                    </div><div class='input'><span class='co'># Rice</span>
 <span class='no'>viabilityconstants</span>[<span class='fu'>grepl</span>(<span class='st'>"oryza"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>viabilityconstants</span>$<span class='no'>Species</span>,
-                         <span class='kw'>ignore.case</span> <span class='kw'>=</span> <span class='no'>T</span>),]</div><div class='output co'>#&gt; # A tibble: 8 x 7
+                         <span class='kw'>ignore.case</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>),]</div><div class='output co'>#&gt; # A tibble: 8 x 7
 #&gt;   Index Species                        Ke    Cw     Ch       Cq Reference      
 #&gt;   &lt;dbl&gt; &lt;chr&gt;                       &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;          
 #&gt; 1   85. Oryza glaberrima             9.41  5.04 0.0375 0.000471 Ellis et al., ~
@@ -181,7 +186,7 @@ International Plant Genetic Resources Institute (IPGRI), Rome, Italy.</p>
 #&gt; 7   91. Oryza sativa ssp. japonica*  6.63  5.51 0.0329 0.000478 Bam et al., 20~
 #&gt; 8   92. Oryza sativa ssp. javanica*  8.74  4.90 0.0329 0.000478 Ellis et al., ~</div><div class='input'><span class='co'># Wheat</span>
 <span class='no'>viabilityconstants</span>[<span class='fu'>grepl</span>(<span class='st'>"triticum"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>viabilityconstants</span>$<span class='no'>Species</span>,
-                         <span class='kw'>ignore.case</span> <span class='kw'>=</span> <span class='no'>T</span>),]</div><div class='output co'>#&gt; # A tibble: 2 x 7
+                         <span class='kw'>ignore.case</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>),]</div><div class='output co'>#&gt; # A tibble: 2 x 7
 #&gt;   Index Species               Ke    Cw     Ch       Cq Reference         
 #&gt;   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;             
 #&gt; 1  136. Triticum aestivum   9.04  5.18 0.0351 0.000475 Ellis et al., 2007

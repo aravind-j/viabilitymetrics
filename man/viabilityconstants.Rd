@@ -43,13 +43,13 @@ Viability constants derived from storage experiment at a single
 
 # Soybean
 viabilityconstants[grepl("glycine", x = viabilityconstants$Species,
-                         ignore.case = T),]
+                         ignore.case = TRUE),]
 # Rice
 viabilityconstants[grepl("oryza", x = viabilityconstants$Species,
-                         ignore.case = T),]
+                         ignore.case = TRUE),]
 # Wheat
 viabilityconstants[grepl("triticum", x = viabilityconstants$Species,
-                         ignore.case = T),]
+                         ignore.case = TRUE),]
 \dontrun{
 # View dataset
 View(viabilityconstants)

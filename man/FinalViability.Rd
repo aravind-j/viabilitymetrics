@@ -23,6 +23,9 @@ StoragePeriod(initial, final, vcindex, vcdirect, mc, temp, years = FALSE)
 \arguments{
 \item{initial}{The initial viability (\%).}
 
+\item{period}{The time period of storage in days or years according to the
+argument \code{years}).}
+
 \item{vcindex}{An interger value indicating the index of seed viability.
 constants to be used from the \code{viabilityconstants} dataset in the
 package.}
@@ -160,7 +163,7 @@ For initial and/or final viability percentage values of 0\% and 100\%,
 \examples{
 # Fetch the index from viabilityconstants dataset
 viabilityconstants[grepl("oryza", x = viabilityconstants$Species,
-                         ignore.case = T),]
+                         ignore.case = TRUE),]
 
 #----------------------------------------------------------------------------
 # Final viability

@@ -71,7 +71,10 @@ Ke <- function(K, temp, temp.coeff = c(0.0329, 0.000478)){
     warning('"temp" is beyond limits (-20 < "temp" < 90)')
   }
 
-  Ke = K + Ch*t + (Cq*(t^2))
+  Ch <- temp.coeff[1]
+  Cq <- temp.coeff[2]
+
+  Ke = K + Ch*temp + (Cq*(temp^2))
 
   return(Ke)
 }

@@ -50,6 +50,7 @@
 #' @export Probit2Percent
 #' @export NED2Probit
 #' @export NED2Percent
+#' @importFrom stats pnorm qnorm
 #'
 #' @references \insertRef{bliss_method_1934}{viabilitymetrics}
 #'

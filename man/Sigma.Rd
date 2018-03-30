@@ -99,7 +99,7 @@ a warning will be displayed.
 #----------------------------------------------------------------------------
 # Fetch the index from viabilityconstants dataset
 viabilityconstants[grepl("oryza", x = viabilityconstants$Species,
-                         ignore.case = T),]
+                         ignore.case = TRUE),]
 # Use index 87
 Sigma(vcindex = 87, mc = 10, temp = 5)
 Sigma(vcindex = 87, mc = 10, temp = 5, years = TRUE)
@@ -121,7 +121,7 @@ Sigma(vcindex = 87, mc = 10, temp = 95)
 #----------------------------------------------------------------------------
 # Fetch the index from viabilityconstants dataset
 viabilityconstants[grepl("glycine", x = viabilityconstants$Species,
-                         ignore.case = T),]
+                         ignore.case = TRUE),]
 # Use index  59
 Sigma(vcindex = 59, mc = 8, temp = -18)
 Sigma(vcindex = 59, mc = 8, temp = -18, years = TRUE)

@@ -100,7 +100,12 @@ give final viability at a particular storage temperature. " />
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/aravind-j/viabilitymetrics">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -113,7 +118,7 @@ give final viability at a particular storage temperature. " />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Predict variables from the seed viability equation</h1>
-    
+    <small>Source: <a href='https://github.com/aravind-j/viabilitymetrics/blob/master/R/FinalViability.R'><code>R/FinalViability.R</code></a></small>
     </div>
 
     
@@ -145,6 +150,11 @@ give final viability at a particular storage temperature.</p></dd> </dl>
     <tr>
       <th>initial</th>
       <td><p>The initial viability (%).</p></td>
+    </tr>
+    <tr>
+      <th>period</th>
+      <td><p>The time period of storage in days or years according to the
+argument <code>years</code>).</p></td>
     </tr>
     <tr>
       <th>vcindex</th>
@@ -278,7 +288,7 @@ a warning will be displayed.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Fetch the index from viabilityconstants dataset</span>
 <span class='no'>viabilityconstants</span>[<span class='fu'>grepl</span>(<span class='st'>"oryza"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>viabilityconstants</span>$<span class='no'>Species</span>,
-                         <span class='kw'>ignore.case</span> <span class='kw'>=</span> <span class='no'>T</span>),]</div><div class='output co'>#&gt; # A tibble: 8 x 7
+                         <span class='kw'>ignore.case</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>),]</div><div class='output co'>#&gt; # A tibble: 8 x 7
 #&gt;   Index Species                        Ke    Cw     Ch       Cq Reference      
 #&gt;   &lt;dbl&gt; &lt;chr&gt;                       &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;          
 #&gt; 1   85. Oryza glaberrima             9.41  5.04 0.0375 0.000471 Ellis et al., ~

@@ -96,6 +96,8 @@
 #'
 #' @param initial The initial viability (\%).
 #' @param final The final viability (\%).
+#' @param period The time period of storage in days or years according to the
+#'   argument \code{years}).
 #' @inheritParams Sigma
 #' @param unit The unit of temperature.
 #'
@@ -122,7 +124,7 @@
 #' @examples
 #' # Fetch the index from viabilityconstants dataset
 #' viabilityconstants[grepl("oryza", x = viabilityconstants$Species,
-#'                          ignore.case = T),]
+#'                          ignore.case = TRUE),]
 #'
 #' #----------------------------------------------------------------------------
 #' # Final viability
