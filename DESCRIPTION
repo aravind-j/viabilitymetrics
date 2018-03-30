@@ -38,3 +38,6 @@ Imports:
     plyr,
     Rdpack
 RdMacros: Rdpack
+URL: https://github.com/aravind-j/viabilitymetrics,
+    https://aravind-j.github.io/viabilitymetrics/
+BugReports: https://github.com/aravind-j/viabilitymetrics/issues
