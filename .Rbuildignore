@@ -7,3 +7,17 @@
 ^pkgdown$
 ^_pkgdown\.yml$
 ^viabilitymetrics\.pdf$
+^vignettes/Introduction\.tex$
+^vignettes/Introduction\.aux$
+^vignettes/Introduction\.out$
+^README\.utf8.Rmd$
+^README\.Rmd$
+^README\.html$
+^README-*\.png$
+^cran-comments\.md$
+^.*\.dropbox$
+^\.dropbox\.attr$
+^desktop\.ini$
+^.*\.Rhistory$
+^.*\.git$
+^docs$

@@ -5,3 +5,6 @@
 To do - viabilitymetrics.R
 vignettes/Viability constants.xlsx
 Release.R
+vignettes/Introduction.tex
+vignettes/Introduction.aux
+vignettes/Introduction.out
