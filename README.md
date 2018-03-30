@@ -24,7 +24,7 @@ WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org
 [![Last-changedate](https://img.shields.io/badge/last%20change-2018--03--30-yellowgreen.svg)](/commits/master)
 <!-- [![Rdoc](http://www.rdocumentation.org/badges/version/viabilitymetrics)](http://www.rdocumentation.org/packages/viabilitymetrics) -->
 <!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963) -->
-<!-- [![Analytics](https://pro-pulsar-193905.appspot.com/UA-116205606-1/welcome-page)](https://github.com/aravind-j/google-analytics-beacon) -->
+[![Analytics](https://pro-pulsar-193905.appspot.com/UA-116693474-1/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
 
 -----
 
