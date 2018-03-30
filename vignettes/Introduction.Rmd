@@ -1,0 +1,139 @@
+---
+title: "The **viabilitymetrics** package: A brief introduction"
+header-includes:
+- \usepackage{fancyhdr}
+- \pagestyle{fancy}
+- \fancyhead[LE,RO]{\slshape \rightmark}
+- \fancyfoot[C]{\thepage}
+- \usepackage{hyperref}
+- \hypersetup{colorlinks=true}
+- \hypersetup{linktoc=all}
+- \hypersetup{linkcolor=blue}
+- \usepackage{pdflscape}
+- \usepackage{booktabs}
+- \usepackage[table]{xcolor}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
+- \fancyhead[LO,RE]{The viabilitymetrics package{:} A brief introduction}
+output:
+  pdf_document:
+    dev: cairo_pdf
+    fig_caption: no
+  html_document:
+    df_print: paged
+csl: frontiers.csl
+bibliography: REFERENCES.bib
+toc: no
+vignette: |
+  %\VignetteIndexEntry{Introduction}
+  %\usepackage[utf8]{inputenc}
+  %\VignetteEngine{knitr::rmarkdown_notangle}
+---
+\begin{center}
+ {\it J. Aravind, S. Vimala Devi, J. Radhamani and Kalyani Srinivasan}
+\end{center}
+
+\begin{center}
+ ICAR-National Bureau of Plant Genetic Resources, New Delhi
+\end{center}
+
+\begin{center}
+`r Sys.Date()`
+\end{center}
+
+\begin{center}
+\vspace{6pt}
+\hrule
+\end{center}
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  comment = "",
+  fig.cap = ""
+)
+```
+
+
+\tableofcontents
+
+## Overview
+
+## Installation
+The package can be installed using the following functions:
+
+```{r, eval=FALSE}
+# Install from CRAN
+install.packages('viabilitymetrics', dependencies=TRUE)
+
+# Install development version from Github
+devtools::install_github("aravind-j/viabilitymetrics")
+```
+
+Then the package can be loaded using the function
+```{r}
+library(viabilitymetrics)
+```
+
+
+## Viability constants
+
+\rowcolors{2}{gray!25}{white}
+\renewcommand{\arraystretch}{1.3}
+
+```{r, echo = FALSE}
+library(viabilitymetrics)
+load("vc.rda")
+
+vc$Species <- gsub("\\*", "&#42;", vc$Species)
+vc$Species <- paste("*", vc$Species, "*", sep = "")
+vc$Species <- gsub("×", "$\\\\times$", vc$Species)
+vc$Species <- gsub("(\\*)(.+)(cvs.|spp.)(\\*)", "\\1\\2\\4\\3", vc$Species)
+vc$Species <- gsub("(\\*)(.+)(cv.)(\\s.+)(\\*)", "\\1\\2\\5\\3\\4", vc$Species)
+vc$Species <- gsub("(\\*)(.+)(\\s)(ssp.)(\\s)(.+)(\\*)",
+                   "\\1\\2\\*\\3\\4\\5\\*\\6\\7", vc$Species)
+vc$Species <- gsub("(&#42;)(\\*)", "\\2\\1", vc$Species)
+vc$Species <- gsub("(\\()(.+)(\\))(\\*)", "\\4\\1\\2\\3", vc$Species)
+
+# vc$Species <- gsub("(\\s)(subsp.)(\\s)", "\\1\\*\\2\\*\\3", vc$Species)
+# vc$Species <- gsub("(\\s)(convar.)(\\s)", "\\1\\*\\2\\*\\3", vc$Species)
+# vc$Species <- gsub("(\\s)(var.)(\\s)", "\\1\\*\\2\\*\\3", vc$Species)
+
+ind <- grepl("*Cucurbita pepo subsp. pepo convar. pepo var. styriaca*",
+             vc$Species)
+vc[ind,]$Species <- "*Cucurbita pepo* subsp. *pepo* convar. *pepo* var. *styriaca*"
+
+
+
+vc$Reference <- gsub("\\[|\\]", "", vc$Reference)
+
+colnames(vc) <- c("Index", "Species", "K~E~", "C~W~", "C~H~", "C~Q~", "Reference")
+pander::pander(vc, style = 'multiline', justify = c('left'),
+               split.table = Inf, keep.line.breaks = TRUE,
+               use.hyphening = FALSE, missing = "")
+```
+&#42; Viability constants are derived from storage experiment at a single temperature. C~H~ and C~Q~ here are the universal temperature coefficients (0.0329 and 0.000478 respectively).
+
+## Citing `viabilitymetrics`
+
+```{r, echo = FALSE, collapse = TRUE}
+suppressMessages(cit <- citation("viabilitymetrics"))
+yr <- format(Sys.Date(), "%Y")
+cit[1]$year <- yr
+oc <- class(cit)
+
+cit <- unclass(cit)
+attr(cit[[1]],"textVersion") <- gsub("\\(\\)",
+                                     paste("\\(", yr, "\\)", sep = ""),
+                                     attr(cit[[1]],"textVersion"))
+class(cit) <- oc
+cit
+```
+
+
+## Session Info
+
+```{r}
+sessionInfo()
+```
+
+## References

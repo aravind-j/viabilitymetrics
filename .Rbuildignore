@@ -1,0 +1,9 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.gitignore$
+^To do - viabilitymetrics\.R$
+^vignettes/Viability constants\.xlsx$
+^Release\.R$
+^pkgdown$
+^_pkgdown\.yml$
+^viabilitymetrics\.pdf$

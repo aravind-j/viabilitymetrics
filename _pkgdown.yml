@@ -1,0 +1,7 @@
+template:
+  params:
+    bootswatch: united
+    
+development:
+  mode: unreleased
+
