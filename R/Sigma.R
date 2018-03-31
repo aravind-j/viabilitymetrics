@@ -135,15 +135,32 @@ Sigma <- function(vcindex, vcdirect, mc, temp, years = FALSE) {
     stop('Provide only either one of the two arguments\n"vcindex" or "vcdirect" and not both')
   }
 
+  # Check if temp is of type numeric with unit length
+  if (!is.numeric(temp) || length(temp) != 1){
+    stop("'temp' should be a numeric vector of length 1")
+  }
+
   # Check limits of temperature
   if (FALSE %in% (findInterval(temp, c(-20,90),
                                rightmost.closed = TRUE) == 1)) {
     warning('"temp" is beyond limits (-20 < "temp" < 90)')
   }
 
+  # Check if mc is of type numeric with unit length
+  if (!is.numeric(mc) || length(mc) != 1){
+    stop("'mc' should be a numeric vector of length 1")
+  }
+
  #Check limits of moisture content
   if (FALSE %in% (findInterval(mc, c(0,100), rightmost.closed = TRUE) == 1)) {
     warning('"mc" is beyond limits (0 < "mc" < 100)')
+  }
+
+  # Check if argument years is of type logical with unit length
+  if(!missing(years)){
+    if(!is.logical(years) || length(years) != 1){
+      stop("'years' should be a numeric vector of length 1")
+    }
   }
 
   #If input is vcindex

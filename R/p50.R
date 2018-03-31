@@ -84,6 +84,12 @@
 #'   \code{\link[viabilitymetrics:Percent2Probit]{PercentAdjust}}
 #'
 P50 <- function(initial, vcindex, vcdirect, mc, temp, years = FALSE) {
+  # Check if initial is of type numeric with unit length
+  if (!is.numeric(initial) || length(initial) != 1){
+    stop("'initial' should be a numeric vector of length 1")
+  }
+
+  # Check limits of initial viability
   if (FALSE %in% (findInterval(initial, c(0,100),
                                rightmost.closed = TRUE) == 1)) {
     stop('"initial" is beyond limits (0 < "initial" < 100)')

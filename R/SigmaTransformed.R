@@ -50,6 +50,37 @@
 #'
 SigmaTransformed <- function(sigma, temp1, temp2,
                       temp.coeff = c(0.0329, 0.000478)){
+  # Check if sigma is of type numeric with unit length
+  if (!is.numeric(sigma) || length(sigma) != 1){
+    stop("'sigma' should be a numeric vector of length 1")
+  }
+
+  # Check if temp1 is of type numeric with unit length
+  if (!is.numeric(temp1) || length(temp1) != 1){
+    stop("'temp1' should be a numeric vector of length 1")
+  }
+
+  # Check if temp2 is of type numeric with unit length
+  if (!is.numeric(temp2) || length(temp2) != 1){
+    stop("'temp2' should be a numeric vector of length 1")
+  }
+
+  # Check limits of temperature1
+  if (FALSE %in% (findInterval(temp1, c(-20,90),
+                               rightmost.closed = TRUE) == 1)) {
+    warning('"temp1" is beyond limits (-20 < "temp1" < 90)')
+  }
+
+  # Check limits of temperature2
+  if (FALSE %in% (findInterval(temp2, c(-20,90),
+                               rightmost.closed = TRUE) == 1)) {
+    warning('"temp2" is beyond limits (-20 < "temp2" < 90)')
+  }
+
+  # Check if temp.coeff is of type numeric with length 2
+  if (!is.numeric(temp.coeff) || length(temp.coeff) != 2){
+    stop("'temp.coeff' should be a numeric vector of length 2")
+  }
 
   Ch <- temp.coeff[1]
   Cq <- temp.coeff[2]

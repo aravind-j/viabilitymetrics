@@ -65,10 +65,25 @@
 #'
 Ke <- function(K, temp, temp.coeff = c(0.0329, 0.000478)){
 
+  # Check if K is of type numeric with unit length
+  if (!is.numeric(K) || length(K) != 1){
+    stop("'K' should be a numeric vector of length 1")
+  }
+
+  # Check if temp is of type numeric with unit length
+  if (!is.numeric(temp) || length(temp) != 1){
+    stop("'temp' should be a numeric vector of length 1")
+  }
+
   # Check limits of temperature
   if (FALSE %in% (findInterval(temp, c(-20,90),
                                rightmost.closed = TRUE) == 1)) {
     warning('"temp" is beyond limits (-20 < "temp" < 90)')
+  }
+
+  # Check if temp.coeff is of type numeric with length 2
+  if (!is.numeric(temp.coeff) || length(temp.coeff) != 2){
+    stop("'temp.coeff' should be a numeric vector of length 2")
   }
 
   Ch <- temp.coeff[1]

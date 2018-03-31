@@ -124,6 +124,14 @@ wet2dry <- function(mc) {
 #' @rdname wet2dry
 #' @export
 MoistureNomograph <- function(min, max, basis = c("wet", "dry"), horiz = FALSE) {
+  if (!is.numeric(min)) {
+    stop('"min" is not numeric')
+  }
+
+  if (!is.numeric(max)) {
+    stop('"max" is not numeric')
+  }
+
   basis <- match.arg(basis)
 
   if (min > max) {

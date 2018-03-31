@@ -80,6 +80,13 @@
 #' @rdname Percent2Probit
 #' @export
 PercentAdjust <- function(percentage, n) {
+  if (!is.numeric(percentage)) {
+    stop('"percentage" is not numeric')
+  }
+  if (!is.numeric(n)) {
+    stop('"n" is not numeric')
+  }
+
   # check for n
   AdjPercent <- ifelse(test = percentage == 100,
                        yes = 100*(n - 0.25)/n,
@@ -92,35 +99,59 @@ PercentAdjust <- function(percentage, n) {
 #' @rdname Percent2Probit
 #' @export
 Percent2NED <- function(percentage) {
+  if (!is.numeric(percentage)) {
+    stop('"percentage" is not numeric')
+  }
+
   qnorm(percentage/100, 0, 1)
 }
 
 #' @rdname Percent2Probit
 #' @export
 Percent2Probit <- function(percentage) {
+  if (!is.numeric(percentage)) {
+    stop('"percentage" is not numeric')
+  }
+
   qnorm(percentage/100, 5, 1)
 }
 
 #' @rdname Percent2Probit
 #' @export
 Probit2NED <- function(probit) {
+  if (!is.numeric(probit)) {
+    stop('"probit" is not numeric')
+  }
+
   probit - 5
 }
 
 #' @rdname Percent2Probit
 #' @export
 NED2Probit <- function(NED) {
+  if (!is.numeric(NED)) {
+    stop('"NED" is not numeric')
+  }
+
   NED + 5
 }
 
 #' @rdname Percent2Probit
 #' @export
 NED2Percent <- function(NED) {
+  if (!is.numeric(NED)) {
+    stop('"NED" is not numeric')
+  }
+
   pnorm(NED, 0, 1)*100
 }
 
 #' @rdname Percent2Probit
 #' @export
 Probit2Percent <- function(probit) {
+  if (!is.numeric(probit)) {
+    stop('"probit" is not numeric')
+  }
+
   pnorm(probit, 5, 1)*100
 }
