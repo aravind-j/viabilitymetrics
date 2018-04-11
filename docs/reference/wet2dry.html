@@ -58,6 +58,8 @@ MoistureNomograph plots the nomograph for these conversions." />
 
 </script>
 
+
+
   </head>
 
   <body>
@@ -118,6 +120,7 @@ MoistureNomograph plots the nomograph for these conversions." />
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -125,12 +128,13 @@ MoistureNomograph plots the nomograph for these conversions." />
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Conversion between Moisture content (wet/fresh weight basis) and Moisture
 content (dry weight basis)</h1>
     <small>Source: <a href='https://github.com/aravind-j/viabilitymetrics/blob/master/R/wet2dry.R'><code>R/wet2dry.R</code></a></small>
+    <div class="hidden name"><code>wet2dry.Rd</code></div>
     </div>
 
     
@@ -228,8 +232,8 @@ International Board for Plant Genetic Resources, Rome, Italy.</p>
 <span class='fu'>MoistureNomograph</span>(<span class='kw'>min</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>max</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>basis</span> <span class='kw'>=</span> <span class='st'>"wet"</span>, <span class='kw'>horiz</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='img'><img src='wet2dry-3.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>MoistureNomograph</span>(<span class='kw'>min</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>max</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>basis</span> <span class='kw'>=</span> <span class='st'>"dry"</span>, <span class='kw'>horiz</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='img'><img src='wet2dry-4.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Nomograph is a "ggplot" object</span>
 <span class='no'>nom</span> <span class='kw'>&lt;-</span> <span class='fu'>MoistureNomograph</span>(<span class='kw'>min</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>max</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>basis</span> <span class='kw'>=</span> <span class='st'>"wet"</span>, <span class='kw'>horiz</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
-<span class='fu'>library</span>(<span class='no'>ggplot2</span>)
-<span class='no'>nom</span> + <span class='fu'><a href='http://www.rdocumentation.org/packages/ggplot2/topics/geom_abline'>geom_hline</a></span>(<span class='fu'><a href='http://www.rdocumentation.org/packages/ggplot2/topics/aes'>aes</a></span>(<span class='kw'>yintercept</span><span class='kw'>=</span><span class='fl'>30</span>), <span class='kw'>colour</span> <span class='kw'>=</span> <span class='st'>"red"</span>)</div><div class='img'><img src='wet2dry-5.png' alt='' width='700' height='433' /></div><div class='input'><span class='no'>p</span> <span class='kw'>&lt;-</span> <span class='st'>"Scale for converting moisture content values\nbetween dry and wet basis"</span>
+<span class='fu'>library</span>(<span class='no'>ggplot2</span>)</div><div class='output co'>#&gt; <span class='message'>Want to understand how all the pieces fit together? Buy the ggplot2</span>
+#&gt; <span class='message'>book: http://ggplot2.org/book/</span></div><div class='input'><span class='no'>nom</span> + <span class='fu'><a href='http://www.rdocumentation.org/packages/ggplot2/topics/geom_abline'>geom_hline</a></span>(<span class='fu'><a href='http://www.rdocumentation.org/packages/ggplot2/topics/aes'>aes</a></span>(<span class='kw'>yintercept</span><span class='kw'>=</span><span class='fl'>30</span>), <span class='kw'>colour</span> <span class='kw'>=</span> <span class='st'>"red"</span>)</div><div class='img'><img src='wet2dry-5.png' alt='' width='700' height='433' /></div><div class='input'><span class='no'>p</span> <span class='kw'>&lt;-</span> <span class='st'>"Scale for converting moisture content values\nbetween dry and wet basis"</span>
 <span class='no'>cap</span> <span class='kw'>&lt;-</span> <span class='st'>"based on Cromarty et al., 1982"</span>
 <span class='no'>nom</span> + <span class='fu'><a href='http://www.rdocumentation.org/packages/ggplot2/topics/labs'>labs</a></span>(<span class='kw'>title</span>  <span class='kw'>=</span> <span class='no'>p</span>, <span class='kw'>caption</span> <span class='kw'>=</span> <span class='no'>cap</span>) +
   <span class='fu'><a href='http://www.rdocumentation.org/packages/ggplot2/topics/theme'>theme</a></span>(<span class='kw'>plot.title</span> <span class='kw'>=</span> <span class='fu'><a href='http://www.rdocumentation.org/packages/ggplot2/topics/element'>element_text</a></span>(<span class='kw'>hjust</span> <span class='kw'>=</span> <span class='fl'>0.5</span>))</div><div class='img'><img src='wet2dry-6.png' alt='' width='700' height='433' /></div></pre>
@@ -262,6 +266,8 @@ International Board for Plant Genetic Resources, Rome, Italy.</p>
 
       </footer>
    </div>
+
+  
 
   </body>
 </html>

@@ -55,6 +55,8 @@
 
 </script>
 
+
+
   </head>
 
   <body>
@@ -115,6 +117,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -122,11 +125,12 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Half-viability period</h1>
     <small>Source: <a href='https://github.com/aravind-j/viabilitymetrics/blob/master/R/p50.R'><code>R/p50.R</code></a></small>
+    <div class="hidden name"><code>P50.Rd</code></div>
     </div>
 
     
@@ -228,8 +232,8 @@ range, a warning will be displayed.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='Sigma.html'>Sigma</a></code>,
-  <code>PercentAdjust</code></p>
+    <div class='dont-index'><p><code><a href='Sigma.html'>Sigma</a></code>,
+  <code>PercentAdjust</code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -239,8 +243,10 @@ range, a warning will be displayed.</p>
 <span class='co'># With intial viability of 100%, use of PercentAdjust() to avoid Inf</span>
 <span class='fu'>P50</span>(<span class='kw'>initial</span> <span class='kw'>=</span> <span class='fu'><a href='Percent2Probit.html'>PercentAdjust</a></span>(<span class='fl'>100</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>50</span>), <span class='kw'>vcindex</span> <span class='kw'>=</span> <span class='fl'>24</span>, <span class='kw'>mc</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>temp</span> <span class='kw'>=</span> -<span class='fl'>20</span>)</div><div class='output co'>#&gt; [1] 2459288</div><div class='input'><span class='fu'>P50</span>(<span class='kw'>initial</span> <span class='kw'>=</span> <span class='fu'><a href='Percent2Probit.html'>PercentAdjust</a></span>(<span class='fl'>100</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>50</span>), <span class='kw'>vcindex</span> <span class='kw'>=</span> <span class='fl'>24</span>, <span class='kw'>mc</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>temp</span> <span class='kw'>=</span> -<span class='fl'>20</span>,
     <span class='kw'>years</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] 6737.777</div><div class='input'>
-</div><div class='input'><span class='co'># Error if initial viability is beyond limits (0-100 %)</span>
-<span class='fu'>P50</span>(<span class='kw'>initial</span> <span class='kw'>=</span> <span class='fl'>110</span>, <span class='kw'>vcindex</span> <span class='kw'>=</span> <span class='fl'>24</span>, <span class='kw'>mc</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>temp</span> <span class='kw'>=</span> -<span class='fl'>20</span>)</div><div class='output co'>#&gt; <span class='error'>Error in P50(initial = 110, vcindex = 24, mc = 5, temp = -20): "initial" is beyond limits (0 &lt; "initial" &lt; 100)</span></div><div class='input'>
+</div><span class='co'># NOT RUN {</span>
+<span class='co'># Error if initial viability is beyond limits (0-100 %)</span>
+<span class='fu'>P50</span>(<span class='kw'>initial</span> <span class='kw'>=</span> <span class='fl'>110</span>, <span class='kw'>vcindex</span> <span class='kw'>=</span> <span class='fl'>24</span>, <span class='kw'>mc</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>temp</span> <span class='kw'>=</span> -<span class='fl'>20</span>)
+<span class='co'># }</span><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -275,6 +281,8 @@ range, a warning will be displayed.</p>
 
       </footer>
    </div>
+
+  
 
   </body>
 </html>
