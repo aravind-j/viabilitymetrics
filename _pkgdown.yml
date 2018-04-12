@@ -2,6 +2,9 @@ template:
   params:
     bootswatch: united
     ganalytics: UA-116693474-2
+    docsearch:
+      api_key: 03ad81ec2c44a5417264b89cc1e97edd
+      index_name: viabilitymetrics
 
 development:
   mode: unreleased
