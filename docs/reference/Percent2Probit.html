@@ -25,6 +25,14 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+<!-- docsearch -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+
+
   <link href="../extra.css" rel="stylesheet">
   
 <meta property="og:title" content="Probit transformation — Percent2Probit" />
@@ -43,22 +51,15 @@ Equivalent Deviate (NED)." />
 <![endif]-->
 
 
-<!-- Google analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116693474-2"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-116693474-2', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'UA-116693474-2');
 </script>
-
-
-
-<!-- docsearch -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
 
@@ -123,7 +124,7 @@ Equivalent Deviate (NED)." />
       
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
         </div>
       </form>
       
@@ -138,14 +139,16 @@ Equivalent Deviate (NED)." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Probit transformation</h1>
-    <small>Source: <a href='https://github.com/aravind-j/viabilitymetrics/blob/master/R/percent2probit.R'><code>R/percent2probit.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/aravind-j/viabilitymetrics/blob/master/R/percent2probit.R'><code>R/percent2probit.R</code></a></small>
     <div class="hidden name"><code>Percent2Probit.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>These functions transfrom data between percentage, probit and Normal
 Equivalent Deviate (NED).</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>PercentAdjust</span>(<span class='no'>percentage</span>, <span class='no'>n</span>)
 
@@ -218,12 +221,12 @@ infinity values during probit transformation (Miller and Tainter, 1944).</p>
 
     <p>Bliss CI (1934).
 &#8220;The method of probits.&#8221;
-<em>Science</em>, <b>79</b>(2037), pp. 38--39.
+<em>Science</em>, <b>79</b>(2037), 38--39.
 doi: <a href='http://doi.org/10.1126/science.79.2037.38'>10.1126/science.79.2037.38</a>
 .</p>
-<p>Miller LC and Tainter ML (1944).
+<p>Miller LC, Tainter ML (1944).
 &#8220;Estimation of the ED50 and its error by means of logarithmic-probit graph paper.&#8221;
-<em>Proceedings of the Society for Experimental Biology and Medicine</em>, <b>57</b>(2), pp. 261--264.
+<em>Proceedings of the Society for Experimental Biology and Medicine</em>, <b>57</b>(2), 261--264.
 doi: <a href='http://doi.org/10.3181/00379727-57-14776'>10.3181/00379727-57-14776</a>
 .</p>
 <p>Finney DJ (ed.) (1952).
@@ -301,10 +304,16 @@ Cambridge University Press, Cambridge, England.</p>
 <script>
   docsearch({
     
+    
     apiKey: '03ad81ec2c44a5417264b89cc1e97edd',
     indexName: 'viabilitymetrics',
     inputSelector: 'input#search-input.form-control',
-    debug: false // Set debug to true if you want to inspect the dropdown
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
   });
 </script>
 

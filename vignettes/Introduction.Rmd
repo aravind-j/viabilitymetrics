@@ -2,6 +2,7 @@
 title: "The **viabilitymetrics** package: A brief introduction"
 header-includes:
 - \usepackage{fancyhdr}
+- \usepackage{wrapfig}
 - \pagestyle{fancy}
 - \fancyhead[LE,RO]{\slshape \rightmark}
 - \fancyfoot[C]{\thepage}
@@ -23,6 +24,7 @@ output:
     df_print: paged
 csl: frontiers.csl
 bibliography: REFERENCES.bib
+link-citations: yes
 toc: no
 vignette: |
   %\VignetteIndexEntry{Introduction}
@@ -56,7 +58,17 @@ knitr::opts_chunk$set(
 
 \tableofcontents
 
-## Overview
+\begin{wrapfigure}{r}{0.35\textwidth}
+  \vspace{-20pt}
+  \begin{center}
+    \includegraphics[width=0.33\textwidth]{`r system.file("extdata", "viabilitymetrics.png", package = "viabilitymetrics")`}
+  \end{center}
+    \vspace{-20pt}
+\end{wrapfigure}
+
+## Overview <img src="https://raw.githubusercontent.com/aravind-j/viabilitymetrics/master/inst/extdata/viabilitymetrics.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
+
+The package `viabilitymetrics`..............
 
 ## Installation
 The package can be installed using the following functions:

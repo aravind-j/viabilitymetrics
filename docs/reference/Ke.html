@@ -26,6 +26,14 @@ based on the species-specific temperature coefficients — Ke • viabilitymetri
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+<!-- docsearch -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+
+
   <link href="../extra.css" rel="stylesheet">
   
 <meta property="og:title" content="Viability constant <i>K<sub>E</sub></i>
@@ -47,22 +55,15 @@ conducted at constant temperature and varying moisture contents." />
 <![endif]-->
 
 
-<!-- Google analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116693474-2"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-116693474-2', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'UA-116693474-2');
 </script>
-
-
-
-<!-- docsearch -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
 
@@ -127,7 +128,7 @@ conducted at constant temperature and varying moisture contents." />
       
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
         </div>
       </form>
       
@@ -143,16 +144,18 @@ conducted at constant temperature and varying moisture contents." />
     <div class="page-header">
     <h1>Viability constant <i>K<sub>E</sub></i>
 based on the species-specific temperature coefficients</h1>
-    <small>Source: <a href='https://github.com/aravind-j/viabilitymetrics/blob/master/R/Ke.R'><code>R/Ke.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/aravind-j/viabilitymetrics/blob/master/R/Ke.R'><code>R/Ke.R</code></a></small>
     <div class="hidden name"><code>Ke.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p><code>Ke</code> computes the viability constant
 <i>K<sub>E</sub></i> from the
 species-specific temperature coefficients in case of storage experiments
 conducted at constant temperature and varying moisture contents.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>Ke</span>(<span class='no'>K</span>, <span class='no'>temp</span>, <span class='kw'>temp.coeff</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0.0329</span>, <span class='fl'>0.000478</span>))</pre>
     
@@ -212,12 +215,12 @@ C<sub>H</sub>t + C<sub>Q</sub>t<sup>2</sup></em></p></p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Ellis R and Roberts E (1980).
+    <p>Ellis R, Roberts E (1980).
 &#8220;Improved equations for the prediction of seed longevity.&#8221;
-<em>Annals of Botany</em>, <b>45</b>(1), pp. 13--30.
-    Pritchard HW and Dickie JB (2003).
+<em>Annals of Botany</em>, <b>45</b>(1), 13--30.
+    Pritchard HW, Dickie JB (2003).
 &#8220;Predicting seed longevity: The use and abuse of seed viability equations.&#8221;
-In Smith RD, Dickie JB, Linington SH, Pritchard HW and Probert RJ (eds.), <em>Seed Conservation: Turning Science into Practice</em>, pp. 653--721.
+In Smith RD, Dickie JB, Linington SH, Pritchard HW, Probert RJ (eds.), <em>Seed Conservation: Turning Science into Practice</em>, 653--721.
 Kew, UK, Royal Botanic Gardens.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
@@ -265,10 +268,16 @@ Kew, UK, Royal Botanic Gardens.</p>
 <script>
   docsearch({
     
+    
     apiKey: '03ad81ec2c44a5417264b89cc1e97edd',
     indexName: 'viabilitymetrics',
     inputSelector: 'input#search-input.form-control',
-    debug: false // Set debug to true if you want to inspect the dropdown
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
   });
 </script>
 

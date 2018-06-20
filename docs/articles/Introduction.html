@@ -9,23 +9,22 @@
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
+<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><!-- docsearch --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script><link href="../extra.css" rel="stylesheet">
 <meta property="og:title" content="The &lt;strong&gt;viabilitymetrics&lt;/strong&gt; package: A brief introduction">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]--><!-- Google analytics --><script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116693474-2"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-116693474-2', 'auto');
-  ga('send', 'pageview');
-
-</script><!-- docsearch --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
+  gtag('config', 'UA-116693474-2');
+</script>
 </head>
 <body>
     <div class="container template-article">
@@ -85,7 +84,7 @@
       </ul>
 <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
 </div>
       </form>
       
@@ -103,7 +102,7 @@
       <h1>The <strong>viabilitymetrics</strong> package: A brief introduction</h1>
             
       
-      <small>Source: <a href="https://github.com/aravind-j/viabilitymetrics/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/aravind-j/viabilitymetrics/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
 
     </div>
@@ -115,9 +114,12 @@
 
 
 
+
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
-<a href="#overview" class="anchor"></a>Overview</h2>
+<a href="#overview" class="anchor"></a>Overview <img src="https://raw.githubusercontent.com/aravind-j/viabilitymetrics/master/inst/extdata/viabilitymetrics.png" align="right" alt="logo" width="173" height="200" style="border: none; float: right;">
+</h2>
+<p>The package <code>viabilitymetrics</code>…………..</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -185,7 +187,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.448</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Daniel et al. (2013)</span></td>
+<td align="left"><span class="citation">Daniel et al. (<a href="#ref-daniel_controlled_2013">2013</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
@@ -195,7 +197,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.23</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Dickie et al. (1991)</span></td>
+<td align="left"><span class="citation">Dickie et al. (<a href="#ref-dickie_effects_1991">1991</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
@@ -204,7 +206,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.255</td>
 <td align="left">0.0329</td>
 <td align="left">0.00048</td>
-<td align="left"><span class="citation">Lee et al. (2017)</span></td>
+<td align="left"><span class="citation">Lee et al. (<a href="#ref-lee_analysis_2017">2017</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
@@ -213,7 +215,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.64</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Dickie and Smith (1995)</span></td>
+<td align="left"><span class="citation">Dickie and Smith (<a href="#ref-dickie_observations_1995">1995</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">5</td>
@@ -222,7 +224,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.47</td>
 <td align="left">0.04</td>
 <td align="left">0.000428</td>
-<td align="left"><span class="citation">Ellis and Roberts (1981)</span></td>
+<td align="left"><span class="citation">Ellis and Roberts (<a href="#ref-ellis_quantification_1981">1981</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">6</td>
@@ -232,7 +234,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.81</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1990)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_low_1990">1990</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">7</td>
@@ -241,7 +243,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.15</td>
 <td align="left">0.0563</td>
 <td align="left">8.39e-05</td>
-<td align="left"><span class="citation">Hay et al. (2003)</span></td>
+<td align="left"><span class="citation">Hay et al. (<a href="#ref-hay_onestep_2003">2003</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">8</td>
@@ -250,7 +252,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.089</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1990)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_low_1990">1990</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">9</td>
@@ -259,7 +261,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.426</td>
 <td align="left">0.0304</td>
 <td align="left">0.000453</td>
-<td align="left"><span class="citation">Usberti and Gomes (1998)</span></td>
+<td align="left"><span class="citation">Usberti and Gomes (<a href="#ref-usberti_seed_1998">1998</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">10</td>
@@ -269,7 +271,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.033</td>
 <td align="left">0.000478</td>
 <td align="left">
-<span class="citation">Tompsett (1984)</span>; <span class="citation">Tompsett (1992)</span>
+<span class="citation">Tompsett (<a href="#ref-tompsett_effect_1984">1984</a>)</span>; <span class="citation">Tompsett (<a href="#ref-tompsett_review_1992">1992</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -279,7 +281,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.73</td>
 <td align="left">0.033</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Tompsett (1992)</span></td>
+<td align="left"><span class="citation">Tompsett (<a href="#ref-tompsett_review_1992">1992</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">12</td>
@@ -288,7 +290,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">9.77e-13</td>
 <td align="left">1.344e-12</td>
 <td align="left">1.165e-13</td>
-<td align="left"><span class="citation">Ignácio (2013)</span></td>
+<td align="left"><span class="citation">Ignácio (<a href="#ref-ignacio_germinacao_2013">2013</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">13</td>
@@ -297,7 +299,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.152</td>
 <td align="left">0.0372</td>
 <td align="left">0.000467</td>
-<td align="left"><span class="citation">Ellis and Hong (2007)</span></td>
+<td align="left"><span class="citation">Ellis and Hong (<a href="#ref-ellis_quantitative_2007">2007</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">14</td>
@@ -307,7 +309,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.723</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1990)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_low_1990">1990</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">15</td>
@@ -316,7 +318,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.42</td>
 <td align="left">0.0665</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Far et al. (2010)</span></td>
+<td align="left"><span class="citation">Far et al. (<a href="#ref-far_determination_2010">2010</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">16</td>
@@ -326,7 +328,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.48</td>
 <td align="left">0.0475</td>
 <td align="left">0.001292</td>
-<td align="left"><span class="citation">Usberti (2007)</span></td>
+<td align="left"><span class="citation">Usberti (<a href="#ref-usberti_performance_2007">2007</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">17</td>
@@ -336,7 +338,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.852</td>
 <td align="left">0.02114</td>
 <td align="left">0.000733</td>
-<td align="left"><span class="citation">Usberti (2007)</span></td>
+<td align="left"><span class="citation">Usberti (<a href="#ref-usberti_performance_2007">2007</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">18</td>
@@ -346,7 +348,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.56</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1989)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_comparison_1989">1989</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">19</td>
@@ -356,7 +358,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.54</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1989)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_comparison_1989">1989</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">20</td>
@@ -365,7 +367,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.5</td>
 <td align="left">0.04387</td>
 <td align="left">1.438e-05</td>
-<td align="left"><span class="citation">Alivand et al. (2013)</span></td>
+<td align="left"><span class="citation">Alivand et al. (<a href="#ref-alivand_germination_2013">2013</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">21</td>
@@ -375,7 +377,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.67</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Demir et al. (2009)</span></td>
+<td align="left"><span class="citation">Demir et al. (<a href="#ref-demir_derivation_2009">2009</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">22</td>
@@ -385,7 +387,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">1.188</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Daniel et al. (2012)</span></td>
+<td align="left"><span class="citation">Daniel et al. (<a href="#ref-daniel_predicting_2012">2012</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">23</td>
@@ -395,7 +397,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.02</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1988)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_low-moisture-content_1988">1988</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">24</td>
@@ -405,7 +407,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
 <td align="left">
-<span class="citation">Ellis et al. (1982)</span>; <span class="citation">Dickie et al. (1990)</span>
+<span class="citation">Ellis et al. (<a href="#ref-ellis_influence_1982">1982</a>)</span>; <span class="citation">Dickie et al. (<a href="#ref-dickie_temperature_1990">1990</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -415,7 +417,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.602</td>
 <td align="left">0.0295</td>
 <td align="left">0.000491</td>
-<td align="left"><span class="citation">Ellis (1988)</span></td>
+<td align="left"><span class="citation">Ellis (<a href="#ref-ellis_viability_1988">1988</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">26</td>
@@ -425,7 +427,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">1.59</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Demir et al. (2011)</span></td>
+<td align="left"><span class="citation">Demir et al. (<a href="#ref-demir_determination_2011">2011</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">27</td>
@@ -435,7 +437,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.59</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Demir et al. (2011)</span></td>
+<td align="left"><span class="citation">Demir et al. (<a href="#ref-demir_determination_2011">2011</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">28</td>
@@ -444,7 +446,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.707</td>
 <td align="left">0.0367</td>
 <td align="left">0.000473</td>
-<td align="left"><span class="citation">Kuo (1991)</span></td>
+<td align="left"><span class="citation">Kuo (<a href="#ref-kuo_prediction_1991">1991</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">29</td>
@@ -454,7 +456,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.03</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Demir et al. (2011)</span></td>
+<td align="left"><span class="citation">Demir et al. (<a href="#ref-demir_determination_2011">2011</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">30</td>
@@ -463,7 +465,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.604</td>
 <td align="left">0.04</td>
 <td align="left">4e-04</td>
-<td align="left"><span class="citation">Hong et al. (1996)</span></td>
+<td align="left"><span class="citation">Hong et al. (<a href="#ref-hong_seed_1996">1996</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">31</td>
@@ -474,7 +476,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.215</td>
 <td align="left">0.131</td>
 <td align="left">0.00264</td>
-<td align="left"><span class="citation">Far et al. (2010)</span></td>
+<td align="left"><span class="citation">Far et al. (<a href="#ref-far_determination_2010">2010</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">32</td>
@@ -483,7 +485,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.554</td>
 <td align="left">0.03</td>
 <td align="left">2e-04</td>
-<td align="left"><span class="citation">Reza (2014a)</span></td>
+<td align="left"><span class="citation">Reza (<a href="#ref-reza_estimation_2014">2014</a><a href="#ref-reza_estimation_2014">a</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">33</td>
@@ -492,7 +494,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.524</td>
 <td align="left">0.08175</td>
 <td align="left">0.001641</td>
-<td align="left"><span class="citation">Chaves and Usberti (2004)</span></td>
+<td align="left"><span class="citation">Chaves and Usberti (<a href="#ref-chaves_controlled_2004">2004</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">34</td>
@@ -501,7 +503,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.12</td>
 <td align="left">0.04</td>
 <td align="left">4e-04</td>
-<td align="left"><span class="citation">Hong et al. (1996)</span></td>
+<td align="left"><span class="citation">Hong et al. (<a href="#ref-hong_seed_1996">1996</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">35</td>
@@ -510,7 +512,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.179</td>
 <td align="left">0.03</td>
 <td align="left">0.000445</td>
-<td align="left"><span class="citation">Reza (2014b)</span></td>
+<td align="left"><span class="citation">Reza (<a href="#ref-reza_prediction_2014">2014</a><a href="#ref-reza_prediction_2014">b</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">36</td>
@@ -520,7 +522,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.61</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Hong et al. (1996)</span></td>
+<td align="left"><span class="citation">Hong et al. (<a href="#ref-hong_seed_1996">1996</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">37</td>
@@ -529,7 +531,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.838</td>
 <td align="left">0.05405</td>
 <td align="left">0.001316</td>
-<td align="left"><span class="citation">Chaves and Usberti (2004)</span></td>
+<td align="left"><span class="citation">Chaves and Usberti (<a href="#ref-chaves_controlled_2004">2004</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">38</td>
@@ -538,7 +540,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">-3.06</td>
 <td align="left">-7e-04</td>
 <td align="left">-7e-04</td>
-<td align="left"><span class="citation">Daniel et al. (2003)</span></td>
+<td align="left"><span class="citation">Daniel et al. (<a href="#ref-daniel_storage_2003">2003</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">39</td>
@@ -547,7 +549,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">-1.646</td>
 <td align="left">-0.02</td>
 <td align="left">-0.00011</td>
-<td align="left"><span class="citation">Daniel et al. (2003)</span></td>
+<td align="left"><span class="citation">Daniel et al. (<a href="#ref-daniel_storage_2003">2003</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">40</td>
@@ -556,7 +558,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.69</td>
 <td align="left">0.033</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Tompsett (1992)</span></td>
+<td align="left"><span class="citation">Tompsett (<a href="#ref-tompsett_review_1992">1992</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">41</td>
@@ -565,7 +567,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.77</td>
 <td align="left">0.033</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Tompsett (1992)</span></td>
+<td align="left"><span class="citation">Tompsett (<a href="#ref-tompsett_review_1992">1992</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">42</td>
@@ -574,7 +576,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.2</td>
 <td align="left">0.03</td>
 <td align="left">2e-04</td>
-<td align="left"><span class="citation">Reza (2014b)</span></td>
+<td align="left"><span class="citation">Reza (<a href="#ref-reza_prediction_2014">2014</a><a href="#ref-reza_prediction_2014">b</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">43</td>
@@ -583,7 +585,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.181</td>
 <td align="left">0.0254</td>
 <td align="left">0.000489</td>
-<td align="left"><span class="citation">Ellis and Hong (2007)</span></td>
+<td align="left"><span class="citation">Ellis and Hong (<a href="#ref-ellis_quantitative_2007">2007</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">44</td>
@@ -593,7 +595,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.08</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1989)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_comparison_1989">1989</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">45</td>
@@ -602,7 +604,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">1.642</td>
 <td align="left">0.03</td>
 <td align="left">2e-04</td>
-<td align="left"><span class="citation">Reza (2014a)</span></td>
+<td align="left"><span class="citation">Reza (<a href="#ref-reza_estimation_2014">2014</a><a href="#ref-reza_estimation_2014">a</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">46</td>
@@ -611,7 +613,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.21</td>
 <td align="left">0.033</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Tompsett (1992)</span></td>
+<td align="left"><span class="citation">Tompsett (<a href="#ref-tompsett_review_1992">1992</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">47</td>
@@ -621,7 +623,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">6.01</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1989)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_comparison_1989">1989</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">48</td>
@@ -631,7 +633,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.185</td>
 <td align="left">0.0329</td>
 <td align="left">0.00054</td>
-<td align="left"><span class="citation">Zewdie and Ellis (1991)</span></td>
+<td align="left"><span class="citation">Zewdie and Ellis (<a href="#ref-zewdie_response_1991">1991</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">49</td>
@@ -641,7 +643,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.185</td>
 <td align="left">0.0329</td>
 <td align="left">0.00054</td>
-<td align="left"><span class="citation">Zewdie and Ellis (1991)</span></td>
+<td align="left"><span class="citation">Zewdie and Ellis (<a href="#ref-zewdie_response_1991">1991</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">50</td>
@@ -650,7 +652,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.4574</td>
 <td align="left">0.03</td>
 <td align="left">0.000304</td>
-<td align="left"><span class="citation">Reza (2014b)</span></td>
+<td align="left"><span class="citation">Reza (<a href="#ref-reza_prediction_2014">2014</a><a href="#ref-reza_prediction_2014">b</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">51</td>
@@ -660,7 +662,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.96</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Muthoka et al. (2009)</span></td>
+<td align="left"><span class="citation">Muthoka et al. (<a href="#ref-muthoka_moisture_2009">2009</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">52</td>
@@ -669,7 +671,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.97</td>
 <td align="left">0.0412</td>
 <td align="left">0.000379</td>
-<td align="left"><span class="citation">Crawford et al. (2013)</span></td>
+<td align="left"><span class="citation">Crawford et al. (<a href="#ref-crawford_one-step_2013">2013</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">53</td>
@@ -678,7 +680,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">6.467</td>
 <td align="left">0.03498</td>
 <td align="left">0.000233</td>
-<td align="left"><span class="citation">Fantinatti and Usberti (2007)</span></td>
+<td align="left"><span class="citation">Fantinatti and Usberti (<a href="#ref-fantinatti_seed_2007">2007</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">54</td>
@@ -688,7 +690,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">6.89</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Muthoka et al. (2009)</span></td>
+<td align="left"><span class="citation">Muthoka et al. (<a href="#ref-muthoka_moisture_2009">2009</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">55</td>
@@ -698,7 +700,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.36</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Muthoka et al. (2009)</span></td>
+<td align="left"><span class="citation">Muthoka et al. (<a href="#ref-muthoka_moisture_2009">2009</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">56</td>
@@ -708,7 +710,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">7.81</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Muthoka et al. (2009)</span></td>
+<td align="left"><span class="citation">Muthoka et al. (<a href="#ref-muthoka_moisture_2009">2009</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">57</td>
@@ -718,7 +720,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">8.09</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Muthoka et al. (2009)</span></td>
+<td align="left"><span class="citation">Muthoka et al. (<a href="#ref-muthoka_moisture_2009">2009</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">58</td>
@@ -727,7 +729,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.5</td>
 <td align="left">0.03</td>
 <td align="left">2e-04</td>
-<td align="left"><span class="citation">Reza (2014a)</span></td>
+<td align="left"><span class="citation">Reza (<a href="#ref-reza_estimation_2014">2014</a><a href="#ref-reza_estimation_2014">a</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">59</td>
@@ -737,7 +739,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
 <td align="left">
-<span class="citation">Ellis et al. (1982)</span>; <span class="citation">Dickie et al. (1990)</span>
+<span class="citation">Ellis et al. (<a href="#ref-ellis_influence_1982">1982</a>)</span>; <span class="citation">Dickie et al. (<a href="#ref-dickie_temperature_1990">1990</a>)</span>
 </td>
 </tr>
 <tr class="even">
@@ -747,7 +749,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.996</td>
 <td align="left">0.0295</td>
 <td align="left">0.000491</td>
-<td align="left"><span class="citation">Ellis (1988)</span></td>
+<td align="left"><span class="citation">Ellis (<a href="#ref-ellis_viability_1988">1988</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">61</td>
@@ -756,7 +758,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.19</td>
 <td align="left">0.03965</td>
 <td align="left">0.000426</td>
-<td align="left"><span class="citation">Usberti et al. (2006)</span></td>
+<td align="left"><span class="citation">Usberti et al. (<a href="#ref-usberti_prediction_2006">2006</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">62</td>
@@ -766,7 +768,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.78</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1989)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_comparison_1989">1989</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">63</td>
@@ -775,7 +777,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.257</td>
 <td align="left">0.0372</td>
 <td align="left">0.00048</td>
-<td align="left"><span class="citation">Zewdie and Ellis (1991)</span></td>
+<td align="left"><span class="citation">Zewdie and Ellis (<a href="#ref-zewdie_response_1991">1991</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">64</td>
@@ -784,7 +786,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.36</td>
 <td align="left">0.04</td>
 <td align="left">4e-04</td>
-<td align="left"><span class="citation">Hong et al. (1996)</span></td>
+<td align="left"><span class="citation">Hong et al. (<a href="#ref-hong_seed_1996">1996</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">65</td>
@@ -794,7 +796,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.16</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1988)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_low-moisture-content_1988">1988</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">66</td>
@@ -804,7 +806,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
 <td align="left">
-<span class="citation">Ellis and Roberts (1980)</span>; <span class="citation">Dickie et al. (1990)</span>
+<span class="citation">Ellis and Roberts (<a href="#ref-ellis_influence_1980">1980</a>)</span>; <span class="citation">Dickie et al. (<a href="#ref-dickie_temperature_1990">1990</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -814,7 +816,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.15</td>
 <td align="left">0.033</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Tompsett (1992)</span></td>
+<td align="left"><span class="citation">Tompsett (<a href="#ref-tompsett_review_1992">1992</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">68</td>
@@ -823,7 +825,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.25</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1989)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_comparison_1989">1989</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">69</td>
@@ -834,7 +836,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
 <td align="left">
-<span class="citation">Kraak and Vos (1987)</span>; <span class="citation">Dickie et al. (1990)</span>
+<span class="citation">Kraak and Vos (<a href="#ref-kraak_seed_1987">1987</a>)</span>; <span class="citation">Dickie et al. (<a href="#ref-dickie_temperature_1990">1990</a>)</span>
 </td>
 </tr>
 <tr class="even">
@@ -844,7 +846,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.324</td>
 <td align="left">0.02544</td>
 <td align="left">1.068e-05</td>
-<td align="left"><span class="citation">Baladi and Balouchi (2016)</span></td>
+<td align="left"><span class="citation">Baladi and Balouchi (<a href="#ref-baladi_evaluation_2016">2016</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">71</td>
@@ -854,7 +856,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.86</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1988)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_low-moisture-content_1988">1988</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">72</td>
@@ -864,7 +866,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.59</td>
 <td align="left">0.03613</td>
 <td align="left">1.5e-05</td>
-<td align="left"><span class="citation">Balouchi et al. (2017)</span></td>
+<td align="left"><span class="citation">Balouchi et al. (<a href="#ref-balouchi_influence_2017">2017</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">73</td>
@@ -874,7 +876,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.185</td>
 <td align="left">0.01467</td>
 <td align="left">0.000161</td>
-<td align="left"><span class="citation">Balouchi et al. (2017)</span></td>
+<td align="left"><span class="citation">Balouchi et al. (<a href="#ref-balouchi_influence_2017">2017</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">74</td>
@@ -883,7 +885,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.033</td>
 <td align="left">0.0081</td>
 <td align="left">0.00151</td>
-<td align="left"><span class="citation">Bonner (1994)</span></td>
+<td align="left"><span class="citation">Bonner (<a href="#ref-bonner_predicting_1994">1994</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">75</td>
@@ -892,7 +894,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.706</td>
 <td align="left">0.0306</td>
 <td align="left">0.000967</td>
-<td align="left"><span class="citation">Bonner (1994)</span></td>
+<td align="left"><span class="citation">Bonner (<a href="#ref-bonner_predicting_1994">1994</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">76</td>
@@ -901,7 +903,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.761</td>
 <td align="left">0.04</td>
 <td align="left">4e-04</td>
-<td align="left"><span class="citation">Dickie and Bowyer (1985)</span></td>
+<td align="left"><span class="citation">Dickie and Bowyer (<a href="#ref-dickie_estimation_1985">1985</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">77</td>
@@ -910,7 +912,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.181</td>
 <td align="left">0.0324</td>
 <td align="left">0.000431</td>
-<td align="left"><span class="citation">Kruse et al. (2005)</span></td>
+<td align="left"><span class="citation">Kruse et al. (<a href="#ref-kruse_seed_2005">2005</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">78</td>
@@ -919,7 +921,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.683</td>
 <td align="left">-0.05018</td>
 <td align="left">0.001266</td>
-<td align="left"><span class="citation">Sinício et al. (2009)</span></td>
+<td align="left"><span class="citation">Sinício et al. (<a href="#ref-sinicio_longevity_2009">2009</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">79</td>
@@ -928,7 +930,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.119</td>
 <td align="left">0.04</td>
 <td align="left">0.00042</td>
-<td align="left"><span class="citation">Dickie (1988)</span></td>
+<td align="left"><span class="citation">Dickie (<a href="#ref-dickie_prospects_1988">1988</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">80</td>
@@ -937,7 +939,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.2</td>
 <td align="left">0.03</td>
 <td align="left">2e-04</td>
-<td align="left"><span class="citation">Reza (2014b)</span></td>
+<td align="left"><span class="citation">Reza (<a href="#ref-reza_prediction_2014">2014</a><a href="#ref-reza_prediction_2014">b</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">81</td>
@@ -946,7 +948,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">1.253</td>
 <td align="left">0.0516</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Far et al. (2010)</span></td>
+<td align="left"><span class="citation">Far et al. (<a href="#ref-far_determination_2010">2010</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">82</td>
@@ -955,7 +957,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.0356</td>
 <td align="left">0.066</td>
 <td align="left">1e-05</td>
-<td align="left"><span class="citation">Kebreab and Murdoch (1999)</span></td>
+<td align="left"><span class="citation">Kebreab and Murdoch (<a href="#ref-kebreab_effect_1999">1999</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">83</td>
@@ -964,7 +966,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.0356</td>
 <td align="left">0.066</td>
 <td align="left">1e-05</td>
-<td align="left"><span class="citation">Kebreab and Murdoch (1999)</span></td>
+<td align="left"><span class="citation">Kebreab and Murdoch (<a href="#ref-kebreab_effect_1999">1999</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">84</td>
@@ -973,7 +975,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.0356</td>
 <td align="left">0.066</td>
 <td align="left">1e-05</td>
-<td align="left"><span class="citation">Kebreab and Murdoch (1999)</span></td>
+<td align="left"><span class="citation">Kebreab and Murdoch (<a href="#ref-kebreab_effect_1999">1999</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">85</td>
@@ -982,7 +984,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.043</td>
 <td align="left">0.0375</td>
 <td align="left">0.000471</td>
-<td align="left"><span class="citation">Ellis and Hong (2007)</span></td>
+<td align="left"><span class="citation">Ellis and Hong (<a href="#ref-ellis_quantitative_2007">2007</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">86</td>
@@ -992,7 +994,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.51</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Bam et al. (2008)</span></td>
+<td align="left"><span class="citation">Bam et al. (<a href="#ref-bam_storage_2008">2008</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">87</td>
@@ -1001,7 +1003,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.345</td>
 <td align="left">0.0307</td>
 <td align="left">0.000501</td>
-<td align="left"><span class="citation">Ellis and Hong (2007)</span></td>
+<td align="left"><span class="citation">Ellis and Hong (<a href="#ref-ellis_quantitative_2007">2007</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">88</td>
@@ -1011,7 +1013,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.03</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1989)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_comparison_1989">1989</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">89</td>
@@ -1021,7 +1023,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.904</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1992)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_low-moisture-content_1992">1992</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">90</td>
@@ -1031,7 +1033,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.904</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1992)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_low-moisture-content_1992">1992</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">91</td>
@@ -1041,7 +1043,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.51</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Bam et al. (2008)</span></td>
+<td align="left"><span class="citation">Bam et al. (<a href="#ref-bam_storage_2008">2008</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">92</td>
@@ -1051,7 +1053,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.904</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1992)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_low-moisture-content_1992">1992</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">93</td>
@@ -1060,7 +1062,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.101</td>
 <td align="left">0.027</td>
 <td align="left">0.000313</td>
-<td align="left"><span class="citation">Belletti et al. (1991)</span></td>
+<td align="left"><span class="citation">Belletti et al. (<a href="#ref-belletti_influence_1991">1991</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">94</td>
@@ -1069,7 +1071,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.449</td>
 <td align="left">0.0266</td>
 <td align="left">0.000526</td>
-<td align="left"><span class="citation">Ellis and Hong (2007)</span></td>
+<td align="left"><span class="citation">Ellis and Hong (<a href="#ref-ellis_quantitative_2007">2007</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">95</td>
@@ -1079,7 +1081,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.86</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1989)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_comparison_1989">1989</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">96</td>
@@ -1089,7 +1091,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.658</td>
 <td align="left">0.01969</td>
 <td align="left">0.000403</td>
-<td align="left"><span class="citation">Pozitano and Usberti (2009)</span></td>
+<td align="left"><span class="citation">Pozitano and Usberti (<a href="#ref-pozitano_seed_2009">2009</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">97</td>
@@ -1099,7 +1101,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.522</td>
 <td align="left">0.03655</td>
 <td align="left">3e-04</td>
-<td align="left"><span class="citation">Pozitano and Usberti (2009)</span></td>
+<td align="left"><span class="citation">Pozitano and Usberti (<a href="#ref-pozitano_seed_2009">2009</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">98</td>
@@ -1109,7 +1111,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.037</td>
 <td align="left">0.02309</td>
 <td align="left">0.000436</td>
-<td align="left"><span class="citation">Pozitano and Usberti (2009)</span></td>
+<td align="left"><span class="citation">Pozitano and Usberti (<a href="#ref-pozitano_seed_2009">2009</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">99</td>
@@ -1118,7 +1120,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.035</td>
 <td align="left">0.025</td>
 <td align="left">0.000443</td>
-<td align="left"><span class="citation">Ellis and Hong (2007)</span></td>
+<td align="left"><span class="citation">Ellis and Hong (<a href="#ref-ellis_quantitative_2007">2007</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">100</td>
@@ -1128,7 +1130,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.761</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1990)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_low_1990">1990</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">101</td>
@@ -1137,7 +1139,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.2</td>
 <td align="left">0.0057</td>
 <td align="left">0.00079</td>
-<td align="left"><span class="citation">Wilson and McDonald (1989)</span></td>
+<td align="left"><span class="citation">Wilson and McDonald (<a href="#ref-wilson_probit_1989">1989</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">102</td>
@@ -1146,7 +1148,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.262</td>
 <td align="left">0.04</td>
 <td align="left">4e-04</td>
-<td align="left"><span class="citation">Hong et al. (1996)</span></td>
+<td align="left"><span class="citation">Hong et al. (<a href="#ref-hong_seed_1996">1996</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">103</td>
@@ -1156,7 +1158,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.75</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1989)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_comparison_1989">1989</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">104</td>
@@ -1166,7 +1168,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.75</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1989)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_comparison_1989">1989</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">105</td>
@@ -1175,7 +1177,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">1.449</td>
 <td align="left">0.0326</td>
 <td align="left">0.00101</td>
-<td align="left"><span class="citation">Bonner (1994)</span></td>
+<td align="left"><span class="citation">Bonner (<a href="#ref-bonner_predicting_1994">1994</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">106</td>
@@ -1184,7 +1186,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.9832</td>
 <td align="left">0.0508</td>
 <td align="left">0.000571</td>
-<td align="left"><span class="citation">Bonner (1994)</span></td>
+<td align="left"><span class="citation">Bonner (<a href="#ref-bonner_predicting_1994">1994</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">107</td>
@@ -1193,7 +1195,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">1.678</td>
 <td align="left">0.0206</td>
 <td align="left">0.00126</td>
-<td align="left"><span class="citation">Bonner (1994)</span></td>
+<td align="left"><span class="citation">Bonner (<a href="#ref-bonner_predicting_1994">1994</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">108</td>
@@ -1202,7 +1204,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">1.674</td>
 <td align="left">0.0354</td>
 <td align="left">0.000838</td>
-<td align="left"><span class="citation">Bonner (1994)</span></td>
+<td align="left"><span class="citation">Bonner (<a href="#ref-bonner_predicting_1994">1994</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">109</td>
@@ -1211,7 +1213,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">-0.2567</td>
 <td align="left">0.00064</td>
 <td align="left">0.00122</td>
-<td align="left"><span class="citation">Bonner (1994)</span></td>
+<td align="left"><span class="citation">Bonner (<a href="#ref-bonner_predicting_1994">1994</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">110</td>
@@ -1220,7 +1222,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">-0.73</td>
 <td align="left">0.0348</td>
 <td align="left">0.000328</td>
-<td align="left"><span class="citation">Bonner (1994)</span></td>
+<td align="left"><span class="citation">Bonner (<a href="#ref-bonner_predicting_1994">1994</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">111</td>
@@ -1229,7 +1231,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.981</td>
 <td align="left">0.1034</td>
 <td align="left">0.0005476</td>
-<td align="left"><span class="citation">Fantinatti and Usberti (2007)</span></td>
+<td align="left"><span class="citation">Fantinatti and Usberti (<a href="#ref-fantinatti_seed_2007">2007</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">112</td>
@@ -1239,7 +1241,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.39</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1989)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_comparison_1989">1989</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">113</td>
@@ -1248,7 +1250,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.26</td>
 <td align="left">0.04</td>
 <td align="left">3e-04</td>
-<td align="left"><span class="citation">Kundu (2008)</span></td>
+<td align="left"><span class="citation">Kundu (<a href="#ref-kundu_prediction_2008">2008</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">114</td>
@@ -1257,7 +1259,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.01</td>
 <td align="left">0.0329</td>
 <td align="left">0.000428</td>
-<td align="left"><span class="citation">Hong et al. (1996)</span></td>
+<td align="left"><span class="citation">Hong et al. (<a href="#ref-hong_seed_1996">1996</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">115</td>
@@ -1267,7 +1269,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.168</td>
 <td align="left">5.168</td>
 <td align="left">0.000581</td>
-<td align="left"><span class="citation">Ellis and Hong (2007)</span></td>
+<td align="left"><span class="citation">Ellis and Hong (<a href="#ref-ellis_quantitative_2007">2007</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">116</td>
@@ -1276,7 +1278,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">1.49</td>
 <td align="left">0.0329</td>
 <td align="left">2e-04</td>
-<td align="left"><span class="citation">Reza (2014b)</span></td>
+<td align="left"><span class="citation">Reza (<a href="#ref-reza_prediction_2014">2014</a><a href="#ref-reza_prediction_2014">b</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">117</td>
@@ -1285,7 +1287,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.391</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Reza (2014b)</span></td>
+<td align="left"><span class="citation">Reza (<a href="#ref-reza_prediction_2014">2014</a><a href="#ref-reza_prediction_2014">b</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">118</td>
@@ -1294,7 +1296,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.059</td>
 <td align="left">0.03</td>
 <td align="left">0.000201</td>
-<td align="left"><span class="citation">Reza (2014a)</span></td>
+<td align="left"><span class="citation">Reza (<a href="#ref-reza_estimation_2014">2014</a><a href="#ref-reza_estimation_2014">a</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">119</td>
@@ -1303,7 +1305,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.472</td>
 <td align="left">0.03</td>
 <td align="left">0.000201</td>
-<td align="left"><span class="citation">Reza (2014a)</span></td>
+<td align="left"><span class="citation">Reza (<a href="#ref-reza_estimation_2014">2014</a><a href="#ref-reza_estimation_2014">a</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">120</td>
@@ -1312,7 +1314,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.577</td>
 <td align="left">0.03856</td>
 <td align="left">0.00013</td>
-<td align="left"><span class="citation">Dehghan and Sharif-Zadeh (2015)</span></td>
+<td align="left"><span class="citation">Dehghan and Sharif-Zadeh (<a href="#ref-dehghan_viability_2015">2015</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">121</td>
@@ -1321,7 +1323,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.02</td>
 <td align="left">0.04</td>
 <td align="left">0.000428</td>
-<td align="left"><span class="citation">Ellis et al. (1986)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_logarithmic_1986">1986</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">122</td>
@@ -1330,7 +1332,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.968</td>
 <td align="left">0.0304</td>
 <td align="left">0.000504</td>
-<td align="left"><span class="citation">Ellis and Hong (2007)</span></td>
+<td align="left"><span class="citation">Ellis and Hong (<a href="#ref-ellis_quantitative_2007">2007</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">123</td>
@@ -1340,7 +1342,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.95</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1989)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_comparison_1989">1989</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">124</td>
@@ -1349,7 +1351,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.009</td>
 <td align="left">0.094</td>
 <td align="left">0.0019</td>
-<td align="left"><span class="citation">Daniel et al. (2011)</span></td>
+<td align="left"><span class="citation">Daniel et al. (<a href="#ref-daniel_comparative_2011">2011</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">125</td>
@@ -1358,7 +1360,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.063</td>
 <td align="left">0.0325</td>
 <td align="left">0.000432</td>
-<td align="left"><span class="citation">Ellis and Hong (2007)</span></td>
+<td align="left"><span class="citation">Ellis and Hong (<a href="#ref-ellis_quantitative_2007">2007</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">126</td>
@@ -1367,7 +1369,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">-0.3002</td>
 <td align="left">0.00725</td>
 <td align="left">-0.00057</td>
-<td align="left"><span class="citation">Ali (2014)</span></td>
+<td align="left"><span class="citation">Ali (<a href="#ref-ali_determination_2014">2014</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">127</td>
@@ -1376,7 +1378,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.426</td>
 <td align="left">0.0324</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis and Hong (2007)</span></td>
+<td align="left"><span class="citation">Ellis and Hong (<a href="#ref-ellis_quantitative_2007">2007</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">128</td>
@@ -1385,7 +1387,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">6.305</td>
 <td align="left">0.041</td>
 <td align="left">0.000349</td>
-<td align="left"><span class="citation">Kuo et al. (1990)</span></td>
+<td align="left"><span class="citation">Kuo et al. (<a href="#ref-kuo_effects_1990">1990</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">129</td>
@@ -1394,7 +1396,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">-0.3002</td>
 <td align="left">0.00725</td>
 <td align="left">-0.00057</td>
-<td align="left"><span class="citation">Tabatabaei (2014)</span></td>
+<td align="left"><span class="citation">Tabatabaei (<a href="#ref-tabatabaei_determination_2014">2014</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">130</td>
@@ -1403,7 +1405,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">2.391</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Dickie et al. (1990)</span></td>
+<td align="left"><span class="citation">Dickie et al. (<a href="#ref-dickie_temperature_1990">1990</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">131</td>
@@ -1412,7 +1414,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.114</td>
 <td align="left">0.2769</td>
 <td align="left">0.002212</td>
-<td align="left"><span class="citation">Simões et al. (2008)</span></td>
+<td align="left"><span class="citation">Simões et al. (<a href="#ref-simoes_controlled_2008">2008</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">132</td>
@@ -1422,7 +1424,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
 <td align="left">
-<span class="citation">Tompsett (1986)</span>; <span class="citation">Tompsett (1992)</span>
+<span class="citation">Tompsett (<a href="#ref-tompsett_effect_1986">1986</a>)</span>; <span class="citation">Tompsett (<a href="#ref-tompsett_review_1992">1992</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -1432,7 +1434,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.753</td>
 <td align="left">0.0347</td>
 <td align="left">2e-04</td>
-<td align="left"><span class="citation">Reza (2014b)</span></td>
+<td align="left"><span class="citation">Reza (<a href="#ref-reza_prediction_2014">2014</a><a href="#ref-reza_prediction_2014">b</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">134</td>
@@ -1441,7 +1443,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.0641</td>
 <td align="left">0.03</td>
 <td align="left">2e-04</td>
-<td align="left"><span class="citation">Reza (2014b)</span></td>
+<td align="left"><span class="citation">Reza (<a href="#ref-reza_prediction_2014">2014</a><a href="#ref-reza_prediction_2014">b</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">135</td>
@@ -1450,7 +1452,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">3.51</td>
 <td align="left">0.04</td>
 <td align="left">4e-04</td>
-<td align="left"><span class="citation">Hong et al. (1996)</span></td>
+<td align="left"><span class="citation">Hong et al. (<a href="#ref-hong_seed_1996">1996</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">136</td>
@@ -1459,7 +1461,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.183</td>
 <td align="left">0.0351</td>
 <td align="left">0.000475</td>
-<td align="left"><span class="citation">Ellis and Hong (2007)</span></td>
+<td align="left"><span class="citation">Ellis and Hong (<a href="#ref-ellis_quantitative_2007">2007</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">137</td>
@@ -1469,7 +1471,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.859</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1990)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_low_1990">1990</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">138</td>
@@ -1479,7 +1481,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
 <td align="left">
-<span class="citation">Tompsett (1986)</span>; <span class="citation">Tompsett (1992)</span>
+<span class="citation">Tompsett (<a href="#ref-tompsett_effect_1986">1986</a>)</span>; <span class="citation">Tompsett (<a href="#ref-tompsett_review_1992">1992</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -1490,7 +1492,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">6.27</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Ellis et al. (1989)</span></td>
+<td align="left"><span class="citation">Ellis et al. (<a href="#ref-ellis_comparison_1989">1989</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">140</td>
@@ -1500,7 +1502,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
 <td align="left">
-<span class="citation">Ellis et al. (1982)</span>; <span class="citation">Dickie et al. (1990)</span>
+<span class="citation">Ellis et al. (<a href="#ref-ellis_influence_1982">1982</a>)</span>; <span class="citation">Dickie et al. (<a href="#ref-dickie_temperature_1990">1990</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -1510,7 +1512,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.967</td>
 <td align="left">0.0295</td>
 <td align="left">0.000491</td>
-<td align="left"><span class="citation">Ellis (1988)</span></td>
+<td align="left"><span class="citation">Ellis (<a href="#ref-ellis_viability_1988">1988</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">142</td>
@@ -1519,7 +1521,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">5.29</td>
 <td align="left">0.0382</td>
 <td align="left">0.000472</td>
-<td align="left"><span class="citation">Crawford et al. (2013)</span></td>
+<td align="left"><span class="citation">Crawford et al. (<a href="#ref-crawford_one-step_2013">2013</a>)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">143</td>
@@ -1528,7 +1530,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">6.366</td>
 <td align="left">0.0332</td>
 <td align="left">0.000577</td>
-<td align="left"><span class="citation">Ellis and Hong (2007)</span></td>
+<td align="left"><span class="citation">Ellis and Hong (<a href="#ref-ellis_quantitative_2007">2007</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="left">144</td>
@@ -1538,7 +1540,7 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <td align="left">4.91</td>
 <td align="left">0.0329</td>
 <td align="left">0.000478</td>
-<td align="left"><span class="citation">Hong et al. (1996)</span></td>
+<td align="left"><span class="citation">Hong et al. (<a href="#ref-hong_seed_1996">1996</a>)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1548,36 +1550,35 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 <h2 class="hasAnchor">
 <a href="#citing-viabilitymetrics" class="anchor"></a>Citing <code>viabilitymetrics</code>
 </h2>
-<pre><code>Warning in citation("viabilitymetrics"): no date field in DESCRIPTION file
-of package 'viabilitymetrics'
-Warning in citation("viabilitymetrics"): could not determine year for
-'viabilitymetrics' from package DESCRIPTION file
-
-To cite package 'viabilitymetrics' in publications use:
+<pre><code>
+To cite the R package 'viabilitymetrics' in publications use:
 
   J. Aravind, J. Radhamani, S. Vimala Devi, Sherry Rachel Jacob
-  and Kalyani Srinivasan (NA). viabilitymetrics: Seed Viability
-  Calculations and Curve Fitting.
-  https://github.com/aravind-j/viabilitymetrics,
+  and Kalyani Srinivasan (2018).  viabilitymetrics: Seed Viability
+  Calculations and Curve Fitting. R package version 0.0.0.9000,
   https://aravind-j.github.io/viabilitymetrics/.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {viabilitymetrics: Seed Viability Calculations and Curve Fitting},
-    author = {{J. Aravind} and {J. Radhamani} and {S. Vimala Devi} and {Sherry Rachel Jacob} and {Kalyani Srinivasan}},
-    note = {https://github.com/aravind-j/viabilitymetrics,
-https://aravind-j.github.io/viabilitymetrics/},
+    author = {{Aravind J} and {Vimala Devi S} and {Radhamani J} and {Sherry Rachel Jacob} and {Kalyani Srinivasan}},
+    note = {R package version 0.0.0.9000},
+    note = {https://aravind-j.github.io/viabilitymetrics/},
     year = {2018},
-  }</code></pre>
+  }
+
+This free and open-source software implements academic research by
+the authors and co-workers. If you use it, please support the
+project by citing the package.</code></pre>
 </div>
 <div id="session-info" class="section level2">
 <h2 class="hasAnchor">
 <a href="#session-info" class="anchor"></a>Session Info</h2>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">sessionInfo</span>()</a></code></pre></div>
-<pre><code>R version 3.4.3 (2017-11-30)
+<pre><code>R version 3.5.0 (2018-04-23)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
-Running under: Windows 10 x64 (build 16299)
+Running under: Windows 10 x64 (build 17134)
 
 Matrix products: default
 
@@ -1593,20 +1594,20 @@ other attached packages:
 [1] viabilitymetrics_0.0.0.9000
 
 loaded via a namespace (and not attached):
- [1] Rcpp_0.12.16       compiler_3.4.3     pillar_1.2.1      
- [4] plyr_1.8.4         tools_3.4.3        digest_0.6.15     
- [7] jsonlite_1.5       evaluate_0.10.1    memoise_1.1.0     
-[10] tibble_1.4.2       gtable_0.2.0       rlang_0.2.0       
-[13] bibtex_0.4.2       rstudioapi_0.7     commonmark_1.4    
-[16] yaml_2.1.18        pkgdown_0.1.0.9000 stringr_1.3.0     
-[19] roxygen2_6.0.1     xml2_1.2.0         knitr_1.20        
-[22] desc_1.1.1         fs_1.2.2           gbRd_0.4-11       
-[25] rprojroot_1.3-2    grid_3.4.3         R6_2.2.2          
-[28] Rdpack_0.7-0       rmarkdown_1.9.8    pander_0.6.1      
-[31] ggplot2_2.2.1      magrittr_1.5       backports_1.1.2   
-[34] scales_0.5.0       htmltools_0.3.6    MASS_7.3-49       
-[37] assertthat_0.2.0   colorspace_1.3-2   stringi_1.1.6     
-[40] lazyeval_0.2.1     munsell_0.4.3      crayon_1.3.4      </code></pre>
+ [1] Rcpp_0.12.16          rstudioapi_0.7.0-9000 knitr_1.20           
+ [4] xml2_1.2.0            magrittr_1.5          roxygen2_6.0.1       
+ [7] MASS_7.3-49           munsell_0.4.3         colorspace_1.3-2     
+[10] R6_2.2.2              rlang_0.2.1           bibtex_0.4.2         
+[13] plyr_1.8.4            stringr_1.3.0         tools_3.5.0          
+[16] grid_3.5.0            gtable_0.2.0          htmltools_0.3.6      
+[19] commonmark_1.5        lazyeval_0.2.1        yaml_2.1.19          
+[22] rprojroot_1.3-2       digest_0.6.15         assertthat_0.2.0     
+[25] tibble_1.4.2          pkgdown_1.0.0         crayon_1.3.4         
+[28] ggplot2_2.2.1         Rdpack_0.7-0          fs_1.2.3             
+[31] gbRd_0.4-11           memoise_1.1.0         evaluate_0.10.1      
+[34] rmarkdown_1.10        stringi_1.1.7         pander_0.6.1         
+[37] pillar_1.2.2          compiler_3.5.0        scales_0.5.0         
+[40] desc_1.2.0            backports_1.1.2      </code></pre>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">
@@ -1811,10 +1812,16 @@ loaded via a namespace (and not attached):
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script><script>
   docsearch({
     
+    
     apiKey: '03ad81ec2c44a5417264b89cc1e97edd',
     indexName: 'viabilitymetrics',
     inputSelector: 'input#search-input.form-control',
-    debug: false // Set debug to true if you want to inspect the dropdown
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
   });
 </script>
 </body>

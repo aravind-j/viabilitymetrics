@@ -13,8 +13,8 @@
 
     --darkRed: #951d2d;
     --darkRed-alpha: rgba(149, 29, 45, 0.3);
-    --lightRed: #c13c40;  /*#c13c40*/
-    --lightRed-hover: #cf8383;
+    --lightRed: #b40000;  /*#c13c40*/
+    --lightRed-hover: #5a0000;
     --lightRed-alpha: rgba(193, 60, 64, 0.3);
 
     --lightOrange: #d7b572;

@@ -10,7 +10,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## `viabilitymetrics`: Seed Viability Calculations and Curve Fitting
+## `viabilitymetrics`: Seed Viability Calculations and Curve Fitting <img src="https://raw.githubusercontent.com/aravind-j/viabilitymetrics/master/inst/extdata/viabilitymetrics.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
 
 ```{r,echo = FALSE, message = FALSE}
 devtools::load_all(".")
@@ -30,7 +30,7 @@ ICAR-National Bureau of Plant Genetic Resources, New Delhi
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version-last-release/viabilitymetrics)](https://cran.r-project.org/package=viabilitymetrics)
 <!-- [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/viabilitymetrics?color=green)](https://CRAN.R-project.org/package=viabilitymetrics) -->
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/viabilitymetrics) -->
-[![develVersion](https://img.shields.io/badge/devel%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/viabilitymetrics)
+[![develVersion](https://img.shields.io/badge/devel%20version-`r getNamespaceVersion("viabilitymetrics")`-orange.svg)](https://github.com/aravind-j/viabilitymetrics)
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/viabilitymetrics/total.svg)] -->
 [![Project Status: WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
