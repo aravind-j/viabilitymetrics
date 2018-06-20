@@ -1,0 +1,30 @@
+citHeader("To cite the R package 'viabilitymetrics' in publications use:")
+
+if(!exists("meta") || is.null(meta)) meta <- packageDescription("viabilitymetrics")
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
+vers <- paste("R package version", meta$Version)
+
+citEntry(entry  = "Manual",
+         title  = "viabilitymetrics: Seed Viability Calculations and Curve Fitting",
+         author = personList(person(c("Aravind", "J"),
+                                    email = "aravindj@nbpgr.ernet.in",
+                                    role = c("aut", "cre")),
+							 person(c("Vimala Devi", "S"), 
+                                    email = "radhamani@nbpgr.ernet.in", role = "aut"),
+                             person(c("Radhamani", "J"), 
+                                    email = "radhamani@nbpgr.ernet.in", role = "aut"),
+							 person(c("Sherry", "Rachel", "Jacob"), 
+                                    email = "radhamani@nbpgr.ernet.in", role = "aut"),
+                             person(c("Kalyani", "Srinivasan"),
+                                    email = "kalyani@nbpgr.ernet.in", role = "aut")),
+         year = year,
+         textVersion = paste(
+           "J. Aravind, J. Radhamani, S. Vimala Devi, Sherry Rachel Jacob and Kalyani Srinivasan (",
+           year, ").  viabilitymetrics: Seed Viability Calculations and Curve Fitting. ",
+           vers, ", ", "https://aravind-j.github.io/viabilitymetrics/",
+           ".", sep=""),
+         note = {c(paste(vers), "https://aravind-j.github.io/viabilitymetrics/")})
+           
+citFooter("This free and open-source software implements academic
+research by the authors and co-workers. If you use it, please support
+the project by citing the package.")
