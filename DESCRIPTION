@@ -39,7 +39,9 @@ Imports:
     plyr,
     Rdpack
 Suggests:
-    knitr
+    knitr,
+    rmarkdown,
+	pander
 RdMacros: Rdpack
 URL: https://github.com/aravind-j/viabilitymetrics,
     https://aravind-j.github.io/viabilitymetrics/
