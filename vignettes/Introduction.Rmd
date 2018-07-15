@@ -128,16 +128,18 @@ pander::pander(vc, style = 'multiline', justify = c('left'),
 ## Citing `viabilitymetrics`
 
 ```{r, echo = FALSE, collapse = TRUE}
-suppressMessages(cit <- citation("viabilitymetrics"))
-yr <- format(Sys.Date(), "%Y")
-cit[1]$year <- yr
-oc <- class(cit)
-
-cit <- unclass(cit)
-attr(cit[[1]],"textVersion") <- gsub("\\(\\)",
-                                     paste("\\(", yr, "\\)", sep = ""),
-                                     attr(cit[[1]],"textVersion"))
-class(cit) <- oc
+detach("package:viabilitymetrics", unload=TRUE)
+suppressPackageStartupMessages(library(viabilitymetrics))
+cit <- citation("viabilitymetrics")
+# yr <- format(Sys.Date(), "%Y")
+# cit[1]$year <- yr
+# oc <- class(cit)
+# 
+# cit <- unclass(cit)
+# attr(cit[[1]],"textVersion") <- gsub("\\(\\)",
+#                                      paste("\\(", yr, "\\)", sep = ""),
+#                                      attr(cit[[1]],"textVersion"))
+# class(cit) <- oc
 cit
 ```
 

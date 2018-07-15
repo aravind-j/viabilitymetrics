@@ -167,8 +167,8 @@ Sigma <- function(vcindex, vcdirect, mc, temp, years = FALSE) {
   if (!missing(vcindex)) {
     # Extract constants from vcindex
     # check if vcindex is an integer
-    if (vcindex %% 1 != 0) {
-      stop('"vcindex" is not an integer')
+    if (vcindex %% 1 != 0 && length(n) != 1) {
+      stop('"vcindex" is not an integer vector of unit length')
     }
 
     # check if vcindex is present in viabilityconstants
