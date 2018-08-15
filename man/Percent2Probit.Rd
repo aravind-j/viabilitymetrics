@@ -4,7 +4,6 @@
 \alias{Percent2Probit}
 \alias{PercentAdjust}
 \alias{Percent2NED}
-\alias{Percent2Probit}
 \alias{Probit2NED}
 \alias{NED2Probit}
 \alias{NED2Percent}

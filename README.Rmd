@@ -10,7 +10,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## `viabilitymetrics`: Seed Viability Calculations and Curve Fitting <img src="https://raw.githubusercontent.com/aravind-j/viabilitymetrics/master/inst/extdata/viabilitymetrics.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
+## `viabilitymetrics`: Seed Viability Calculations and Curve Fitting <img src="https://raw.githubusercontent.com/aravind-j/viabilitymetrics/master/inst/extdata/viabilitymetrics.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
 
 ```{r,echo = FALSE, message = FALSE}
 devtools::load_all(".")
@@ -19,7 +19,7 @@ devtools::load_all(".")
 
 ###### Version : [`r getNamespaceVersion("viabilitymetrics")`](https://aravind-j.github.io/viabilitymetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2018: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL2|GPL-3](https://www.r-project.org/Licenses/)
 
-##### *J. Aravind, J. Radhamani, S. Vimala Devi, Sherry R. Jacob  and Kalyani Srinivasan*
+##### *Aravind, J., Radhamani, J., Vimala Devi, S., Jacob, S. R., and Kalyani Srinivasan*
 
 ICAR-National Bureau of Plant Genetic Resources, New Delhi
 
@@ -55,6 +55,8 @@ For a detailed tutorial on how to used this package type:
 browseVignettes(package = 'viabilitymetrics')
 ```
 
+The vignette for the latest version is also available [online](https://aravind-j.github.io/viabilitymetrics/articles/Introduction.html).
+
 ## What's new
 To know whats new in this version type:
 
@@ -63,6 +65,15 @@ news(package='viabilitymetrics')
 ```
 
 ## Links
+
+<-- [CRAN page](https://cran.r-project.org/package=viabilitymetrics)  -->
+
+[Github page](https://github.com/aravind-j/viabilitymetrics)
+
+[Documentation website](https://aravind-j.github.io/viabilitymetrics/)
+
+<-- [Zenodo DOI](https://doi.org/10.5281/zenodo.841963) -->
+
 
 ## Citing `viabilitymetrics`
 To cite the methods in the package use:

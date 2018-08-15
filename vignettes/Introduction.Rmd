@@ -1,5 +1,7 @@
 ---
-title: "The **viabilitymetrics** package: A brief introduction"
+title: "The `viabilitymetrics` Package: A Brief Introduction"
+author: "Aravind, J., Radhamani, J., Vimala Devi, S., Jacob, S. R., and Kalyani Srinivasan"
+date: '`r Sys.Date()`'
 header-includes:
 - \usepackage{fancyhdr}
 - \usepackage{wrapfig}
@@ -15,7 +17,7 @@ header-includes:
 - \usepackage[table]{xcolor}
 - \newcommand{\blandscape}{\begin{landscape}}
 - \newcommand{\elandscape}{\end{landscape}}
-- \fancyhead[LO,RE]{The viabilitymetrics package{:} A brief introduction}
+- \fancyhead[LO,RE]{The \texttt{viabilitymetrics} package{:} A Brief Introduction}
 output:
   pdf_document:
     dev: cairo_pdf
@@ -31,17 +33,20 @@ vignette: |
   %\usepackage[utf8]{inputenc}
   %\VignetteEngine{knitr::rmarkdown_notangle}
 ---
-\begin{center}
- {\it J. Aravind, S. Vimala Devi, J. Radhamani and Kalyani Srinivasan}
-\end{center}
 
-\begin{center}
- ICAR-National Bureau of Plant Genetic Resources, New Delhi
-\end{center}
+```{r, echo=FALSE}
+out_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+```
 
-\begin{center}
-`r Sys.Date()`
-\end{center}
+```{r, results='asis', echo=FALSE}
+switch(out_type,
+    html = {cat("<p> ICAR-National Bureau of Plant Genetic Resources, New Delhi.</p>")},
+    latex = cat("\\begin{center}
+	ICAR-National Bureau of Plant Genetic Resources, New Delhi.
+
+\\end{center}" )
+)
+```
 
 \begin{center}
 \vspace{6pt}
@@ -66,9 +71,11 @@ knitr::opts_chunk$set(
     \vspace{-20pt}
 \end{wrapfigure}
 
-## Overview <img src="https://raw.githubusercontent.com/aravind-j/viabilitymetrics/master/inst/extdata/viabilitymetrics.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
+## Overview <img src="https://raw.githubusercontent.com/aravind-j/viabilitymetrics/master/inst/extdata/viabilitymetrics.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
 
 The package `viabilitymetrics`..............
+
+\clearpage
 
 ## Installation
 The package can be installed using the following functions:

@@ -3,15 +3,13 @@
 \encoding{UTF-8}
 \name{FinalViability}
 \alias{FinalViability}
-\alias{FinalViability}
 \alias{StorageMC}
-\alias{FinalViability}
 \alias{StorageTemp}
-\alias{FinalViability}
 \alias{StoragePeriod}
 \title{Predict variables from the seed viability equation}
 \usage{
-FinalViability(initial, period, vcindex, vcdirect, mc, temp, years = FALSE)
+FinalViability(initial, period, vcindex, vcdirect, mc, temp,
+  years = FALSE)
 
 StorageMC(initial, final, period, vcindex, vcdirect, temp, years = FALSE)
 

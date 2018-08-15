@@ -3,24 +3,24 @@ Type: Package
 Title: Seed Viability Calculations and Curve Fitting
 Version: 0.0.0.9000
 Authors@R: c(
-    person(c("J.", "Aravind"),
-    email = "j.aravind@icar.gov.in",
-    role = c("aut", "cre"),
-    comment = c(ORCID = "0000-0002-4791-442X")),
-    person(c("J.", "Radhamani"),
-    email = "jalli.radhamani@icar.gov.in",
-    role = "aut"),
-    person(c("S.", "Vimala Devi"),
-    email = "vimala.devi@icar.gov.in",
-    role = "aut"),
-    person(c("Sherry Rachel", "Jacob"),
-    email = "Sherry.Jacob@icar.gov.in",
-    role = "aut"),
-    person(c("Kalyani", "Srinivasan"),
-    email = "kalyani.srinivasan@icar.gov.in",
-    role = "aut"),
+    person(given = "J.", family = "Aravind",
+           email = "j.aravind@icar.gov.in",
+           role = c("aut", "cre")),
+	  person(given = "J.", family = "Radhamani",
+           email = "jalli.radhamani@icar.gov.in",
+		       role = "aut"),
+	  person(given = "S.", family = "Vimala Devi",
+           email = "vimala.devi@icar.gov.in",
+		       role = "aut"),
+    person(given = c("Sherry", "Rachel"), family = "Jacob",
+           email = "sherry.jacob@icar.gov.in",
+		       role = "aut"),
+    person(family = c("Kalyani Srinivasan"),
+           email = "kalyani.srinivasan@icar.gov.in",
+		       role = "aut"),
     person("ICAR-NBGPR",
-    role = "cph"))
+           role = "cph",
+		       comment = c(url = "www.nbpgr.ernet.in")))
 Description: An implementation of viability equation of Ellis and Roberts (1980)
     for calculation of several seed viability metrics such as storage period,
     final viability, storage moisture content, storage temperature and days to
@@ -32,7 +32,7 @@ Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.0.1)
 VignetteBuilder: knitr
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
 Imports:
     data.table,
     ggplot2,
