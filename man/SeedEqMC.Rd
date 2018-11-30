@@ -21,14 +21,14 @@ EqRH(oilcontent, mc, temp, basis = c("wet", "dry"))
 \item{basis}{The type of estimation of moisture content specified in the
 argument \code{mc}. Either \code{"wet"} or \code{"dry"}.}
 
-\item{mc}{The seed equilibrium moisture content on wet or dry basis (according
-to argument \code{basis}).}
+\item{mc}{The seed equilibrium moisture content on wet or dry basis
+(according to argument \code{basis}).}
 }
 \value{
 For \code{SeedEqMC}, the seed equilibrium moisture content on wet or
- dry basis (according to argument \code{basis}) expressed in percentage.
+  dry basis (according to argument \code{basis}) expressed in percentage.
 
- For \code{EqRH}, the equilibrium relative humidity expressed in percentage.
+  For \code{EqRH}, the equilibrium relative humidity expressed in percentage.
 }
 \description{
 Compute the following metrics:\describe{\item{\code{SeedEqMC}}{The seed
@@ -38,9 +38,10 @@ storage environment from seed equilibrium moisture content, oil content and
 temperature.} }
 }
 \details{
-This relationship between seed equilibrium moisture content, seed oil content,
-the  equilibrium relative humidity and temperature of the storage environment
-was described by Cromarty et al., (1982) as follows:
+This relationship between seed equilibrium moisture content, seed oil
+content, the  equilibrium relative humidity and temperature of the storage
+environment was described by
+\insertCite{cromarty_design_1982;textual}{viabilitymetrics} as follows:
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>(1-R) = e
 <sup>&minus;<big>[</big> <sup>[ <sup>(Me &times; (1.1 + T&frasl;90))</sup>
@@ -62,9 +63,10 @@ and seed equilibrium moisture content (\code{mc}) beyond the limits of 0-100
 \%, a warning is issued.
 }
 \note{
-The above expression by Cromarty et al., (1982) is recommended for
- temperature and humidity ranges of 0-40 °C and 10-70\% RH for starchy seeds
- (eg. cereals); and 15-25 °C and 10-70\% RH for oilseeds.
+The above expression by
+  \insertCite{cromarty_design_1982;textual}{viabilitymetrics} is recommended
+  for temperature and humidity ranges of 0-40 °C and 10-70\% RH for starchy
+  seeds (eg. cereals); and 15-25 °C and 10-70\% RH for oilseeds.
 }
 \examples{
 SeedEqMC(oilcontent = 29, rh = 13, temp = 25, basis = "wet")
@@ -85,7 +87,7 @@ EqRH(oilcontent = 29, mc = 115, temp = 25, basis = "wet")
 
 }
 \references{
-\insertRef{cromarty_design_1982}{viabilitymetrics}
+\insertAllCited
 }
 \seealso{
 \code{\link[viabilitymetrics]{wet2dry}}

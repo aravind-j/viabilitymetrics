@@ -58,20 +58,22 @@ For \code{FinalViability}, the final viability (\%).
 }
 \description{
 Predict the variables, final viability, storage period, storage temperature
-and storage period from the improved seed viability equation (Ellis and
-Roberts, 1980). \describe{ \item{\code{FinalViability}}{Compute the final
-viability after a period of storage at a set of storage conditions (seed
-moisture content and temperature).} \item{\code{StoragePeriod}}{Compute the
-storage period from the final viability and the storage conditions (seed
-moisture content and temperature).} \item{\code{StorageMC}}{Compute the
-storage moisture content to give final viability at a particular storage
-temperature.} \item{\code{StorageTemp}}{Compute the storage temperature to
-give final viability at a particular storage temperature.} }
+and storage period from the improved seed viability equation
+\insertCite{ellis_improved_1980}{viabilitymetrics}. \describe{
+\item{\code{FinalViability}}{Compute the final viability after a period of
+storage at a set of storage conditions (seed moisture content and
+temperature).} \item{\code{StoragePeriod}}{Compute the storage period from
+the final viability and the storage conditions (seed moisture content and
+temperature).} \item{\code{StorageMC}}{Compute the storage moisture content
+to give final viability at a particular storage temperature.}
+\item{\code{StorageTemp}}{Compute the storage temperature to give final
+viability at a particular storage temperature.} }
 }
 \details{
-The improved seed viability equation of Ellis and Roberts (1980) describes
-the relationship between final viability, storage period and storage
-environment conditions as follows:
+The improved seed viability equation of
+\insertCite{ellis_improved_1980}{viabilitymetrics} describes the relationship
+between final viability, storage period and storage environment conditions as
+follows:
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>v = K<sub>i</sub>
 &minus; [ <sup>p</sup> &frasl; <sub>&sigma;</sub> ]
@@ -314,7 +316,7 @@ StorageTemp(initial = 98, final = 95, period = 3650, vcindex = 87, mc = 110)
 
 }
 \references{
-\insertRef{ellis_improved_1980}{viabilitymetrics}
+\insertAllCited
 }
 \seealso{
 \code{\link[viabilitymetrics]{Sigma}},

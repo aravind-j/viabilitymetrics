@@ -17,15 +17,18 @@
   \ifelse{html}{\out{<i>C<sub>Q</sub></i>}}{\eqn{C_{Q}}}}
   \item{Reference}{Source of the data.} }}
 \source{
-Primarily from Hong et al., 1996, updated with more species. The
-  source for each record is mentioned in the \strong{Reference} column.
+Primarily from \insertCite{hong_seed_1996;textual}{viabilitymetrics},
+  updated with more species. The source for each record is mentioned in the
+  \strong{Reference} column.
+  \insertNoCite{ali_determination_2014,alivand_germination_2013,baladi_evaluation_2016,balouchi_influence_2017,bam_storage_2008,belletti_influence_1991,bonner_predicting_1994,chaves_controlled_2004,crawford_one-step_2013,daniel_comparative_2011,daniel_controlled_2013,daniel_predicting_2012,daniel_storage_2003,dehghan_viability_2015,demir_derivation_2009,demir_determination_2011,dickie_effects_1991,dickie_estimation_1985,dickie_observations_1995,dickie_prospects_1988,dickie_temperature_1990,ellis_comparison_1989,ellis_influence_1980,ellis_influence_1982,ellis_logarithmic_1986,ellis_low-moisture-content_1988,ellis_low-moisture-content_1992,ellis_low_1990,ellis_quantification_1981,ellis_quantitative_2007,ellis_viability_1988,fantinatti_seed_2007,ghaderi_determination_2010,hay_onestep_2003,hong_seed_1996,ignacio_germinacao_2013,kebreab_effect_1999,kraak_seed_1987,kruse_seed_2005,kundu_prediction_2008,kuo_effects_1990,kuo_prediction_1991,lee_analysis_2017,muthoka_moisture_2009,pozitano_seed_2009,reza_estimation_2014,reza_prediction_2014,simoes_controlled_2008,sinicio_longevity_2009,tabatabaei_determination_2014,tompsett_effect_1984,tompsett_effect_1986,tompsett_review_1992,usberti_performance_2007,usberti_prediction_2006,usberti_seed_1998,wilson_probit_1989,zewdie_response_1991}{viabilitymetrics}
 }
 \usage{
 viabilityconstants
 }
 \description{
 A dataset of the known species-specific seed viability constants estimated
-from the 'improved seed viability equation' of Ellis and Roberts (1980).
+from the 'improved seed viability equation' of
+\insertCite{ellis_improved_1980;textual}{viabilitymetrics}.
 }
 \details{
 Various functions such as \code{\link{Sigma}}, \code{\link{StorageMC}} use
@@ -57,8 +60,6 @@ View(viabilityconstants)
 
 }
 \references{
-\insertRef{ellis_improved_1980}{viabilitymetrics}
-
-  \insertRef{hong_seed_1996}{viabilitymetrics}
+\insertAllCited
 }
 \keyword{datasets}

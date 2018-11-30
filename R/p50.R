@@ -6,7 +6,7 @@
 #' The period to lose 50\% viability
 #' (\ifelse{html}{\out{<em>P<sub>50</sub></em>}}{\eqn{P_{50}}}) is computed
 #' according to the relationship between probit percentage viabilities and time
-#' of storage described by Ellis and Roberts (1980) as follows:
+#' of storage described by \insertCite{ellis_improved_1980;textual}{viabilitymetrics} as follows:
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>v = K<sub>i</sub>
 #' &minus; [ <sup>p</sup> &frasl; <sub>&sigma;</sub> ]
@@ -57,7 +57,9 @@
 #' @return The half-viability period in days or years (according to argument
 #'   \code{years}).
 #'
-#' @references \insertRef{ellis_improved_1980}{viabilitymetrics}
+#' @references
+#'
+#' \insertAllCited
 #'
 #' @encoding UTF-8
 #' @export

@@ -3,7 +3,8 @@
 #' \code{SigmaTransformed} transforms the measured sigma value at a specific
 #' temperature to an estimate of sigma at another temperature. This useful in
 #' comparitive seed testing protocol to compare seed longevities among species
-#' tested at different temperatures (Probert et al., 2009).
+#' tested at different temperatures
+#' \insertCite{probert_ecological_2009}{viabilitymetrics}.
 #'
 #' The transformation is based on the effect of temperature on seed longevity
 #' (\ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}}) (identified by storage
@@ -39,8 +40,11 @@
 #' @export
 #' @encoding UTF-8
 #'
-#' @references \insertRef{ellis_improved_1980}{viabilitymetrics}
-#'   \insertRef{probert_ecological_2009}{viabilitymetrics}
+#' @references
+#'
+#' \insertRef{ellis_improved_1980}{viabilitymetrics}
+#'
+#' \insertRef{probert_ecological_2009}{viabilitymetrics}
 #'
 #' @examples
 #'

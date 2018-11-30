@@ -38,7 +38,8 @@ moisture content and temperature.
 \details{
 This function computes the period to lose one probit viability
 (\ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}}) according to the improved
-seed viability equation of Ellis and Roberts (1980) as follows:
+seed viability equation of
+\insertCite{ellis_improved_1980;textual}{viabilitymetrics} as follows:
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>v = K<sub>i</sub>
 &minus; [ <sup>p</sup> &frasl; <sub>&sigma;</sub> ]
@@ -139,5 +140,5 @@ Sigma(vcindex = 59, mc = 10, temp = 95)
 
 }
 \references{
-\insertRef{ellis_improved_1980}{viabilitymetrics}
+\insertAllCited
 }

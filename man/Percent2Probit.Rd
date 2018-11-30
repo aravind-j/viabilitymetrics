@@ -38,7 +38,8 @@ The transformed value.
 }
 \description{
 These functions transfrom data between percentage, probit and Normal
-Equivalent Deviate (NED).
+Equivalent Deviate (NED)
+\insertCite{bliss_method_1934,finney_probit_1952}{viabilitymetrics}.
 }
 \details{
 Probit transformation can be used to transform a sigmoid curve of percentage
@@ -73,7 +74,8 @@ to \ifelse{html}{\out{100 &times; [ <sup>0.25</sup> &frasl;
 \ifelse{html}{\out{100 &times; [ <sup>(<i>n</i> &minus; 0.25)</sup> &frasl;
 <sub><i>n</i></sub> ]}}{\eqn{100\times \frac{n-0.25}{n}}} respectively,
 according to the sample size \ifelse{html}{\out{<i>n</i>}}{\eqn{n}} to avoid
-infinity values during probit transformation (Miller and Tainter, 1944).
+infinity values during probit transformation
+\insertCite{miller_estimation_1944}{viabilitymetrics}.
 }
 \examples{
 Percent2NED(0:100)

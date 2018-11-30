@@ -71,7 +71,8 @@ Ke(36, 10)
 }
 \references{
 \insertRef{ellis_improved_1980}{viabilitymetrics}
-  \insertRef{pritchard_predicting_2003}{viabilitymetrics}
+
+\insertRef{pritchard_predicting_2003}{viabilitymetrics}
 }
 \seealso{
 \code{\link[viabilitymetrics]{Sigma}}

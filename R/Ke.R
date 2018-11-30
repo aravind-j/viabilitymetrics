@@ -55,8 +55,11 @@
 #' @export
 #' @encoding UTF-8
 #'
-#' @references \insertRef{ellis_improved_1980}{viabilitymetrics}
-#'   \insertRef{pritchard_predicting_2003}{viabilitymetrics}
+#' @references
+#'
+#' \insertRef{ellis_improved_1980}{viabilitymetrics}
+#'
+#' \insertRef{pritchard_predicting_2003}{viabilitymetrics}
 #'
 #' @examples
 #' Ke(36, 10)
