@@ -1,3 +1,4 @@
+^test\.Rda$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.gitignore$

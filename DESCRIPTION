@@ -1,7 +1,7 @@
 Package: viabilitymetrics
 Type: Package
 Title: Seed Viability Calculations and Curve Fitting
-Version: 0.0.0.9000
+Version: 0.0.0.9100
 Authors@R: c(
     person(given = "J.", family = "Aravind",
            email = "j.aravind@icar.gov.in",
