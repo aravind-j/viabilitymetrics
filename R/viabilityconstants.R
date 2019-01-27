@@ -1,4 +1,4 @@
-#' Viability constants.
+#' Viability constants
 #'
 #' A dataset of the known species-specific seed viability constants estimated
 #' from the 'improved seed viability equation' of

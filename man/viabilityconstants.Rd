@@ -3,7 +3,7 @@
 \docType{data}
 \name{viabilityconstants}
 \alias{viabilityconstants}
-\title{Viability constants.}
+\title{Viability constants}
 \format{A data frame with 7 columns: \describe{ \item{Index}{A unique index
   value, called by the \code{vcindex} argument in different functions.}
   \item{Species}{The species for which the constants were estimated.}
