@@ -7,7 +7,8 @@
 \ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}}}
 \usage{
 FitSigma(data, viability.percent, samp.size, storage.period,
-  probit.method = c("glm", "tflm"))
+  probit.method = c("glm", "tflm"), use.cv = FALSE,
+  control.viability = 100)
 }
 \arguments{
 \item{data}{A data frame with the seed viability data recorded periodically.
@@ -106,44 +107,78 @@ df <- data.frame(Rep = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                               99, 98, 101, 100, 100, 101, 100, 100,
                               99, 97, 100, 97, 99, 98, 100, 98, 99,
                               99, 101, 98, 97, 97),
-                 viabilitypercent = c(98, 96, 91, 83, 70, 55, 39, 24,
-                                      13, 7, 3, 1, 0, 0, 0, 98, 94, 86,
-                                      73, 55, 35, 19, 9, 3, 1,
+                 viabilitypercent = c(98, 96, 90, 82, 70, 54, 38, 24,
+                                      12, 6, 2, 0, 0, 0, 0, 98, 94, 85,
+                                      72, 54, 35, 18, 8, 2, 0,
                                       0, 0, 0, 0, 0))
 
 plot(df$period, df$viabilitypercent)
 
 #----------------------------------------------------------------------------
-# With generalised linear model with probit link function
+# Generalised linear model with probit link function (without cv)
 #----------------------------------------------------------------------------
-model1 <- FitSigma(data = df, viability.percent = "viabilitypercent",
+model1a <- FitSigma(data = df, viability.percent = "viabilitypercent",
                    samp.size = "sampsize", storage.period = "period",
                    probit.method = "glm")
-model1
+model1a
 # Raw model
-model1$model
+model1a$model
 
 # Model parameters
-model1$parameters
+model1a$parameters
 
 # Model fit
-model1$fit
+model1a$fit
 
 #----------------------------------------------------------------------------
-# With linear model after probit transformation
+# Generalised linear model with probit link function (with cv)
 #----------------------------------------------------------------------------
-model2 <- FitSigma(data = df, viability.percent = "viabilitypercent",
+model1b <- FitSigma(data = df, viability.percent = "viabilitypercent",
+                   samp.size = "sampsize", storage.period = "period",
+                   probit.method = "glm",
+                   use.cv = TRUE, control.viability = 98)
+model1b
+# Raw model
+model1b$model
+
+# Model parameters
+model1b$parameters
+
+# Model fit
+model1b$fit
+
+#----------------------------------------------------------------------------
+# Linear model after probit transformation (without cv)
+#----------------------------------------------------------------------------
+model2a <- FitSigma(data = df, viability.percent = "viabilitypercent",
                    samp.size = "sampsize", storage.period = "period",
                    probit.method = "tflm")
-model2
+model2a
 # Raw model
-model2$model
+model2a$model
 
 # Model parameters
-model2$parameters
+model2a$parameters
 
 # Model fit
-model2$fit
+model2a$fit
+
+#----------------------------------------------------------------------------
+# Linear model after probit transformation (with cv)
+#----------------------------------------------------------------------------
+model2b <- FitSigma(data = df, viability.percent = "viabilitypercent",
+                   samp.size = "sampsize", storage.period = "period",
+                   probit.method = "tflm",
+                   use.cv = TRUE, control.viability = 98)
+model2b
+# Raw model
+model2b$model
+
+# Model parameters
+model2b$parameters
+
+# Model fit
+model2b$fit
 
 }
 \references{

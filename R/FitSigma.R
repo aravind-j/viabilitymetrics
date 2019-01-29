@@ -96,47 +96,82 @@
 #'                               99, 98, 101, 100, 100, 101, 100, 100,
 #'                               99, 97, 100, 97, 99, 98, 100, 98, 99,
 #'                               99, 101, 98, 97, 97),
-#'                  viabilitypercent = c(98, 96, 91, 83, 70, 55, 39, 24,
-#'                                       13, 7, 3, 1, 0, 0, 0, 98, 94, 86,
-#'                                       73, 55, 35, 19, 9, 3, 1,
+#'                  viabilitypercent = c(98, 96, 90, 82, 70, 54, 38, 24,
+#'                                       12, 6, 2, 0, 0, 0, 0, 98, 94, 85,
+#'                                       72, 54, 35, 18, 8, 2, 0,
 #'                                       0, 0, 0, 0, 0))
 #'
 #' plot(df$period, df$viabilitypercent)
 #'
 #' #----------------------------------------------------------------------------
-#' # With generalised linear model with probit link function
+#' # Generalised linear model with probit link function (without cv)
 #' #----------------------------------------------------------------------------
-#' model1 <- FitSigma(data = df, viability.percent = "viabilitypercent",
+#' model1a <- FitSigma(data = df, viability.percent = "viabilitypercent",
 #'                    samp.size = "sampsize", storage.period = "period",
 #'                    probit.method = "glm")
-#' model1
+#' model1a
 #' # Raw model
-#' model1$model
+#' model1a$model
 #'
 #' # Model parameters
-#' model1$parameters
+#' model1a$parameters
 #'
 #' # Model fit
-#' model1$fit
+#' model1a$fit
 #'
 #' #----------------------------------------------------------------------------
-#' # With linear model after probit transformation
+#' # Generalised linear model with probit link function (with cv)
 #' #----------------------------------------------------------------------------
-#' model2 <- FitSigma(data = df, viability.percent = "viabilitypercent",
+#' model1b <- FitSigma(data = df, viability.percent = "viabilitypercent",
+#'                    samp.size = "sampsize", storage.period = "period",
+#'                    probit.method = "glm",
+#'                    use.cv = TRUE, control.viability = 98)
+#' model1b
+#' # Raw model
+#' model1b$model
+#'
+#' # Model parameters
+#' model1b$parameters
+#'
+#' # Model fit
+#' model1b$fit
+#'
+#' #----------------------------------------------------------------------------
+#' # Linear model after probit transformation (without cv)
+#' #----------------------------------------------------------------------------
+#' model2a <- FitSigma(data = df, viability.percent = "viabilitypercent",
 #'                    samp.size = "sampsize", storage.period = "period",
 #'                    probit.method = "tflm")
-#' model2
+#' model2a
 #' # Raw model
-#' model2$model
+#' model2a$model
 #'
 #' # Model parameters
-#' model2$parameters
+#' model2a$parameters
 #'
 #' # Model fit
-#' model2$fit
+#' model2a$fit
+#'
+#' #----------------------------------------------------------------------------
+#' # Linear model after probit transformation (with cv)
+#' #----------------------------------------------------------------------------
+#' model2b <- FitSigma(data = df, viability.percent = "viabilitypercent",
+#'                    samp.size = "sampsize", storage.period = "period",
+#'                    probit.method = "tflm",
+#'                    use.cv = TRUE, control.viability = 98)
+#' model2b
+#' # Raw model
+#' model2b$model
+#'
+#' # Model parameters
+#' model2b$parameters
+#'
+#' # Model fit
+#' model2b$fit
 #'
 FitSigma <- function(data, viability.percent, samp.size, storage.period,
-                     probit.method = c("glm", "tflm")) {
+                     probit.method = c("glm", "tflm"),
+                     use.cv = FALSE, control.viability = 100) {
     # Check if data.frame
     if (!is.data.frame(data)) {
       stop('"data" should be a data frame object.')
@@ -193,20 +228,54 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
          ' (0 < "viability.percent" < 100).')
   }
 
+  # Check if argument use.cv is of type logical with unit length
+  if (!is.logical(use.cv) || length(use.cv) != 1) {
+    stop("'use.cv' should be a logical vector of length 1.")
+  }
+
+  if(use.cv) {
+    # Check if control.viability is within range
+    if (control.viability > 100 || control.viability < 0) {
+      stop('"control.viability" is not within range',
+           ' (0 < "control.viability" < 100).')
+    }
+  }
+
   # Check probit.method
   probit.method <- match.arg(probit.method)
 
   data$viability.count <- (data[, viability.percent] * data[, samp.size]) / 100
 
   if (probit.method == "glm") {
-    probit.model <- withWE(glm(formula(paste("viability.count/",samp.size,
-                                             " ~ ", storage.period, sep = "")),
+    if(use.cv) {
+      cvc <- control.viability/100
+      frmla <- formula(paste("(viability.count/",samp.size,
+                             ")/", cvc,
+                             " ~ ", storage.period, sep = ""))
+    } else {
+      frmla <- formula(paste("viability.count/",samp.size,
+                             " ~ ", storage.period, sep = ""))
+    }
+
+    probit.model <- withWE(glm(formula = frmla,
                                family = binomial(link = "probit"),
                                data = data,
                                weights = data[, samp.size]))
   }
 
   if (probit.method == "tflm") {
+    if(use.cv) {
+      cvc <- control.viability/100
+      frmla <- formula(paste("(Percent2NED(PercentAdjust(",
+                             viability.percent, ", 100)))/",
+                             cvc, " ~ ",
+                             storage.period, sep = ""))
+    } else {
+      frmla <- formula(paste("Percent2NED(PercentAdjust(",
+                             viability.percent, ", 100))", " ~ ",
+                             storage.period, sep = ""))
+    }
+
     probit.model <- withWE(lm(formula(paste("Percent2NED(PercentAdjust(",
                                         viability.percent, ", 100))", " ~ ",
                                          storage.period, sep = "")),
@@ -234,6 +303,7 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
               message = probit.model$message)
 
   attr(out, "method") <- probit.method
+  attr(out, "cv") <- c(logical = use.cv, value = control.viability)
 
   class(out) <- "FitSigma"
   return(out)

@@ -14,6 +14,19 @@
 #'
 #' @export
 print.FitSigma <- function(x, ...){
+
+  if(attributes(x)$method == "glm") {
+    cat("Generalised linear model with probit link function.")
+  }
+  if(attributes(x)$method == "tflm") {
+    cat("Linear model after probit transformation.")
+  }
+
+  if(attributes(x)$cv["logical"] == 1) {
+    cat(paste("Control viability = ",
+              attributes(x)$cv["value"], "%", sep = ""))
+  }
+
   print(data.frame(Ki = x$Ki, Sigma = x$sigma), row.names = FALSE)
 
   if (!is.na(x$message)) {
