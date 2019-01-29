@@ -70,16 +70,17 @@
 #'   (\code{"glm"}, recommended) or as a linear model with probit transformed
 #'   viability percentages (\code{"tflm"}).
 #'
-#' @return A list with the following components:  \item{model}{The
-#'   fitted model as an object of class \code{glm} (if \code{probit.method =
-#'   "glm"}) or \code{lm} (if \code{probit.method = "lm"}).} \item{parameters}{A
-#'   data.frame of parameter estimates, standard errors and p value.}
-#'   \item{fit}{A one-row data frame with estimates of model fitness such as log
-#'   likelyhoods, Akaike Information Criterion, Bayesian Information Criterion,
-#'   deviance and residual degrees of freedom.} \item{Ki}{The estimated seed lot
-#'   constant from the model.} \item{sigma}{The estimated period of time to lose
-#'   unit probit viability from the model.} \item{message}{Warning or error
-#'   messages generated during fitting of model, if any.}
+#' @return A list with the following components: \item{data}{A data frame with
+#'   the data used for computing the model} \item{model}{The fitted model as an
+#'   object of class \code{glm} (if \code{probit.method = "glm"}) or \code{lm}
+#'   (if \code{probit.method = "lm"}).} \item{parameters}{A data.frame of
+#'   parameter estimates, standard errors and p value.} \item{fit}{A one-row
+#'   data frame with estimates of model fitness such as log likelyhoods, Akaike
+#'   Information Criterion, Bayesian Information Criterion, deviance and
+#'   residual degrees of freedom.} \item{Ki}{The estimated seed lot constant
+#'   from the model.} \item{sigma}{The estimated period of time to lose unit
+#'   probit viability from the model.} \item{message}{Warning or error messages
+#'   generated during fitting of model, if any.}
 #' @importFrom broom tidy
 #' @importFrom broom glance
 #' @export
@@ -244,42 +245,40 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
   # Check probit.method
   probit.method <- match.arg(probit.method)
 
-  data$viability.count <- (data[, viability.percent] * data[, samp.size]) / 100
+  data <- data.frame(storage.period = data[,c(storage.period)],
+             viability.percent = data[,c(viability.percent)],
+             samp.size = data[,c(samp.size)])
+
+  data$viability.count <- (data$viability.percent * data$samp.size) / 100
 
   if (probit.method == "glm") {
     if(use.cv) {
       cvc <- control.viability/100
-      frmla <- formula(paste("(viability.count/",samp.size,
-                             ")/", cvc,
-                             " ~ ", storage.period, sep = ""))
+      frmla <- formula(paste("(viability.count/samp.size)/", cvc,
+                             " ~ storage.period", sep = ""))
     } else {
-      frmla <- formula(paste("viability.count/",samp.size,
-                             " ~ ", storage.period, sep = ""))
+      frmla <- formula("viability.count/samp.size ~ storage.period")
     }
 
     probit.model <- withWE(glm(formula = frmla,
                                family = binomial(link = "probit"),
                                data = data,
-                               weights = data[, samp.size]))
+                               weights = data$samp.size))
   }
 
   if (probit.method == "tflm") {
     if(use.cv) {
       cvc <- control.viability/100
-      frmla <- formula(paste("(Percent2NED(PercentAdjust(",
-                             viability.percent, ", 100)))/",
-                             cvc, " ~ ",
-                             storage.period, sep = ""))
+      frmla <- formula(paste("(Percent2NED(PercentAdjust",
+                             "(viability.percent, samp.size)))/",
+                             cvc, " ~ storage.period", sep = ""))
     } else {
-      frmla <- formula(paste("Percent2NED(PercentAdjust(",
-                             viability.percent, ", 100))", " ~ ",
-                             storage.period, sep = ""))
+      frmla <- formula(paste("Percent2NED(PercentAdjust",
+                             "(viability.percent, samp.size))",
+                             " ~ storage.period", sep = ""))
     }
 
-    probit.model <- withWE(lm(formula(paste("Percent2NED(PercentAdjust(",
-                                        viability.percent, ", 100))", " ~ ",
-                                         storage.period, sep = "")),
-                           data = data))
+    probit.model <- withWE(lm(formula = frmla, data = data))
   }
 
   parameters <- NA
@@ -290,7 +289,7 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
   if(!is.null(probit.model$value)) {
     parameters <- as.data.frame(broom::tidy(probit.model$value))
     parameters$term <- gsub("\\(Intercept\\)", "Ki", parameters$term)
-    parameters$term <- gsub("period", "1/sigma", parameters$term)
+    parameters$term <- gsub("storage.period", "1/sigma", parameters$term)
 
     fit <- as.data.frame(broom::glance(probit.model$value))
 
@@ -298,7 +297,9 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
     sigma <- 1 / parameters[parameters$term == "1/sigma", ]$estimate
   }
 
-  out <- list(model = probit.model$value, parameters = parameters,
+  out <- list(data = data[,c("storage.period",
+                             "viability.percent", "samp.size")],
+              model = probit.model$value, parameters = parameters,
               fit = fit, Ki = Ki, sigma = sigma,
               message = probit.model$message)
 

@@ -16,15 +16,15 @@
 print.FitSigma <- function(x, ...){
 
   if(attributes(x)$method == "glm") {
-    cat("Generalised linear model with probit link function.")
+    cat("Generalised linear model with probit link function.\n")
   }
   if(attributes(x)$method == "tflm") {
-    cat("Linear model after probit transformation.")
+    cat("Linear model after probit transformation.\n")
   }
 
   if(attributes(x)$cv["logical"] == 1) {
     cat(paste("Control viability = ",
-              attributes(x)$cv["value"], "%", sep = ""))
+              attributes(x)$cv["value"], "%\n", sep = ""))
   }
 
   print(data.frame(Ki = x$Ki, Sigma = x$sigma), row.names = FALSE)
