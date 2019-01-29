@@ -32,7 +32,7 @@ Either as a generalised linear model with a probit link function
 viability percentages (\code{"tflm"}).}
 }
 \value{
-@return A list with the following components:  \item{model}{The
+A list with the following components:  \item{model}{The
   fitted model as an object of class \code{glm} (if \code{probit.method =
   "glm"}) or \code{lm} (if \code{probit.method = "lm"}).} \item{parameters}{A
   data.frame of parameter estimates, standard errors and p value.}
@@ -111,15 +111,39 @@ df <- data.frame(Rep = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                                       73, 55, 35, 19, 9, 3, 1,
                                       0, 0, 0, 0, 0))
 
-# With generalised linear model with probit link function
-FitSigma(data = df, viability.percent = "viabilitypercent",
-         samp.size = "sampsize", storage.period = "period",
-         probit.method = "glm")
+plot(df$period, df$viabilitypercent)
 
+#----------------------------------------------------------------------------
+# With generalised linear model with probit link function
+#----------------------------------------------------------------------------
+model1 <- FitSigma(data = df, viability.percent = "viabilitypercent",
+                   samp.size = "sampsize", storage.period = "period",
+                   probit.method = "glm")
+model1
+# Raw model
+model1$model
+
+# Model parameters
+model1$parameters
+
+# Model fit
+model1$fit
+
+#----------------------------------------------------------------------------
 # With linear model after probit transformation
-FitSigma(data = df, viability.percent = "viabilitypercent",
-         samp.size = "sampsize", storage.period = "period",
-         probit.method = "tflm")
+#----------------------------------------------------------------------------
+model2 <- FitSigma(data = df, viability.percent = "viabilitypercent",
+                   samp.size = "sampsize", storage.period = "period",
+                   probit.method = "tflm")
+model2
+# Raw model
+model2$model
+
+# Model parameters
+model2$parameters
+
+# Model fit
+model2$fit
 
 }
 \references{

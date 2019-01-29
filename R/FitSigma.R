@@ -103,15 +103,37 @@
 #'
 #' plot(df$period, df$viabilitypercent)
 #'
+#' #----------------------------------------------------------------------------
 #' # With generalised linear model with probit link function
-#' FitSigma(data = df, viability.percent = "viabilitypercent",
-#'          samp.size = "sampsize", storage.period = "period",
-#'          probit.method = "glm")
+#' #----------------------------------------------------------------------------
+#' model1 <- FitSigma(data = df, viability.percent = "viabilitypercent",
+#'                    samp.size = "sampsize", storage.period = "period",
+#'                    probit.method = "glm")
+#' model1
+#' # Raw model
+#' model1$model
 #'
+#' # Model parameters
+#' model1$parameters
+#'
+#' # Model fit
+#' model1$fit
+#'
+#' #----------------------------------------------------------------------------
 #' # With linear model after probit transformation
-#' FitSigma(data = df, viability.percent = "viabilitypercent",
-#'          samp.size = "sampsize", storage.period = "period",
-#'          probit.method = "tflm")
+#' #----------------------------------------------------------------------------
+#' model2 <- FitSigma(data = df, viability.percent = "viabilitypercent",
+#'                    samp.size = "sampsize", storage.period = "period",
+#'                    probit.method = "tflm")
+#' model2
+#' # Raw model
+#' model2$model
+#'
+#' # Model parameters
+#' model2$parameters
+#'
+#' # Model fit
+#' model2$fit
 #'
 FitSigma <- function(data, viability.percent, samp.size, storage.period,
                      probit.method = c("glm", "tflm")) {
