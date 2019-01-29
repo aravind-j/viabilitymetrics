@@ -91,8 +91,10 @@ plot.FitSigma <- function(x, limits = TRUE, annotate = TRUE, ...){
   }
 
   if (annotate == TRUE) {
-  Vplot + annotate("text", x = quantile(x$data$storage.period)[4],
-                   y = 90,  parse = TRUE,
+    Vplot <- Vplot + annotate("text", x = quantile(x$data$storage.period)[4],
+                   y = quantile(x$data$viability.percent,
+                                prob = seq(0, 1, length = 11),
+                                type = 5)[10],  parse = TRUE,
                    label = paste("atop(K[i] == ", round(x$Ki, 2), ",",
                                  "~sigma == ", round(x$sigma, 2), ")",
                                  sep = ""))
