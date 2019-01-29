@@ -7,7 +7,7 @@
 #' This function computes the period to lose one probit viability
 #' (\ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}}) according to the improved
 #' seed viability equation of
-#' \insertCite{ellis_improved_1980;textual}{viabilitymetrics} as follows:
+#' \insertCite{ellis_improved_1980;textual}{viabilitymetrics} as follows.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>v = K<sub>i</sub>
 #' &minus; [ <sup>p</sup> &frasl; <sub>&sigma;</sub> ]
@@ -33,7 +33,7 @@
 #' transformation with slope \ifelse{html}{\out{<i><sup>1</sup> &frasl;
 #' <sub>&sigma;</sub></i>}}{\eqn{\frac{1}{\sigma}}}.
 #'
-#' The slope is determined as follows:
+#' The slope is determined as follows.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>&sigma; = 10</em><sup>
 #' <em>K<sub>E</sub> &minus; C<sub>W</sub></em> log<em>m &minus; C<sub>H</sub>t

@@ -9,7 +9,7 @@
 #' \ifelse{html}{\out{<i>MC<sub>wb</sub></i>}}{\eqn{MC_{wb}}} and that on dry
 #' weight basis \ifelse{html}{\out{<i>MC<sub>db</sub></i>}}{\eqn{MC_{db}}} are
 #' computed based on the formulae
-#' \insertCite{cromarty_design_1982;textual}{viabilitymetrics} as follows:
+#' \insertCite{cromarty_design_1982;textual}{viabilitymetrics} as follows.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><i>MC<sub>db</sub> =
 #' <sup>100 &times; MC<sub>wb</sub></sup> &frasl; <sub>100 &minus;

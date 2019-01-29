@@ -10,7 +10,7 @@
 #' This relationship between seed equilibrium moisture content, seed oil
 #' content, the  equilibrium relative humidity and temperature of the storage
 #' environment was described by
-#' \insertCite{cromarty_design_1982;textual}{viabilitymetrics} as follows:
+#' \insertCite{cromarty_design_1982;textual}{viabilitymetrics} as follows.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>(1-R) = e
 #' <sup>&minus;<big>[</big> <sup>[ <sup>(Me &times; (1.1 + T&frasl;90))</sup>

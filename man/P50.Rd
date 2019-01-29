@@ -40,7 +40,7 @@ The half-viability period in days or years (according to argument
 The period to lose 50\% viability
 (\ifelse{html}{\out{<em>P<sub>50</sub></em>}}{\eqn{P_{50}}}) is computed
 according to the relationship between probit percentage viabilities and time
-of storage described by \insertCite{ellis_improved_1980;textual}{viabilitymetrics} as follows:
+of storage described by \insertCite{ellis_improved_1980;textual}{viabilitymetrics} as follows.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>v = K<sub>i</sub>
 &minus; [ <sup>p</sup> &frasl; <sub>&sigma;</sub> ]
@@ -68,7 +68,7 @@ transformation with slope \ifelse{html}{\out{<i><sup>1</sup> &frasl;
 
 When \ifelse{html}{\out{<i>v</i>}}{\eqn{v}} = 0 (equivalent to 50\%
 viability), \ifelse{html}{\out{<em>P<sub>50</sub></em>}}{\eqn{P_{50}}} can be
-computed as follows:
+computed as follows.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>P<sub>50</sub> =
 K<sub>i</sub> &times; &sigma;</em></p>}}{\deqn{P_{50} = K_{i} \times \sigma}}

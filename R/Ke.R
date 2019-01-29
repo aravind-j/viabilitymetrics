@@ -19,7 +19,7 @@
 #' \ifelse{html}{\out{<i>m</i>}}{\eqn{m}} is the moisture content.
 #'
 #' The constant \ifelse{html}{\out{<i>K</i>}}{\eqn{K}} associated with the
-#' relationship of temperature with seed longevity as follows:
+#' relationship of temperature with seed longevity as follows.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>K = K<sub>E</sub>
 #' &minus; C<sub>H</sub>t &minus; C<sub>Q</sub>t<sup>2</sup></em></p>}}{\deqn{K
@@ -35,7 +35,7 @@
 #' (\ifelse{html}{\out{<i>C<sub>H</sub></i>}}{\eqn{C_{H}}} = 0.0329 and
 #' \ifelse{html}{\out{<i>C<sub>Q</sub></i>}}{\eqn{C_{Q}}} = 0.000478) in case of
 #' seed storage experiments at constant temperature and varying moisture content
-#' as follows:
+#' as follows.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em> K<sub>E</sub> = K +
 #' C<sub>H</sub>t + C<sub>Q</sub>t<sup>2</sup></em></p>}}{\deqn{K_{E} = K +

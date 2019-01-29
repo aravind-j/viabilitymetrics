@@ -38,7 +38,7 @@ tested at different temperatures
 The transformation is based on the effect of temperature on seed longevity
 (\ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}}) (identified by storage
 experiment with constant moisture content and varying temperature) which is
-as follows:
+as follows.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>log&sigma; = &beta;
 &minus; C<sub>H</sub>t &minus;

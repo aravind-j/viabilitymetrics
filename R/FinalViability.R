@@ -15,7 +15,7 @@
 #' The improved seed viability equation of
 #' \insertCite{ellis_improved_1980}{viabilitymetrics} describes the relationship
 #' between final viability, storage period and storage environment conditions as
-#' follows:
+#' follows.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>v = K<sub>i</sub>
 #' &minus; [ <sup>p</sup> &frasl; <sub>&sigma;</sub> ]
@@ -41,7 +41,7 @@
 #' transformation with slope \ifelse{html}{\out{<i><sup>1</sup> &frasl;
 #' <sub>&sigma;</sub></i>}}{\eqn{\frac{1}{\sigma}}}.
 #'
-#' The slope is determined as follows:
+#' The slope is determined as follows.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>&sigma; = 10</em><sup>
 #' <em>K<sub>E</sub> &minus; C<sub>W</sub></em> log<em>m &minus; C<sub>H</sub>t
@@ -60,7 +60,7 @@
 #' \ifelse{html}{\out{<i>v</i>}}{\eqn{v}},
 #' \ifelse{html}{\out{<i>p</i>}}{\eqn{p}},
 #' \ifelse{html}{\out{<i>m</i>}}{\eqn{m}} and
-#' \ifelse{html}{\out{<i>t</i>}}{\eqn{t}} can be estimated as follows:
+#' \ifelse{html}{\out{<i>t</i>}}{\eqn{t}} can be estimated as follows.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>v = K<sub>i</sub>
 #' &minus; [ <sup>p</sup> &frasl; <sub>&sigma;</sub> ]
