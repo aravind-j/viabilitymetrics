@@ -30,7 +30,7 @@ withWE <- function(expr) {
 
   if("simpleError" %in% class(out$value)) {
     out$message <- paste("ERROR:", conditionMessage(out$value))
-    out$value <- NA
+    out$value <- NULL
   }
 
   return(out)
