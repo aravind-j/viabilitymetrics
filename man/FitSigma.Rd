@@ -31,6 +31,13 @@ string.}
 Either as a generalised linear model with a probit link function
 (\code{"glm"}, recommended) or as a linear model with probit transformed
 viability percentages (\code{"tflm"}).}
+
+\item{use.cv}{logical. If \code{TRUE}, then the percentage value specified in
+the \code{control.viabilty} argument is incorporated as the control
+viability parameter into the seed viability equation for fitting. Default
+is \code{FALSE}.}
+
+\item{control.viability}{The control viability (\%).}
 }
 \value{
 A list of class \code{FitSigma} with the following components:
