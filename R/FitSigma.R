@@ -46,7 +46,7 @@
 #' inverse of the cumulative normal distribution function.
 #'
 #' The parameters estimated are the intercept
-#' \ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K<i>}}, theoretical viability
+#' \ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}}, theoretical viability
 #' of the seeds at the start of storage or the seed lot constant, and the slope
 #' \ifelse{html}{\out{<i>&minus;&sigma;<sup>-1</sup></i>}}{\eqn{-\sigma^{-1}}},
 #' where \ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}} is the standard
@@ -64,7 +64,7 @@
 #' <big>)</big></em></p>}}{\deqn{y = C_{v} \times \phi(v) = C_{v} \times
 #' \phi\left (K_{i}-\left ( \frac{1}{\sigma} \right )p \right )}}
 #'
-#' Where, \ifelse{html}{\out{<i>C<sub>v</sub></i>}}{\deqn{C_{v}}} is the control
+#' Where, \ifelse{html}{\out{<i>C<sub>v</sub></i>}}{\eqn{C_{v}}} is the control
 #' viability parameter which is the proportion of respondent seeds. This
 #' excludes the bias due to seeds of the ageing population that have already
 #' lost viability at the start of storage and those non-respondent seeds that
