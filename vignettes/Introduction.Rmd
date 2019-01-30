@@ -15,6 +15,7 @@ header-includes:
 - \hypersetup{linkcolor=blue}
 - \usepackage{pdflscape}
 - \usepackage{booktabs}
+- \usepackage{xcolor}
 - \newcommand{\blandscape}{\begin{landscape}}
 - \newcommand{\elandscape}{\end{landscape}}
 - \fancyhead[LO,RE]{The \texttt{viabilitymetrics} package{:} A Brief Introduction}

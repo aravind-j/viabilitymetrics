@@ -1,3 +1,4 @@
+^Data\.xlsx$
 ^test\.Rda$
 ^.*\.Rproj$
 ^\.Rproj\.user$

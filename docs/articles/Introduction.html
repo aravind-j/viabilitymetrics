@@ -39,14 +39,14 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">viabilitymetrics</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9100</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
     Home
@@ -83,7 +83,7 @@
   </a>
 </li>
       </ul>
-<form class="navbar-form navbar-right" role="search">
+<form class="navbar-form navbar-right hidden-xs hidden-sm" role="search">
         <div class="form-group">
           <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
 </div>
@@ -103,7 +103,7 @@
       <h1>The <code>viabilitymetrics</code> Package: A Brief Introduction</h1>
                         <h4 class="author">Aravind, J., Radhamani, J., Vimala Devi, S., Jacob, S. R., and Kalyani Srinivasan</h4>
             
-            <h4 class="date">2018-11-30</h4>
+            <h4 class="date">2019-01-30</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/aravind-j/viabilitymetrics/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
@@ -136,9 +136,14 @@ ICAR-National Bureau of Plant Genetic Resources, New Delhi.
 <a class="sourceLine" id="cb1-5" data-line-number="5">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"aravind-j/viabilitymetrics"</span>)</a></code></pre></div>
 <p>Then the package can be loaded using the function</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(viabilitymetrics)</a></code></pre></div>
+<pre><code>Registered S3 methods overwritten by 'ggplot2':
+  method         from 
+  [.quosures     rlang
+  c.quosures     rlang
+  print.quosures rlang</code></pre>
 <pre><code>
 --------------------------------------------------------------------------------
-Welcome to viabilitymetrics version 0.0.0.9000
+Welcome to viabilitymetrics version 0.0.0.9100
 
 
 To know how to use this package type:
@@ -1558,8 +1563,8 @@ suppressPackageStartupMessages(library(viabilitymetrics))
 To cite the R package 'viabilitymetrics' in publications use:
 
   Aravind, J., Radhamani, J., Vimala Devi, S., Jacob, S. R., and
-  Kalyani Srinivasan (2018).  viabilitymetrics: Seed Viability
-  Calculations and Curve Fitting. R package version 0.0.0.9000,
+  Kalyani Srinivasan (2019).  viabilitymetrics: Seed Viability
+  Calculations and Curve Fitting. R package version 0.0.0.9100,
   https://aravind-j.github.io/viabilitymetrics/.
 
 A BibTeX entry for LaTeX users is
@@ -1567,8 +1572,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {viabilitymetrics: Seed Viability Calculations and Curve Fitting},
     author = {J. Aravind and J. Radhamani and S. {Vimala Devi} and Sherry Rachel Jacob and {Kalyani Srinivasan}},
-    year = {2018},
-    note = {R package version 0.0.0.9000},
+    year = {2019},
+    note = {R package version 0.0.0.9100},
     note = {https://aravind-j.github.io/viabilitymetrics/},
   }
 
@@ -1579,8 +1584,8 @@ project by citing the package.</code></pre>
 <div id="session-info" class="section level2">
 <h2 class="hasAnchor">
 <a href="#session-info" class="anchor"></a>Session Info</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/sessionInfo">sessionInfo</a></span>()</a></code></pre></div>
-<pre><code>R version 3.5.1 (2018-07-02)
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/sessionInfo">sessionInfo</a></span>()</a></code></pre></div>
+<pre><code>R Under development (unstable) (2018-10-27 r75507)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 Running under: Windows 10 x64 (build 17134)
 
@@ -1595,25 +1600,27 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] viabilitymetrics_0.0.0.9000
+[1] viabilitymetrics_0.0.0.9100
 
 loaded via a namespace (and not attached):
- [1] Rcpp_1.0.0         compiler_3.5.1     pillar_1.3.0      
- [4] plyr_1.8.4         bindr_0.1.1        tools_3.5.1       
- [7] digest_0.6.18      evaluate_0.12      memoise_1.1.0     
-[10] tibble_1.4.2       gtable_0.2.0       pkgconfig_2.0.2   
-[13] rlang_0.3.0.1      bibtex_0.4.2       rstudioapi_0.8    
-[16] commonmark_1.6     yaml_2.2.0         pkgdown_1.2.0.9000
-[19] bindrcpp_0.2.2     stringr_1.3.1      dplyr_0.7.8       
-[22] roxygen2_6.1.1     xml2_1.2.0         knitr_1.20        
-[25] desc_1.2.0         fs_1.2.6           tidyselect_0.2.5  
-[28] gbRd_0.4-11        rprojroot_1.3-2    grid_3.5.1        
-[31] glue_1.3.0         R6_2.3.0           Rdpack_0.10-3     
-[34] rmarkdown_1.10     pander_0.6.3       purrr_0.2.5       
-[37] ggplot2_3.1.0      magrittr_1.5       backports_1.1.2   
-[40] scales_1.0.0       htmltools_0.3.6    MASS_7.3-50       
-[43] assertthat_0.2.0   colorspace_1.3-2   stringi_1.2.4     
-[46] lazyeval_0.2.1     munsell_0.5.0      crayon_1.3.4      </code></pre>
+ [1] Rcpp_1.0.0         bindr_0.1.1        compiler_3.6.0    
+ [4] pillar_1.3.1       plyr_1.8.4         tools_3.6.0       
+ [7] digest_0.6.18      lattice_0.20-38    nlme_3.1-137      
+[10] evaluate_0.12      memoise_1.1.0      tibble_2.0.1      
+[13] gtable_0.2.0       pkgconfig_2.0.2    rlang_0.3.1       
+[16] bibtex_0.4.2       rstudioapi_0.9.0   commonmark_1.7    
+[19] yaml_2.2.0         pkgdown_1.3.0.9000 xfun_0.4          
+[22] bindrcpp_0.2.2     stringr_1.3.1      dplyr_0.7.8       
+[25] roxygen2_6.1.1     xml2_1.2.0         knitr_1.21        
+[28] generics_0.0.2     desc_1.2.0         fs_1.2.6          
+[31] tidyselect_0.2.5   gbRd_0.4-11        rprojroot_1.3-2   
+[34] grid_3.6.0         glue_1.3.0         R6_2.3.0          
+[37] Rdpack_0.10-3      rmarkdown_1.11     pander_0.6.3      
+[40] tidyr_0.8.2        purrr_0.2.5        ggplot2_3.1.0     
+[43] magrittr_1.5       backports_1.1.3    scales_1.0.0      
+[46] htmltools_0.3.6    MASS_7.3-51.1      assertthat_0.2.0  
+[49] colorspace_1.4-0   stringi_1.2.4      lazyeval_0.2.1    
+[52] munsell_0.5.0      broom_0.5.1        crayon_1.3.4      </code></pre>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">
@@ -1659,7 +1666,7 @@ loaded via a namespace (and not attached):
 <p>Daniel, I. O., Ng, N. Q., Tayo, T. O., and Togun, A. O. (2003). Storage of West African yam (<em>dioscorea</em> spp.) seeds: Modelling seed survival under controlled storage environments. <em>Seed Science and Technology</em> 31, 139–147. doi:<a href="https://doi.org/10.15258/sst.2003.31.1.14">10.15258/sst.2003.31.1.14</a>.</p>
 </div>
 <div id="ref-dehghan_viability_2015">
-<p>Dehghan, M., and Sharif-Zadeh, F. (2015). Viability model and effect of two drying procedures on seed longevity of <em>Secale montanum</em> seeds. <em>Biomedicine and Nursing</em> 1, 43–48.</p>
+<p>Dehghan, M., and Sharif-Zadeh, F. (2015). Viability model and effect of two drying procedures on seed longevity of <em>Secale montanum</em> seeds. <em>Biomedicine and Nursing</em> 1, 43–48. doi:<a href="https://doi.org/10.7537/marsbnj010115.08">10.7537/marsbnj010115.08</a>.</p>
 </div>
 <div id="ref-demir_determination_2011">
 <p>Demir, I., Kenanoglu, B. B., Hay, F., Mavi, K., and Celikkol, T. (2011). Determination of seed moisture constants (KE, CW) for the viability equation for watermelon, melon, and cucumber seeds. <em>Seed Science and Technology</em> 39, 527–532. doi:<a href="https://doi.org/10.15258/sst.2011.39.2.23">10.15258/sst.2011.39.2.23</a>.</p>
@@ -1686,7 +1693,7 @@ loaded via a namespace (and not attached):
 <p>Ellis, R. H. (1988). The viability equation, seed viability nomographs, and practical advice on seed storage. <em>Seed Science and Technology</em> 16, 29–50.</p>
 </div>
 <div id="ref-ellis_quantitative_2007">
-<p>Ellis, R. H., and Hong, T. D. (2007). Quantitative response of the longevity of seed of twelve crops to temperature and moisture in hermetic storage. <em>Seed Science and Technology</em> 35, 432–444. Available at: <a href="http://centaur.reading.ac.uk/8496/" class="uri">http://centaur.reading.ac.uk/8496/</a>.</p>
+<p>Ellis, R. H., and Hong, T. D. (2007). Quantitative response of the longevity of seed of twelve crops to temperature and moisture in hermetic storage. <em>Seed Science and Technology</em> 35, 432–444. doi:<a href="https://doi.org/10.15258/sst.2007.35.2.18">10.15258/sst.2007.35.2.18</a>.</p>
 </div>
 <div id="ref-ellis_logarithmic_1986">
 <p>Ellis, R. H., Hong, T. D., and Roberts, E. H. (1986). Logarithmic relationship between moisture content and longevity in sesame seeds. <em>Annals of Botany</em> 57, 499–503. doi:<a href="https://doi.org/10.1093/oxfordjournals.aob.a087131">10.1093/oxfordjournals.aob.a087131</a>.</p>
@@ -1713,7 +1720,7 @@ loaded via a namespace (and not attached):
 <p>Ellis, R. H., and Roberts, E. H. (1981). The quantification of ageing and survival in orthodox seeds. <em>Seed Science and Technology</em>.</p>
 </div>
 <div id="ref-fantinatti_seed_2007">
-<p>Fantinatti, J. B., and Usberti, R. (2007). Seed viability constants for <em>Eucalyptus grandis</em>. <em>Pesquisa Agropecuária Brasileira</em> 42, 111–117. doi:<a href="https://doi.org/10.1590/s0100-204s2007000100015">10.1590/s0100-204s2007000100015</a>.</p>
+<p>Fantinatti, J. B., and Usberti, R. (2007). Seed viability constants for <em>Eucalyptus grandis</em>. <em>Pesquisa Agropecuária Brasileira</em> 42, 111–117. doi:<a href="https://doi.org/10.1590/S0100-204X2007000100015">10.1590/S0100-204X2007000100015</a>.</p>
 </div>
 <div id="ref-ghaderi_determination_2010">
 <p>Ghaderi, F. F., Soltani, A., and Sadeghipour, H. R. (2010). Determination of seed viability constants in medicinal pumpkin (<em>Cucurbita pepo</em> L. Subsp. <em>Pepo</em>. Convar. <em>Pepo</em> var. <em>Styriaca</em> Greb), borago (<em>Borago officinalis</em> L.) And black cumin (<em>Nigella sativa</em> L.). <em>Journal of Plant Production (Journal of Agricultural Sciences and Natural Resources)</em> 17, 53–66. Available at: <a href="http://www.sid.ir/En/Journal/ViewPaper.aspx?ID=214959" class="uri">http://www.sid.ir/En/Journal/ViewPaper.aspx?ID=214959</a>.</p>
@@ -1746,13 +1753,13 @@ loaded via a namespace (and not attached):
 <p>Kuo, W. H. J., Shan, M. L., and Tseng, M. T. (1990). Effects of temperature and seed moisture-content on the longevity of sorghum seeds. <em>Journal of the Agricultural Association of China</em>, 32–41.</p>
 </div>
 <div id="ref-lee_analysis_2017">
-<p>Lee, M. H., Hong, S. H., Na, C. S., Kim, J. G., Kim, T. W., and Lee, Y. H. (2017). Analysis of seed storage data and longevity for <em>Agastache rugosa</em>. <em>Korean Journal of Environmental Biology</em> 35, 207–214.</p>
+<p>Lee, M. H., Hong, S. H., Na, C. S., Kim, J. G., Kim, T. W., and Lee, Y. H. (2017). Analysis of seed storage data and longevity for <em>Agastache rugosa</em>. <em>Korean Journal of Environmental Biology</em> 35, 207–214. doi:<a href="https://doi.org/10.11626/KJEB.2017.35.2.207">10.11626/KJEB.2017.35.2.207</a>.</p>
 </div>
 <div id="ref-muthoka_moisture_2009">
 <p>Muthoka, P. N., Hay, F. R., Dida, M. M., Nyabundi, J. O., and Probert, R. J. (2009). Moisture content and the longevity of seeds of six <em>euphorbia</em> species in open storage. <em>Seed Science and Technology</em> 37, 383–397. doi:<a href="https://doi.org/10.15258/sst.2009.37.2.12">10.15258/sst.2009.37.2.12</a>.</p>
 </div>
 <div id="ref-pozitano_seed_2009">
-<p>Pozitano, M., and Usberti, R. (2009). Seed controlled deterioration of three interspecific elephant grass pearl millet hybrids. <em>Revista Brasileira de Zootecnia</em> 38, 428–434. Available at: <a href="http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S1516-35982009000300005&amp;nrm=iso" class="uri">http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S1516-35982009000300005&amp;nrm=iso</a>.</p>
+<p>Pozitano, M., and Usberti, R. (2009). Seed controlled deterioration of three interspecific elephant grass pearl millet hybrids. <em>Revista Brasileira de Zootecnia</em> 38, 428–434. doi:<a href="https://doi.org/10.1590/S1516-35982009000300005">10.1590/S1516-35982009000300005</a>.</p>
 </div>
 <div id="ref-reza_estimation_2014">
 <p>Reza, E. H. (2014a). Estimation of seed viability constants for tall wheatgrass, cocksfoot, rye, and sheep fescue to inform gene banking decisions. <em>Iranian Journal of Plant Physiology</em> 4, 1145–1149. Available at: <a href="http://www.sid.ir/En/Journal/ViewPaper.aspx?ID=518161" class="uri">http://www.sid.ir/En/Journal/ViewPaper.aspx?ID=518161</a>.</p>
@@ -1808,7 +1815,7 @@ loaded via a namespace (and not attached):
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
 </div>
       </footer>
 </div>

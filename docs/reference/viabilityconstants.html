@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Viability constants. — viabilityconstants • viabilitymetrics</title>
+<title>Viability constants — viabilityconstants • viabilitymetrics</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -38,7 +38,7 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Viability constants. — viabilityconstants" />
+<meta property="og:title" content="Viability constants — viabilityconstants" />
 
 <meta property="og:description" content="A dataset of the known species-specific seed viability constants estimated
 from the 'improved seed viability equation' of
@@ -84,14 +84,14 @@ Ellis and Roberts (1980)
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">viabilitymetrics</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9100</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
     Home
@@ -130,7 +130,7 @@ Ellis and Roberts (1980)
 </li>
       </ul>
       
-      <form class="navbar-form navbar-right" role="search">
+      <form class="navbar-form navbar-right hidden-xs hidden-sm" role="search">
         <div class="form-group">
           <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
         </div>
@@ -146,7 +146,7 @@ Ellis and Roberts (1980)
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Viability constants.</h1>
+    <h1>Viability constants</h1>
     <small class="dont-index">Source: <a href='https://github.com/aravind-j/viabilitymetrics/blob/master/R/viabilityconstants.R'><code>R/viabilityconstants.R</code></a></small>
     <div class="hidden name"><code>viabilityconstants.Rd</code></div>
     </div>
@@ -267,7 +267,7 @@ argument <code>vcindex</code>.</p>
 &#8220;The quantification of ageing and survival in orthodox seeds.&#8221;
 <em>Seed Science and Technology</em>.<br /><br /> Fantinatti JB, Usberti R (2007).
 &#8220;Seed viability constants for <em>Eucalyptus grandis</em>.&#8221;
-<em>Pesquisa Agropecuaria Brasileira</em>, <b>42</b>(1), 111--117.<br /><br /> Far FG, Soltani A, Sadeghipour (2010).
+<em>Pesquisa Agropecuaria Brasileira</em>, <b>42</b>(1), 111--117.<br /><br /> Ghaderi FF, Soltani A, Sadeghipour HR (2010).
 &#8220;Determination of seed viability constants in medicinal pumpkin (<em>Cucurbita pepo</em> L. subsp. <em>pepo</em>. convar. <em>pepo</em> var. <em>styriaca</em> Greb), borago (<em>Borago officinalis</em> L.) and black cumin (<em>Nigella sativa</em> L.).&#8221;
 <em>Journal of Plant Production (Journal of Agricultural Sciences and Natural Resources)</em>, <b>17</b>(3), 53--66.<br /><br /> Hay FR, Mead A, Manger K, Wilson FJ (2003).
 &#8220;One-step analysis of seed storage data and the longevity of <em>Arabidopsis thaliana</em> seeds.&#8221;
@@ -275,7 +275,7 @@ argument <code>vcindex</code>.</p>
 <em>Seed Storage Behaviour: A Compendium</em>,  number 4 in Handbooks for Genebanks.
 International Plant Genetic Resources Institute (IPGRI), Rome, Italy.<br /><br /> Ignacio VL (2013).
 <em>Germinacao e conservacao de sementes de Balfourodendron riedelianum (Engler) Engler</em>.
-PhD thesis, Universidade Estadual do Oeste do Parana.<br /><br /> Kebreab, Murdoch (1999).
+Ph.D. thesis, Universidade Estadual do Oeste do Parana.<br /><br /> Kebreab E, Murdoch AJ (1999).
 &#8220;Effect of temperature and humidity on the longevity of <em>Orobanche</em> seeds.&#8221;
 <em>Weed Research</em>, <b>39</b>(3), 199--211.<br /><br /> Kraak HL, Vos J (1987).
 &#8220;Seed viability constants for lettuce.&#8221;
@@ -326,29 +326,31 @@ PhD thesis, Universidade Estadual do Oeste do Parana.<br /><br /> Kebreab, Murdo
 <span class='co'># Soybean</span>
 <span class='no'>viabilityconstants</span>[<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/grep'>grepl</a></span>(<span class='st'>"glycine"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>viabilityconstants</span>$<span class='no'>Species</span>,
                          <span class='kw'>ignore.case</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>),]</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 2 x 7</span><span>
-#&gt;   Index Species        Ke    Cw     Ch      Cq Reference                       
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                           
-#&gt; </span><span style='color: #555555;'>1</span><span>    59 Glycine max  7.52  4.09 0.032</span><span style='text-decoration: underline;'>9</span><span> 4.78</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Ellis et al., 1982; Dickie et a~
-#&gt; </span><span style='color: #555555;'>2</span><span>    60 Glycine max  7.29  4.00 0.029</span><span style='text-decoration: underline;'>5</span><span> 4.91</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Ellis, 1988                     </div><div class='input'><span class='co'># Rice</span>
+#&gt;   Index Species        Ke    Cw     Ch      Cq Reference                        
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                            
+#&gt; </span><span style='color: #555555;'>1</span><span>    59 Glycine max  7.52  4.09 0.032</span><span style='text-decoration: underline;'>9</span><span> 4.78</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Ellis et al., 1982; Dickie et al~
+#&gt; </span><span style='color: #555555;'>2</span><span>    60 Glycine max  7.29  4.00 0.029</span><span style='text-decoration: underline;'>5</span><span> 4.91</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Ellis, 1988                      </div><div class='input'><span class='co'># Rice</span>
 <span class='no'>viabilityconstants</span>[<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/grep'>grepl</a></span>(<span class='st'>"oryza"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>viabilityconstants</span>$<span class='no'>Species</span>,
                          <span class='kw'>ignore.case</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>),]</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 8 x 7</span><span>
-#&gt;   Index Species              Ke    Cw     Ch       Cq Reference                
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                    
-#&gt; </span><span style='color: #555555;'>1</span><span>    85 Oryza glaberrima   9.41  5.04 0.037</span><span style='text-decoration: underline;'>5</span><span> 0.000</span><span style='text-decoration: underline;'>471</span><span> Ellis et al., 2007       
-#&gt; </span><span style='color: #555555;'>2</span><span>    86 Oryza glaberrima*  6.87  5.51 0.032</span><span style='text-decoration: underline;'>9</span><span> 0.000</span><span style='text-decoration: underline;'>478</span><span> Bam, Hong, Ellis, Kumaga~
-#&gt; </span><span style='color: #555555;'>3</span><span>    87 Oryza sativa       8.24  4.34 0.030</span><span style='text-decoration: underline;'>7</span><span> 0.000</span><span style='text-decoration: underline;'>501</span><span> Ellis et al., 2007       
-#&gt; </span><span style='color: #555555;'>4</span><span>    88 Oryza sativa*      8.67  5.03 0.032</span><span style='text-decoration: underline;'>9</span><span> 0.000</span><span style='text-decoration: underline;'>478</span><span> Ellis et al., 1989       
-#&gt; </span><span style='color: #555555;'>5</span><span>    89 Oryza sativa ssp~  8.81  4.90 0.032</span><span style='text-decoration: underline;'>9</span><span> 0.000</span><span style='text-decoration: underline;'>478</span><span> Ellis, Hong, and Roberts~
-#&gt; </span><span style='color: #555555;'>6</span><span>    90 Oryza sativa ssp~  8.42  4.90 0.032</span><span style='text-decoration: underline;'>9</span><span> 0.000</span><span style='text-decoration: underline;'>478</span><span> Ellis et al., 1992       
-#&gt; </span><span style='color: #555555;'>7</span><span>    91 Oryza sativa ssp~  6.63  5.51 0.032</span><span style='text-decoration: underline;'>9</span><span> 0.000</span><span style='text-decoration: underline;'>478</span><span> Bam et al., 2008         
-#&gt; </span><span style='color: #555555;'>8</span><span>    92 Oryza sativa ssp~  8.74  4.90 0.032</span><span style='text-decoration: underline;'>9</span><span> 0.000</span><span style='text-decoration: underline;'>478</span><span> Ellis et al., 1992       </div><div class='input'><span class='co'># Wheat</span>
+#&gt;   Index Species               Ke    Cw     Ch      Cq Reference                 
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                     
+#&gt; </span><span style='color: #555555;'>1</span><span>    85 Oryza glaberrima    9.41  5.04 0.037</span><span style='text-decoration: underline;'>5</span><span> 4.71</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Ellis et al., 2007        
+#&gt; </span><span style='color: #555555;'>2</span><span>    86 Oryza glaberrima*   6.87  5.51 0.032</span><span style='text-decoration: underline;'>9</span><span> 4.78</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Bam, Hong, Ellis, Kumaga,~
+#&gt; </span><span style='color: #555555;'>3</span><span>    87 Oryza sativa        8.24  4.34 0.030</span><span style='text-decoration: underline;'>7</span><span> 5.01</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Ellis et al., 2007        
+#&gt; </span><span style='color: #555555;'>4</span><span>    88 Oryza sativa*       8.67  5.03 0.032</span><span style='text-decoration: underline;'>9</span><span> 4.78</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Ellis et al., 1989        
+#&gt; </span><span style='color: #555555;'>5</span><span>    89 Oryza sativa ssp.~  8.81  4.90 0.032</span><span style='text-decoration: underline;'>9</span><span> 4.78</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Ellis, Hong, and Roberts,~
+#&gt; </span><span style='color: #555555;'>6</span><span>    90 Oryza sativa ssp.~  8.42  4.90 0.032</span><span style='text-decoration: underline;'>9</span><span> 4.78</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Ellis et al., 1992        
+#&gt; </span><span style='color: #555555;'>7</span><span>    91 Oryza sativa ssp.~  6.63  5.51 0.032</span><span style='text-decoration: underline;'>9</span><span> 4.78</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Bam et al., 2008          
+#&gt; </span><span style='color: #555555;'>8</span><span>    92 Oryza sativa ssp.~  8.74  4.90 0.032</span><span style='text-decoration: underline;'>9</span><span> 4.78</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Ellis et al., 1992        </div><div class='input'><span class='co'># Wheat</span>
 <span class='no'>viabilityconstants</span>[<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/grep'>grepl</a></span>(<span class='st'>"triticum"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>viabilityconstants</span>$<span class='no'>Species</span>,
                          <span class='kw'>ignore.case</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>),]</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 2 x 7</span><span>
 #&gt;   Index Species               Ke    Cw     Ch       Cq Reference         
 #&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>             
 #&gt; </span><span style='color: #555555;'>1</span><span>   136 Triticum aestivum   9.04  5.18 0.035</span><span style='text-decoration: underline;'>1</span><span> 0.000</span><span style='text-decoration: underline;'>475</span><span> Ellis et al., 2007
-#&gt; </span><span style='color: #555555;'>2</span><span>   137 Triticum aestivum*  9.42  5.86 0.032</span><span style='text-decoration: underline;'>9</span><span> 0.000</span><span style='text-decoration: underline;'>478</span><span> Ellis et al., 1990</div></span><div class='input'><span class='co'># View dataset</span>
-<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/View'>View</a></span>(<span class='no'>viabilityconstants</span>)</div><div class='input'>
+#&gt; </span><span style='color: #555555;'>2</span><span>   137 Triticum aestivum*  9.42  5.86 0.032</span><span style='text-decoration: underline;'>9</span><span> 0.000</span><span style='text-decoration: underline;'>478</span><span> Ellis et al., 1990</div></span><span class='co'># NOT RUN {</span>
+<span class='co'># View dataset</span>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/View'>View</a></span>(<span class='no'>viabilityconstants</span>)
+<span class='co'># }</span><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -377,7 +379,7 @@ PhD thesis, Universidade Estadual do Oeste do Parana.<br /><br /> Kebreab, Murdo
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
 </div>
       </footer>
    </div>

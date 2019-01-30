@@ -7,6 +7,12 @@
     <loc>https://aravind-j.github.io/viabilitymetrics//reference/FinalViability.html</loc>
   </url>
   <url>
+    <loc>https://aravind-j.github.io/viabilitymetrics//reference/FitSigma.batch.html</loc>
+  </url>
+  <url>
+    <loc>https://aravind-j.github.io/viabilitymetrics//reference/FitSigma.html</loc>
+  </url>
+  <url>
     <loc>https://aravind-j.github.io/viabilitymetrics//reference/Ke.html</loc>
   </url>
   <url>
@@ -14,6 +20,18 @@
   </url>
   <url>
     <loc>https://aravind-j.github.io/viabilitymetrics//reference/Percent2Probit.html</loc>
+  </url>
+  <url>
+    <loc>https://aravind-j.github.io/viabilitymetrics//reference/plot.FitSigma.batch.html</loc>
+  </url>
+  <url>
+    <loc>https://aravind-j.github.io/viabilitymetrics//reference/plot.FitSigma.html</loc>
+  </url>
+  <url>
+    <loc>https://aravind-j.github.io/viabilitymetrics//reference/print.FitSigma.batch.html</loc>
+  </url>
+  <url>
+    <loc>https://aravind-j.github.io/viabilitymetrics//reference/print.FitSigma.html</loc>
   </url>
   <url>
     <loc>https://aravind-j.github.io/viabilitymetrics//reference/SeedEqMC.html</loc>
@@ -29,6 +47,9 @@
   </url>
   <url>
     <loc>https://aravind-j.github.io/viabilitymetrics//reference/wet2dry.html</loc>
+  </url>
+  <url>
+    <loc>https://aravind-j.github.io/viabilitymetrics//reference/withWE.html</loc>
   </url>
   <url>
     <loc>https://aravind-j.github.io/viabilitymetrics//articles/Introduction.html</loc>
