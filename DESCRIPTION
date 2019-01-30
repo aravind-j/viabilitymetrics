@@ -21,8 +21,10 @@ Authors@R: c(
     person("ICAR-NBGPR",
            role = "cph",
 		       comment = c(url = "www.nbpgr.ernet.in")))
-Description: An implementation of viability equation of Ellis and Roberts (1980)
-    for calculation of several seed viability metrics such as storage period,
+Description: An implementation of viability equations of Ellis and Roberts 
+    (1980) <doi:10.1093/oxfordjournals.aob.a085797> and Mead and Grey (1999) 
+    <doi:10.1017/s0960258599000070>, for seed viability curve fitting and 
+    calculation of several seed viability metrics such as storage period,
     final viability, storage moisture content, storage temperature and days to
     loose one probit viablity. The package further includes various conversions
     and transformations associated with seed viability calculations.

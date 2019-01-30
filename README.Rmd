@@ -30,7 +30,13 @@ ICAR-National Bureau of Plant Genetic Resources, New Delhi
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version-last-release/viabilitymetrics)](https://cran.r-project.org/package=viabilitymetrics)
 <!-- [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/viabilitymetrics?color=green)](https://CRAN.R-project.org/package=viabilitymetrics) -->
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/viabilitymetrics) -->
-[![develVersion](https://img.shields.io/badge/devel%20version-`r gsub("Version:\\s*", "", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/viabilitymetrics", "/master/DESCRIPTION"))[grep("Version:", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/viabilitymetrics", "/master/DESCRIPTION")))])`-orange.svg)](https://github.com/aravind-j/viabilitymetrics)
+```{r, results='asis', echo=FALSE}
+dver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("viabilitymetrics")) != "",
+               yes = getNamespaceVersion("viabilitymetrics"),
+               no = gsub("Version:\\s*", "", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/viabilitymetrics", "/master/DESCRIPTION"))[grep("Version:", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/viabilitymetrics", "/master/DESCRIPTION")))]))
+
+cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver, "-orange.svg)](https://github.com/aravind-j/viabilitymetrics)", sep = ""))
+```
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/viabilitymetrics/total.svg)] -->
 [![Project Status: WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
@@ -40,6 +46,9 @@ ICAR-National Bureau of Plant Genetic Resources, New Delhi
 [![Analytics](https://pro-pulsar-193905.appspot.com/UA-116693474-1/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
 
 ***
+
+## Description
+`r gsub("(<doi:)(.+)(>)", "[doi:\\2](https://doi.org/\\2)", gsub("\\n", " ", packageDescription("viabilitymetrics", fields = "Description")))`
 
 ## Installation
 
@@ -66,13 +75,13 @@ news(package='viabilitymetrics')
 
 ## Links
 
-<-- [CRAN page](https://cran.r-project.org/package=viabilitymetrics)  -->
+<!-- [CRAN page](https://cran.r-project.org/package=viabilitymetrics)  -->
 
 [Github page](https://github.com/aravind-j/viabilitymetrics)
 
 [Documentation website](https://aravind-j.github.io/viabilitymetrics/)
 
-<-- [Zenodo DOI](https://doi.org/10.5281/zenodo.841963) -->
+<!-- [Zenodo DOI](https://doi.org/10.5281/zenodo.841963) -->
 
 
 ## Citing `viabilitymetrics`

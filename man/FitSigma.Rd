@@ -98,6 +98,23 @@ of the seeds at the start of storage or the seed lot constant, and the slope
 where \ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}} is the standard
 deviation of the normal distribution of seed deaths in time or the period of
 time to lose unit probit viability.
+
+This function can also incorporate a control viability parameter into the
+model to fit the modified model suggested by
+\insertCite{mead_prediction_1999}{viabilitymetrics}. The modified model is as
+follows.
+
+\ifelse{html}{\out{<p style="text-align: center;"><em>y = C<sub>v</sub>
+&times; &phi;(v) = C<sub>v</sub> &times;  &phi;<big>(</big>K<sub>i</sub>
+&minus; (<sup>1</sup> &frasl; <sub>&sigma;</sub>)
+<big>)</big></em></p>}}{\deqn{y = C_{v} \times \phi(v) = C_{v} \times
+\phi\left (K_{i}-\left ( \frac{1}{\sigma} \right )p \right )}}
+
+Where, \ifelse{html}{\out{<i>C<sub>v</sub></i>}}{\deqn{C_{v}}} is the control
+viability parameter which is the proportion of respondent seeds. This
+excludes the bias due to seeds of the ageing population that have already
+lost viability at the start of storage and those non-respondent seeds that
+are not part of the ageing population due to several reasons.
 }
 \examples{
 df <- data.frame(Rep = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
