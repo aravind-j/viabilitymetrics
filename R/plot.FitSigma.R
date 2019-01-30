@@ -4,9 +4,9 @@
 #' \code{FitSigma} object as an object of class \code{ggplot}.
 #'
 #' @param x An object of class \code{FitSigma} obtained as output from the
-#'   \code{\link[germinationmetrics]{FitSigma}} function.
-#' @param limits logical. If \code{TRUE}, set the limits of y axis (germination
-#'   percentage) between 0 and 100 in the germination curve plot. If
+#'   \code{\link[viabilitymetrics]{FitSigma}} function.
+#' @param limits logical. If \code{TRUE}, set the limits of y axis (viability
+#'   percentage) between 0 and 100 in the viability curve plot. If
 #'   \code{FALSE}, limits are set according to the data. Default is \code{TRUE}.
 #' @param annotate logical. If \code{TRUE},
 #'   \ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}} and
@@ -109,7 +109,7 @@ plot.FitSigma <- function(x, limits = TRUE, annotate = TRUE, ...){
 
 FitSigma.fun <- function(p, ki, sigma) {
 
-  NED2Percent(ki - (p/(-sigma)))
+  NED2Percent(ki - (p/sigma))
 
 }
 

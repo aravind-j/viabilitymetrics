@@ -124,6 +124,9 @@ FitSigma.batch <- function(data, group, ...) {
   outlist <- vector(mode = "list", length = nlevels(data[, group]))
   names(outlist) <- levels(data[, group])
 
+  datalist <- vector(mode = "list", length = nlevels(data[, group]))
+  names(datalist) <- levels(data[, group])
+
   probitm <- NA
   cvm <- c(NA, NA)
 
@@ -142,6 +145,8 @@ FitSigma.batch <- function(data, group, ...) {
                                  sigma = NA_integer_, stringsAsFactors = FALSE)
       outlist[[i]] <- cbind(outlist[[i]], pmod$message,
                             stringsAsFactors = FALSE)
+      # datalist[[i]] <- pmod$data
+      # datalist[[i]]$group <- names(datalist)[i]
     } else {
       outlist[[i]] <- data.frame(group = names(outlist)[i],
                                  Ki = pmod$Ki,
@@ -151,8 +156,16 @@ FitSigma.batch <- function(data, group, ...) {
                                  sigma.inv_se = pmod$parameters[pmod$parameters$term == "1/sigma", ]$std.error,
                                  sigma.inv_pvalue = pmod$parameters[pmod$parameters$term == "1/sigma", ]$p.value,
                                  sigma = pmod$sigma, stringsAsFactors = FALSE)
+
       outlist[[i]] <- cbind(outlist[[i]], pmod$fit, message = pmod$message,
                             stringsAsFactors = FALSE)
+
+      if(attributes(pmod)$method == "tflm") {
+        colnames(outlist[[i]]) <- make.unique(colnames(outlist[[i]]))
+      }
+
+      datalist[[i]] <- pmod$data
+      datalist[[i]]$group <- names(datalist)[i]
     }
 
     probitm <- ifelse(is.na(probitm), attributes(pmod)$method, probitm)
@@ -163,7 +176,8 @@ FitSigma.batch <- function(data, group, ...) {
     rm(pmod)
   }
 
-  out <- list(data = data,
+  out <- list(data = data.frame(dplyr::bind_rows(datalist),
+                                stringsAsFactors = FALSE),
               models = data.frame(dplyr::bind_rows(outlist),
                                   stringsAsFactors = FALSE))
 

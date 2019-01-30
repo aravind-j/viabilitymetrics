@@ -8,10 +8,10 @@
 }
 \arguments{
 \item{x}{An object of class \code{FitSigma} obtained as output from the
-\code{\link[germinationmetrics]{FitSigma}} function.}
+\code{\link[viabilitymetrics]{FitSigma}} function.}
 
-\item{limits}{logical. If \code{TRUE}, set the limits of y axis (germination
-percentage) between 0 and 100 in the germination curve plot. If
+\item{limits}{logical. If \code{TRUE}, set the limits of y axis (viability
+percentage) between 0 and 100 in the viability curve plot. If
 \code{FALSE}, limits are set according to the data. Default is \code{TRUE}.}
 
 \item{annotate}{logical. If \code{TRUE},
