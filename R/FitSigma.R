@@ -84,6 +84,10 @@
 #'   if any.}
 #' @importFrom broom tidy
 #' @importFrom broom glance
+#' @importFrom stats binomial
+#' @importFrom stats formula
+#' @importFrom stats glm
+#' @importFrom stats lm
 #' @export
 #'
 #' @references \insertAllCited{}

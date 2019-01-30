@@ -20,6 +20,7 @@
 #' @seealso \code{\link[viabilitymetrics]{FitSigma}}
 #'
 #' @import ggplot2
+#' @importFrom stats quantile
 #' @method plot FitSigma
 #' @export
 #'
