@@ -70,13 +70,13 @@ SigmaTransformed <- function(sigma, temp1, temp2,
   }
 
   # Check limits of temperature1
-  if (FALSE %in% (findInterval(temp1, c(-20,90),
+  if (FALSE %in% (findInterval(temp1, c(-20, 90),
                                rightmost.closed = TRUE) == 1)) {
     warning('"temp1" is beyond limits (-20 < "temp1" < 90)')
   }
 
   # Check limits of temperature2
-  if (FALSE %in% (findInterval(temp2, c(-20,90),
+  if (FALSE %in% (findInterval(temp2, c(-20, 90),
                                rightmost.closed = TRUE) == 1)) {
     warning('"temp2" is beyond limits (-20 < "temp2" < 90)')
   }
@@ -98,4 +98,3 @@ SigmaTransformed <- function(sigma, temp1, temp2,
   return(Csigma)
 
 }
-

@@ -296,7 +296,7 @@ FinalViability <- function(initial, period, vcindex, vcdirect, mc, temp,
   }
 
   # Check limits of initial viability
-  if (FALSE %in% (findInterval(initial, c(0,100),
+  if (FALSE %in% (findInterval(initial, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
     stop('"initial" is beyond limits (0 < "initial" < 100)')
   }
@@ -307,15 +307,15 @@ FinalViability <- function(initial, period, vcindex, vcdirect, mc, temp,
   }
 
   if (years == TRUE) {
-    period = period*365
+    period <- period * 365
   } else {
-    period = period
+    period <- period
   }
   Ki <- Percent2NED(initial)
   sig <- Sigma(vcindex = vcindex, vcdirect = vcdirect, mc = mc, temp = temp,
                years = FALSE)
 
-  finalv <- Ki - (period/sig)
+  finalv <- Ki - (period / sig)
   finalv <- NED2Percent(finalv)
   return(finalv)
 
@@ -328,7 +328,8 @@ StorageMC <- function(initial, final, period, vcindex, vcdirect, temp,
   # check if both vcindex and vcdirect are given as input
   chk <- c(missing(vcindex), missing(vcdirect))
   if (identical(chk, c(FALSE, FALSE))) {
-    stop('Provide only either one of the two arguments\n"vcindex" or "vcdirect" and not both')
+    stop('Provide only either one of the two arguments\n',
+         '"vcindex" or "vcdirect" and not both')
   }
 
   # Check if initial is of type numeric with unit length
@@ -337,7 +338,7 @@ StorageMC <- function(initial, final, period, vcindex, vcdirect, temp,
   }
 
   # Check limits of initial viability
-  if (FALSE %in% (findInterval(initial, c(0,100),
+  if (FALSE %in% (findInterval(initial, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
     stop('"initial" is beyond limits (0 < "initial" < 100)')
   }
@@ -348,7 +349,7 @@ StorageMC <- function(initial, final, period, vcindex, vcdirect, temp,
   }
 
   # Check limits of final viability
-  if (FALSE %in% (findInterval(final, c(0,100),
+  if (FALSE %in% (findInterval(final, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
     stop('"final" is beyond limits (0 < "final" < 100)')
   }
@@ -364,22 +365,22 @@ StorageMC <- function(initial, final, period, vcindex, vcdirect, temp,
   }
 
   # Check limits of temperature
-  if (FALSE %in% (findInterval(temp, c(-20,90),
+  if (FALSE %in% (findInterval(temp, c(-20, 90),
                                rightmost.closed = TRUE) == 1)) {
     warning('"temp" is beyond limits (-20 < "temp" < 90)')
   }
   if (years == TRUE) {
-    period = period*365
+    period <- period * 365
   } else {
-    period = period
+    period <- period
   }
 
   Ki <- Percent2NED(initial)
   v <- Percent2NED(final)
 
   # Check if argument years is of type logical with unit length
-  if(!missing(years)){
-    if(!is.logical(years) || length(years) != 1){
+  if (!missing(years)){
+    if (!is.logical(years) || length(years) != 1){
       stop("'years' should be a numeric vector of length 1")
     }
   }
@@ -394,16 +395,17 @@ StorageMC <- function(initial, final, period, vcindex, vcdirect, temp,
 
     # check if vcindex is present in viabilityconstants
     if (!(vcindex %in% viabilityconstants$Index)) {
-      stop( paste("specified 'vcindex' is not present in the 'viabilityconstants' dataset.\n",
+      stop( paste("specified 'vcindex' is not present in the",
+                  " 'viabilityconstants' dataset.\n",
                   "Input a value in the range 1-",
                   max(viabilityconstants$Index), sep = ""))
     }
     vcdirect <- NULL
-    vc <- viabilityconstants[vcindex,]
-    Ke <- as.numeric(vc[,3])
-    Cw <- as.numeric(vc[,4])
-    Ch <- as.numeric(vc[,5])
-    Cq <- as.numeric(vc[,6])
+    vc <- viabilityconstants[vcindex, ]
+    Ke <- as.numeric(vc[, 3])
+    Cw <- as.numeric(vc[, 4])
+    Ch <- as.numeric(vc[, 5])
+    Cq <- as.numeric(vc[, 6])
     rm(vc)
 
   } else {#If input is vcdirect
@@ -445,7 +447,8 @@ StorageTemp <- function(initial, final, period, vcindex, vcdirect, mc,
   # check if both vcindex and vcdirect are given as input
   chk <- c(missing(vcindex), missing(vcdirect))
   if (identical(chk, c(FALSE, FALSE))) {
-    stop('Provide only either one of the two arguments\n"vcindex" or "vcdirect" and not both')
+    stop('Provide only either one of the two arguments\n',
+         '"vcindex" or "vcdirect" and not both')
   }
 
   # Check if initial is of type numeric with unit length
@@ -454,7 +457,7 @@ StorageTemp <- function(initial, final, period, vcindex, vcdirect, mc,
   }
 
   # Check limits of initial viability
-  if (FALSE %in% (findInterval(initial, c(0,100),
+  if (FALSE %in% (findInterval(initial, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
     stop('"initial" is beyond limits (0 < "initial" < 100)')
   }
@@ -465,7 +468,7 @@ StorageTemp <- function(initial, final, period, vcindex, vcdirect, mc,
   }
 
   # Check limits of final viability
-  if (FALSE %in% (findInterval(final, c(0,100),
+  if (FALSE %in% (findInterval(final, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
     stop('"final" is beyond limits (0 < "final" < 100)')
   }
@@ -481,7 +484,7 @@ StorageTemp <- function(initial, final, period, vcindex, vcdirect, mc,
   }
 
   #Check limits of moisture content
-  if (FALSE %in% (findInterval(mc, c(0,100), rightmost.closed = TRUE) == 1)) {
+  if (FALSE %in% (findInterval(mc, c(0, 100), rightmost.closed = TRUE) == 1)) {
     warning('"mc" is beyond limits (0 < "mc" < 100)')
   }
 
@@ -504,9 +507,9 @@ StorageTemp <- function(initial, final, period, vcindex, vcdirect, mc,
   }
 
   if (years == TRUE) {
-    period = period*365
+    period <- period * 365
   } else {
-    period = period
+    period <- period
   }
 
   #If input is vcindex
@@ -519,16 +522,17 @@ StorageTemp <- function(initial, final, period, vcindex, vcdirect, mc,
 
     # check if vcindex is present in viabilityconstants
     if (!(vcindex %in% viabilityconstants$Index)) {
-      stop( paste("specified 'vcindex' is not present in the 'viabilityconstants' dataset.\n",
+      stop( paste("specified 'vcindex' is not present in the",
+                  " 'viabilityconstants' dataset.\n",
                   "Input a value in the range 1-",
                   max(viabilityconstants$Index), sep = ""))
     }
     vcdirect <- NULL
-    vc <- viabilityconstants[vcindex,]
-    Ke <- as.numeric(vc[,3])
-    Cw <- as.numeric(vc[,4])
-    Ch <- as.numeric(vc[,5])
-    Cq <- as.numeric(vc[,6])
+    vc <- viabilityconstants[vcindex, ]
+    Ke <- as.numeric(vc[, 3])
+    Cw <- as.numeric(vc[, 4])
+    Ch <- as.numeric(vc[, 5])
+    Cq <- as.numeric(vc[, 6])
     rm(vc)
 
   } else {#If input is vcdirect
@@ -579,7 +583,7 @@ StoragePeriod <- function(initial, final, vcindex, vcdirect, mc, temp,
   }
 
   # Check limits of initial viability
-  if (FALSE %in% (findInterval(initial, c(0,100),
+  if (FALSE %in% (findInterval(initial, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
     stop('"initial" is beyond limits (0 < "initial" < 100)')
   }
@@ -590,7 +594,7 @@ StoragePeriod <- function(initial, final, vcindex, vcdirect, mc, temp,
   }
 
   # Check limits of final viability
-  if (FALSE %in% (findInterval(final, c(0,100),
+  if (FALSE %in% (findInterval(final, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
     stop('"final" is beyond limits (0 < "final" < 100)')
   }
@@ -604,7 +608,7 @@ StoragePeriod <- function(initial, final, vcindex, vcdirect, mc, temp,
   period <- sig*(Ki - v)
 
   if (years == TRUE) {
-    period <- period/365
+    period <- period / 365
   } else {
     period <- period
   }
@@ -614,4 +618,3 @@ StoragePeriod <- function(initial, final, vcindex, vcdirect, mc, temp,
   }
   return(period)
 }
-

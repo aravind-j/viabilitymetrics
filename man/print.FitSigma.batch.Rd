@@ -25,5 +25,5 @@ lose unit probit viability
 (\ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}}).
 }
 \seealso{
-\code{\link[viabilitymetrics]{print.FitSigma.batch}}
+\code{\link[viabilitymetrics]{FitSigma.batch}}
 }

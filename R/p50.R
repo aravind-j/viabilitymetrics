@@ -92,7 +92,7 @@ P50 <- function(initial, vcindex, vcdirect, mc, temp, years = FALSE) {
   }
 
   # Check limits of initial viability
-  if (FALSE %in% (findInterval(initial, c(0,100),
+  if (FALSE %in% (findInterval(initial, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
     stop('"initial" is beyond limits (0 < "initial" < 100)')
   }
@@ -102,9 +102,9 @@ P50 <- function(initial, vcindex, vcdirect, mc, temp, years = FALSE) {
                years = FALSE)
 
   if (years == TRUE) {
-    out <- Ki*sig/365
+    out <- (Ki * sig) / 365
   } else {
-    out <- Ki*sig
+    out <- Ki * sig
   }
 
   return(out)

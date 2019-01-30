@@ -9,7 +9,7 @@
 #'
 #' @param x An object of class \code{print.FitSigma}.
 #' @param ... Unused
-#' @seealso \code{\link[viabilitymetrics]{print.FitSigma}}
+#' @seealso \code{\link[viabilitymetrics]{FitSigma}}
 #'
 #' @return The \ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}} and
 #'   \ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}} values (degree Celsius) in
@@ -18,14 +18,14 @@
 #' @export
 print.FitSigma <- function(x, ...){
 
-  if(attributes(x)$method == "glm") {
+  if (attributes(x)$method == "glm") {
     cat("Generalised linear model with probit link function.\n")
   }
-  if(attributes(x)$method == "tflm") {
+  if (attributes(x)$method == "tflm") {
     cat("Linear model after probit transformation.\n")
   }
 
-  if(attributes(x)$cv["logical"] == 1) {
+  if (attributes(x)$cv["logical"] == 1) {
     cat(paste("Control viability = ",
               attributes(x)$cv["value"], "%\n", sep = ""))
   }

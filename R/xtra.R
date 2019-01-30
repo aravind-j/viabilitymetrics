@@ -10,13 +10,13 @@ wlcm <- paste0("\n",
                "news(package='viabilitymetrics') for the NEWS file.", "\n",
                "\n",
                "To cite the methods in the package type:", "\n",
-               "citation(package='viabilitymetrics')","\n",
+               "citation(package='viabilitymetrics')", "\n",
                "\n",
                "To suppress this message use:", "\n",
                "suppressPackageStartupMessages(library(viabilitymetrics))", "\n",
                "--------------------------------------------------------------------------------\n")
 
-.onAttach <- function(lib, pkg,...){
+.onAttach <- function(lib, pkg, ...){
   packageStartupMessage(wlcm)
 
 }

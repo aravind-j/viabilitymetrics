@@ -99,7 +99,7 @@ dry2wet <- function(mc) {
   if (!is.numeric(mc)) {
     stop('"mc" is not numeric')
   }
-  if (FALSE %in% (findInterval(mc, c(0,100), rightmost.closed = TRUE) == 1)) {
+  if (FALSE %in% (findInterval(mc, c(0, 100), rightmost.closed = TRUE) == 1)) {
     warning('"mc" is beyond limits (0 < "mc" < 100)')
   }
 
@@ -114,7 +114,7 @@ wet2dry <- function(mc) {
   if (!is.numeric(mc)) {
     stop('"mc" is not numeric')
   }
-  if (FALSE %in% (findInterval(mc, c(0,50), rightmost.closed = TRUE) == 1)) {
+  if (FALSE %in% (findInterval(mc, c(0, 50), rightmost.closed = TRUE) == 1)) {
     warning('"mc" is beyond limits (0 < "mc" < 50)')
   }
 
@@ -175,7 +175,7 @@ MoistureNomograph <- function(min, max, basis = c("wet", "dry"), horiz = FALSE) 
   data$Unit <- factor(data$Unit)
   data$Unit <- factor(data$Unit, levels = c("wet", "dry"))
 
-  data <- data[data$label %% 1 == 0,]
+  data <- data[data$label %% 1 == 0, ]
   data$size <- ifelse(data$label %% 10 == 0, 4,
                       ifelse(data$label %% 5 == 0, 2,
                              1))
@@ -194,28 +194,28 @@ MoistureNomograph <- function(min, max, basis = c("wet", "dry"), horiz = FALSE) 
   p <- ggplot(data, aes(x = Unit, y = value)) +
     geom_line(aes(group = Unit)) +
     scale_x_discrete("Unit", labels = parse(text = levels(data$Unit)),
-                     expand = c(0,20)) +
+                     expand = c(0, 20)) +
     annotate("segment", x = data$L, xend = data$R,
              y = data$value,
              yend = data$value) +
-    annotate("text", x = data[data$label %% 10 == 0,]$Txt,
-             y = data[data$label %% 10 == 0,]$value,
-             label = data[data$label %% 10 == 0,]$label) +
+    annotate("text", x = data[data$label %% 10 == 0, ]$Txt,
+             y = data[data$label %% 10 == 0, ]$value,
+             label = data[data$label %% 10 == 0, ]$label) +
     theme_minimal() +
     theme(axis.title = element_blank(),
-          plot.margin = unit(c(0.5,0.5,0.5,0.5), "cm"),
+          plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm"),
           panel.grid.major = element_blank(),
           panel.grid.minor = element_blank())
 
   if (horiz) {
     p <- p +
       theme(axis.text.x = element_blank(),
-            axis.text.y = element_text(colour = "black", vjust = c(1,0))) +
+            axis.text.y = element_text(colour = "black", vjust = c(1, 0))) +
       coord_flip()
   } else {
     p <- p +
       theme(axis.text.y = element_blank(),
-            axis.text.x = element_text(colour = "black", hjust = c(1,0)))
+            axis.text.x = element_text(colour = "black", hjust = c(1, 0)))
   }
 
   return(p)

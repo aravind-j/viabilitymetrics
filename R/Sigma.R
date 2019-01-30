@@ -135,7 +135,8 @@ Sigma <- function(vcindex, vcdirect, mc, temp, years = FALSE) {
   # check if both vcindex and vcdirect are given as input
   chk <- c(missing(vcindex), missing(vcdirect))
   if (identical(chk, c(FALSE, FALSE))) {
-    stop('Provide only either one of the two arguments\n"vcindex" or "vcdirect" and not both')
+    stop('Provide only either one of the two arguments\n',
+         '"vcindex" or "vcdirect" and not both')
   }
 
   # Check if temp is of type numeric with unit length
@@ -144,7 +145,7 @@ Sigma <- function(vcindex, vcdirect, mc, temp, years = FALSE) {
   }
 
   # Check limits of temperature
-  if (FALSE %in% (findInterval(temp, c(-20,90),
+  if (FALSE %in% (findInterval(temp, c(-20, 90),
                                rightmost.closed = TRUE) == 1)) {
     warning('"temp" is beyond limits (-20 < "temp" < 90)')
   }
@@ -155,13 +156,13 @@ Sigma <- function(vcindex, vcdirect, mc, temp, years = FALSE) {
   }
 
  #Check limits of moisture content
-  if (FALSE %in% (findInterval(mc, c(0,100), rightmost.closed = TRUE) == 1)) {
+  if (FALSE %in% (findInterval(mc, c(0, 100), rightmost.closed = TRUE) == 1)) {
     warning('"mc" is beyond limits (0 < "mc" < 100)')
   }
 
   # Check if argument years is of type logical with unit length
-  if(!missing(years)){
-    if(!is.logical(years) || length(years) != 1){
+  if (!missing(years)){
+    if (!is.logical(years) || length(years) != 1){
       stop("'years' should be a numeric vector of length 1")
     }
   }
@@ -181,11 +182,11 @@ Sigma <- function(vcindex, vcdirect, mc, temp, years = FALSE) {
                   max(viabilityconstants$Index), sep = ""))
     }
       vcdirect <- NULL
-      vc <- viabilityconstants[vcindex,]
-      Ke <- as.numeric(vc[,3])
-      Cw <- as.numeric(vc[,4])
-      Ch <- as.numeric(vc[,5])
-      Cq <- as.numeric(vc[,6])
+      vc <- viabilityconstants[vcindex, ]
+      Ke <- as.numeric(vc[, 3])
+      Cw <- as.numeric(vc[, 4])
+      Ch <- as.numeric(vc[, 5])
+      Cq <- as.numeric(vc[, 6])
       rm(vc)
 
   } else {#If input is vcdirect

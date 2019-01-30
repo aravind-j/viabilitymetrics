@@ -224,7 +224,7 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
   }
 
   # Check if viability.percent is within range
-  if (any(!findInterval(data[, viability.percent], c(0,100),
+  if (any(!findInterval(data[, viability.percent], c(0, 100),
                         rightmost.closed = TRUE) == 1)) {
     stop('Data in "viability.percent" is not within range',
          ' (0 < "viability.percent" < 100).')
@@ -258,7 +258,7 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
 
   if (probit.method == "glm") {
     if(use.cv) {
-      cvc <- control.viability/100
+      cvc <- control.viability / 100
       frmla <- formula(paste("(viability.count/samp.size)/", cvc,
                              " ~ storage.period", sep = ""))
     } else {
@@ -273,7 +273,7 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
 
   if (probit.method == "tflm") {
     if(use.cv) {
-      cvc <- control.viability/100
+      cvc <- control.viability / 100
       frmla <- formula(paste("(Percent2NED(PercentAdjust",
                              "(viability.percent, samp.size)))/",
                              cvc, " ~ storage.period", sep = ""))
@@ -302,7 +302,7 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
     sigma <- -(1 / parameters[parameters$term == "1/sigma", ]$estimate)
   }
 
-  out <- list(data = data[,c("storage.period",
+  out <- list(data = data[, c("storage.period",
                              "viability.percent", "samp.size")],
               model = probit.model$value, parameters = parameters,
               fit = fit, Ki = Ki, sigma = sigma,

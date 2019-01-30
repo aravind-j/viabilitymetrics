@@ -105,7 +105,8 @@ plot.FitSigma.batch <- function(x, limits = TRUE, grid = FALSE, ...){
   x$data$group <- as.factor(x$data$group)
 
   Vplot <- ggplot(data = x$data,
-                  aes(x = storage.period, y = viability.percent, group = group)) +
+                  aes(x = storage.period, y = viability.percent,
+                      group = group)) +
     geom_point(aes(colour = group), alpha = 0.8) +
     labs(x = "Storage period", y = "Viability (%)") +
     theme_bw()
@@ -121,7 +122,7 @@ plot.FitSigma.batch <- function(x, limits = TRUE, grid = FALSE, ...){
   for(i in seq_along(glevels)){
     if (!grepl("ERROR:", x$models[x$models$group == glevels[i], ]$message)) {
       Vplot <- Vplot +
-        stat_function(data = x$data[x$data$group == glevels[i],],
+        stat_function(data = x$data[x$data$group == glevels[i], ],
                       fun = FitSigma.fun, colour = gcol[i],
                       args = list(ki = x$models[x$models$group == glevels[i],
                                                ]$Ki,

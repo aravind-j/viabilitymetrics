@@ -79,7 +79,7 @@ Ke <- function(K, temp, temp.coeff = c(0.0329, 0.000478)){
   }
 
   # Check limits of temperature
-  if (FALSE %in% (findInterval(temp, c(-20,90),
+  if (FALSE %in% (findInterval(temp, c(-20, 90),
                                rightmost.closed = TRUE) == 1)) {
     warning('"temp" is beyond limits (-20 < "temp" < 90)')
   }
@@ -92,7 +92,7 @@ Ke <- function(K, temp, temp.coeff = c(0.0329, 0.000478)){
   Ch <- temp.coeff[1]
   Cq <- temp.coeff[2]
 
-  Ke = K + Ch*temp + (Cq*(temp^2))
+  Ke <- K + (Ch * temp) + (Cq * (temp ^ 2))
 
   return(Ke)
 }

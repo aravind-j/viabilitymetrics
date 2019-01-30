@@ -109,7 +109,6 @@ plot.FitSigma <- function(x, limits = TRUE, annotate = TRUE, ...){
 
 FitSigma.fun <- function(p, ki, sigma) {
 
-  NED2Percent(ki - (p/sigma))
+  NED2Percent(ki - (p / sigma))
 
 }
-

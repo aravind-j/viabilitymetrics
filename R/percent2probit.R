@@ -91,9 +91,9 @@ PercentAdjust <- function(percentage, n) {
 
   # check for n
   AdjPercent <- ifelse(test = percentage == 100,
-                       yes = 100*(n - 0.25)/n,
+                       yes = (100 * (n - 0.25)) / n,
                        no = ifelse(test = percentage == 0,
-                                   yes = 100*(0.25/n),
+                                   yes = 100 * (0.25 / n),
                                    no = percentage))
   return(AdjPercent)
 }
@@ -105,7 +105,7 @@ Percent2NED <- function(percentage) {
     stop('"percentage" is not numeric')
   }
 
-  qnorm(percentage/100, 0, 1)
+  qnorm(percentage / 100, 0, 1)
 }
 
 #' @rdname Percent2Probit
@@ -115,7 +115,7 @@ Percent2Probit <- function(percentage) {
     stop('"percentage" is not numeric')
   }
 
-  qnorm(percentage/100, 5, 1)
+  qnorm(percentage / 100, 5, 1)
 }
 
 #' @rdname Percent2Probit
@@ -145,7 +145,7 @@ NED2Percent <- function(NED) {
     stop('"NED" is not numeric')
   }
 
-  pnorm(NED, 0, 1)*100
+  pnorm(NED, 0, 1) * 100
 }
 
 #' @rdname Percent2Probit
@@ -155,5 +155,5 @@ Probit2Percent <- function(probit) {
     stop('"probit" is not numeric')
   }
 
-  pnorm(probit, 5, 1)*100
+  pnorm(probit, 5, 1) * 100
 }
