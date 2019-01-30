@@ -10,7 +10,7 @@ P50(initial, vcindex, vcdirect, mc, temp, years = FALSE)
 \arguments{
 \item{initial}{The initial viability (\%).}
 
-\item{vcindex}{An interger value indicating the index of seed viability.
+\item{vcindex}{An integer value indicating the index of seed viability.
 constants to be used from the \code{viabilityconstants} dataset in the
 package.}
 

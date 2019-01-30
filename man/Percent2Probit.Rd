@@ -37,7 +37,7 @@ Probit2Percent(probit)
 The transformed value.
 }
 \description{
-These functions transfrom data between percentage, probit and Normal
+These functions transform data between percentage, probit and Normal
 Equivalent Deviate (NED)
 \insertCite{bliss_method_1934,finney_probit_1952}{viabilitymetrics}.
 }

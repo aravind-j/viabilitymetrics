@@ -24,7 +24,7 @@ StoragePeriod(initial, final, vcindex, vcdirect, mc, temp, years = FALSE)
 \item{period}{The time period of storage in days or years according to the
 argument \code{years}).}
 
-\item{vcindex}{An interger value indicating the index of seed viability.
+\item{vcindex}{An integer value indicating the index of seed viability.
 constants to be used from the \code{viabilityconstants} dataset in the
 package.}
 

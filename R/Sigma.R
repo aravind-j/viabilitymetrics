@@ -53,7 +53,7 @@
 #' species-specific seed viability constants.
 #'
 #' The value of the species-specific seed viability constants can be specified
-#' either directly in the arguement \code{vcdirect} or as the index value of the
+#' either directly in the argument \code{vcdirect} or as the index value of the
 #' required seed viability constants from the \code{\link{viabilityconstants}}
 #' dataset through the argument \code{vcindex}.
 #'
@@ -61,7 +61,7 @@
 #' °C and seed moisture content between 5 to 25\%. For values beyond this range,
 #' a warning will be displayed.
 #'
-#' @param vcindex An interger value indicating the index of seed viability.
+#' @param vcindex An integer value indicating the index of seed viability.
 #'   constants to be used from the \code{viabilityconstants} dataset in the
 #'   package.
 #' @param vcdirect A numeric vector of length 4 with the four viability

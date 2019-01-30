@@ -8,7 +8,7 @@
 Sigma(vcindex, vcdirect, mc, temp, years = FALSE)
 }
 \arguments{
-\item{vcindex}{An interger value indicating the index of seed viability.
+\item{vcindex}{An integer value indicating the index of seed viability.
 constants to be used from the \code{viabilityconstants} dataset in the
 package.}
 
@@ -85,7 +85,7 @@ temperature and \ifelse{html}{\out{<i>K<sub>E</sub></i>}}{\eqn{K_{E}}},
 species-specific seed viability constants.
 
 The value of the species-specific seed viability constants can be specified
-either directly in the arguement \code{vcdirect} or as the index value of the
+either directly in the argument \code{vcdirect} or as the index value of the
 required seed viability constants from the \code{\link{viabilityconstants}}
 dataset through the argument \code{vcindex}.
 
