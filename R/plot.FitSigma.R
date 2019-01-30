@@ -83,7 +83,8 @@ plot.FitSigma <- function(x, limits = TRUE, annotate = TRUE, ...){
     stat_function(fun = FitSigma.fun, colour = "red2",
                   args = list(ki = x$Ki, sigma = x$sigma)) +
     labs(x = "Storage period", y = "Viability (%)") +
-    theme_bw()
+    theme_bw() +
+    theme(axis.text = element_text(colour = "black"))
 
   # plot limits
   if (limits == TRUE) {
@@ -100,9 +101,6 @@ plot.FitSigma <- function(x, limits = TRUE, annotate = TRUE, ...){
                                  "~sigma == ", round(x$sigma, 2), ")",
                                  sep = ""))
   }
-
-  Vplot <- Vplot +
-    theme(axis.text = element_text(colour = "black"))
 
   return(Vplot)
 }

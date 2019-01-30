@@ -109,7 +109,9 @@ plot.FitSigma.batch <- function(x, limits = TRUE, grid = FALSE, ...){
                       group = group)) +
     geom_point(aes(colour = group), alpha = 0.8) +
     labs(x = "Storage period", y = "Viability (%)") +
-    theme_bw()
+    theme_bw() +
+    theme(axis.text = element_text(colour = "black"),
+          legend.title = element_blank())
 
   # plot grid
   if (grid) {
@@ -137,10 +139,6 @@ plot.FitSigma.batch <- function(x, limits = TRUE, grid = FALSE, ...){
     Vplot <- Vplot + coord_cartesian(xlim = c(0, max(x$data$storage.period)),
                                      ylim = c(0, 100))
   }
-
-  Vplot <- Vplot +
-    theme(axis.text = element_text(colour = "black"),
-          legend.title = element_blank())
 
   return(Vplot)
 }
