@@ -36,6 +36,7 @@ RoxygenNote: 6.1.1
 Imports:
     broom,
     data.table,
+    dplyr,
     ggplot2,
     gnm,
     plyr,

@@ -70,17 +70,18 @@
 #'   (\code{"glm"}, recommended) or as a linear model with probit transformed
 #'   viability percentages (\code{"tflm"}).
 #'
-#' @return A list with the following components: \item{data}{A data frame with
-#'   the data used for computing the model} \item{model}{The fitted model as an
-#'   object of class \code{glm} (if \code{probit.method = "glm"}) or \code{lm}
-#'   (if \code{probit.method = "lm"}).} \item{parameters}{A data.frame of
-#'   parameter estimates, standard errors and p value.} \item{fit}{A one-row
-#'   data frame with estimates of model fitness such as log likelyhoods, Akaike
-#'   Information Criterion, Bayesian Information Criterion, deviance and
-#'   residual degrees of freedom.} \item{Ki}{The estimated seed lot constant
-#'   from the model.} \item{sigma}{The estimated period of time to lose unit
-#'   probit viability from the model.} \item{message}{Warning or error messages
-#'   generated during fitting of model, if any.}
+#' @return A list of class \code{FitSigma} with the following components:
+#'   \item{data}{A data frame with the data used for computing the model.}
+#'   \item{model}{The fitted model as an object of class \code{glm} (if
+#'   \code{probit.method = "glm"}) or \code{lm} (if \code{probit.method =
+#'   "lm"}).} \item{parameters}{A data.frame of parameter estimates, standard
+#'   errors and p value.} \item{fit}{A one-row data frame with estimates of
+#'   model fitness such as log likelyhoods, Akaike Information Criterion,
+#'   Bayesian Information Criterion, deviance and residual degrees of freedom.}
+#'   \item{Ki}{The estimated seed lot constant from the model.} \item{sigma}{The
+#'   estimated period of time to lose unit probit viability from the model.}
+#'   \item{message}{Warning or error messages generated during fitting of model,
+#'   if any.}
 #' @importFrom broom tidy
 #' @importFrom broom glance
 #' @export
@@ -240,14 +241,18 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
       stop('"control.viability" is not within range',
            ' (0 < "control.viability" < 100).')
     }
+    # Check if control.viability > any viability.percent
+    if (any(data[, viability.percent] > control.viability)) {
+      stop('Values > control.viability" exist in "viability.percent".')
+    }
   }
 
   # Check probit.method
   probit.method <- match.arg(probit.method)
 
-  data <- data.frame(storage.period = data[,c(storage.period)],
-             viability.percent = data[,c(viability.percent)],
-             samp.size = data[,c(samp.size)])
+  data <- data.frame(storage.period = data[, c(storage.period)],
+             viability.percent = data[, c(viability.percent)],
+             samp.size = data[, c(samp.size)])
 
   data$viability.count <- (data$viability.percent * data$samp.size) / 100
 
@@ -294,7 +299,7 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
     fit <- as.data.frame(broom::glance(probit.model$value))
 
     Ki <- parameters[parameters$term == "Ki", ]$estimate
-    sigma <- 1 / parameters[parameters$term == "1/sigma", ]$estimate
+    sigma <- -(1 / parameters[parameters$term == "1/sigma", ]$estimate)
   }
 
   out <- list(data = data[,c("storage.period",

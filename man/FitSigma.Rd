@@ -33,17 +33,18 @@ Either as a generalised linear model with a probit link function
 viability percentages (\code{"tflm"}).}
 }
 \value{
-A list with the following components: \item{data}{A data frame with
-  the data used for computing the model} \item{model}{The fitted model as an
-  object of class \code{glm} (if \code{probit.method = "glm"}) or \code{lm}
-  (if \code{probit.method = "lm"}).} \item{parameters}{A data.frame of
-  parameter estimates, standard errors and p value.} \item{fit}{A one-row
-  data frame with estimates of model fitness such as log likelyhoods, Akaike
-  Information Criterion, Bayesian Information Criterion, deviance and
-  residual degrees of freedom.} \item{Ki}{The estimated seed lot constant
-  from the model.} \item{sigma}{The estimated period of time to lose unit
-  probit viability from the model.} \item{message}{Warning or error messages
-  generated during fitting of model, if any.}
+A list of class \code{FitSigma} with the following components:
+  \item{data}{A data frame with the data used for computing the model.}
+  \item{model}{The fitted model as an object of class \code{glm} (if
+  \code{probit.method = "glm"}) or \code{lm} (if \code{probit.method =
+  "lm"}).} \item{parameters}{A data.frame of parameter estimates, standard
+  errors and p value.} \item{fit}{A one-row data frame with estimates of
+  model fitness such as log likelyhoods, Akaike Information Criterion,
+  Bayesian Information Criterion, deviance and residual degrees of freedom.}
+  \item{Ki}{The estimated seed lot constant from the model.} \item{sigma}{The
+  estimated period of time to lose unit probit viability from the model.}
+  \item{message}{Warning or error messages generated during fitting of model,
+  if any.}
 }
 \description{
 Fit seed viability/survival curve to estimate the seed lot constant
