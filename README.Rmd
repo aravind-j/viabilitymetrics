@@ -48,7 +48,8 @@ cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver
 ***
 
 ## Description
-`r gsub("(<doi:)(.+)(>)", "[doi:\\2](https://doi.org/\\2)", gsub("\\n", " ", packageDescription("viabilitymetrics", fields = "Description")))`
+<!-- `r gsub("(<doi:)(.*?)(>)", "[\\1\\2\\3](https://doi.org/\\2)", gsub("\\n", " ", packageDescription("viabilitymetrics", fields = "Description")))` -->
+`r pkgdown:::linkify(packageDescription("viabilitymetrics", fields = "Description"))`
 
 ## Installation
 

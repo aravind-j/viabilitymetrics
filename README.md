@@ -30,9 +30,11 @@ WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org
 
 ## Description
 
+<!-- An implementation of viability equations of Ellis and Roberts (1980) [<doi:10/gcshwj>](https://doi.org/10/gcshwj) and Mead and Grey (1999) [<doi:10/gcsgt7>](https://doi.org/10/gcsgt7) for seed viability curve fitting and calculation of several seed viability metrics such as storage period, final viability, storage moisture content, storage temperature and days to loose one probit viablity. The package further includes various conversions and transformations associated with seed viability calculations. -->
+
 An implementation of viability equations of Ellis and Roberts (1980)
-[doi:10.1093/oxfordjournals.aob.a085797\> and Mead and Grey (1999)
-\<doi:10.1017/s0960258599000070](https://doi.org/10.1093/oxfordjournals.aob.a085797%3E%20and%20Mead%20and%20Grey%20\(1999\)%20%3Cdoi:10.1017/s0960258599000070),
+\<<a href='https://doi.org/10/gcshwj'>doi:10/gcshwj</a>\> and Mead and
+Grey (1999) \<<a href='https://doi.org/10/gcsgt7'>doi:10/gcsgt7</a>\>
 for seed viability curve fitting and calculation of several seed
 viability metrics such as storage period, final viability, storage
 moisture content, storage temperature and days to loose one probit
