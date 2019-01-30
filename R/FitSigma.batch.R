@@ -125,7 +125,7 @@ FitSigma.batch <- function(data, group, ...) {
   names(outlist) <- levels(data[, group])
 
   probitm <- NA
-  cvm <- NA
+  cvm <- c(NA, NA)
 
 
   for(i in seq_along(levels(data[, group]))) {
@@ -151,12 +151,14 @@ FitSigma.batch <- function(data, group, ...) {
                                  sigma.inv_se = pmod$parameters[pmod$parameters$term == "1/sigma", ]$std.error,
                                  sigma.inv_pvalue = pmod$parameters[pmod$parameters$term == "1/sigma", ]$p.value,
                                  sigma = pmod$sigma, stringsAsFactors = FALSE)
-      outlist[[i]] <- cbind(outlist[[i]], pmod$fit, pmod$message,
+      outlist[[i]] <- cbind(outlist[[i]], pmod$fit, message = pmod$message,
                             stringsAsFactors = FALSE)
     }
 
     probitm <- ifelse(is.na(probitm), attributes(pmod)$method, probitm)
-    cvm <- ifelse(is.na(cvm), attributes(pmod)$cv, cvm)
+    if(all(is.na(cvm))) {
+      cvm <-  attributes(pmod)$cv
+    }
 
     rm(pmod)
   }

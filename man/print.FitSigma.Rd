@@ -3,7 +3,8 @@
 \name{print.FitSigma}
 \alias{print.FitSigma}
 \title{Prints \ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}} and
-\ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}} from a \code{melting} object}
+\ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}} from a \code{FitSigma}
+object}
 \usage{
 \method{print}{FitSigma}(x, ...)
 }
@@ -13,7 +14,9 @@
 \item{...}{Unused}
 }
 \value{
-The melting temperature value (degree Celsius) in the console.
+The \ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}} and
+  \ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}} values (degree Celsius) in
+  the console.
 }
 \description{
 \code{print.FitSigma} prints to console the seed lot constant

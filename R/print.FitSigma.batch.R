@@ -1,22 +1,22 @@
 #' Prints \ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}} and
-#' \ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}} from a \code{FitSigma}
-#' object
+#' \ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}} from a
+#' \code{FitSigma.batch} object
 #'
-#' \code{print.FitSigma} prints to console the seed lot constant
+#' \code{print.FitSigma.batch} prints to console the seed lot constant
 #' (\ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}}) and the period to
 #' lose unit probit viability
 #' (\ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}}).
 #'
-#' @param x An object of class \code{print.FitSigma}.
+#' @param x An object of class \code{print.FitSigma.batch}.
 #' @param ... Unused
-#' @seealso \code{\link[viabilitymetrics]{print.FitSigma}}
+#' @seealso \code{\link[viabilitymetrics]{print.FitSigma.batch}}
 #'
 #' @return The \ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}} and
-#'   \ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}} values (degree Celsius) in
-#'   the console.
+#'   \ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}} values (degree Celsius)
+#'   in the console.
 #'
 #' @export
-print.FitSigma <- function(x, ...){
+print.FitSigma.batch <- function(x, ...){
 
   if(attributes(x)$method == "glm") {
     cat("Generalised linear model with probit link function.\n")
@@ -30,10 +30,10 @@ print.FitSigma <- function(x, ...){
               attributes(x)$cv["value"], "%\n", sep = ""))
   }
 
-  print(data.frame(Ki = x$Ki, Sigma = x$sigma), row.names = FALSE)
-
-  if (!is.na(x$message)) {
-    message(x$message)
+  print(x$models[, c("group", "Ki", "sigma")], row.names = FALSE)
+  cat("\n")
+  if (!any(is.na(x$models$message))) {
+    print(x$models[, c("group", "message")], row.names = FALSE)
   }
 
 }
