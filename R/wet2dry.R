@@ -97,10 +97,10 @@
 # 0 < mc & 100 >= mc
 dry2wet <- function(mc) {
   if (!is.numeric(mc)) {
-    stop('"mc" is not numeric')
+    stop('"mc" is not numeric.')
   }
   if (FALSE %in% (findInterval(mc, c(0, 100), rightmost.closed = TRUE) == 1)) {
-    warning('"mc" is beyond limits (0 < "mc" < 100)')
+    warning('"mc" is beyond limits (0 < "mc" < 100).')
   }
 
   mcwb <- (100 * mc)/(100 + mc)
@@ -112,10 +112,10 @@ dry2wet <- function(mc) {
 # 0 < mc & 50 >= mc
 wet2dry <- function(mc) {
   if (!is.numeric(mc)) {
-    stop('"mc" is not numeric')
+    stop('"mc" is not numeric.')
   }
   if (FALSE %in% (findInterval(mc, c(0, 50), rightmost.closed = TRUE) == 1)) {
-    warning('"mc" is beyond limits (0 < "mc" < 50)')
+    warning('"mc" is beyond limits (0 < "mc" < 50).')
   }
 
   mcdb <- (100 * mc)/(100 - mc)
@@ -126,21 +126,21 @@ wet2dry <- function(mc) {
 #' @export
 MoistureNomograph <- function(min, max, basis = c("wet", "dry"), horiz = FALSE) {
   if (!is.numeric(min)) {
-    stop('"min" is not numeric')
+    stop('"min" is not numeric.')
   }
 
   if (!is.numeric(max)) {
-    stop('"max" is not numeric')
+    stop('"max" is not numeric.')
   }
 
   basis <- match.arg(basis)
 
   if (min > max) {
-    stop("'min' is greater than 'max'")
+    stop("'min' is greater than 'max'.")
   }
 
   if (min == max) {
-    stop("'min' is equal to 'max'")
+    stop("'min' is equal to 'max'.")
   }
   min <- plyr::round_any(min, 10, f = floor)
   max <- plyr::round_any(max, 10, f = ceiling)

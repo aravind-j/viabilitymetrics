@@ -83,10 +83,10 @@
 #' @export
 PercentAdjust <- function(percentage, n) {
   if (!is.numeric(percentage)) {
-    stop('"percentage" is not numeric')
+    stop('"percentage" is not numeric.')
   }
   if (!is.numeric(n)) {
-    stop('"n" is not numeric')
+    stop('"n" is not numeric.')
   }
 
   # check for n
@@ -102,7 +102,7 @@ PercentAdjust <- function(percentage, n) {
 #' @export
 Percent2NED <- function(percentage) {
   if (!is.numeric(percentage)) {
-    stop('"percentage" is not numeric')
+    stop('"percentage" is not numeric.')
   }
 
   qnorm(percentage / 100, 0, 1)
@@ -112,7 +112,7 @@ Percent2NED <- function(percentage) {
 #' @export
 Percent2Probit <- function(percentage) {
   if (!is.numeric(percentage)) {
-    stop('"percentage" is not numeric')
+    stop('"percentage" is not numeric.')
   }
 
   qnorm(percentage / 100, 5, 1)
@@ -122,7 +122,7 @@ Percent2Probit <- function(percentage) {
 #' @export
 Probit2NED <- function(probit) {
   if (!is.numeric(probit)) {
-    stop('"probit" is not numeric')
+    stop('"probit" is not numeric.')
   }
 
   probit - 5
@@ -132,7 +132,7 @@ Probit2NED <- function(probit) {
 #' @export
 NED2Probit <- function(NED) {
   if (!is.numeric(NED)) {
-    stop('"NED" is not numeric')
+    stop('"NED" is not numeric.')
   }
 
   NED + 5
@@ -142,7 +142,7 @@ NED2Probit <- function(NED) {
 #' @export
 NED2Percent <- function(NED) {
   if (!is.numeric(NED)) {
-    stop('"NED" is not numeric')
+    stop('"NED" is not numeric.')
   }
 
   pnorm(NED, 0, 1) * 100
@@ -152,7 +152,7 @@ NED2Percent <- function(NED) {
 #' @export
 Probit2Percent <- function(probit) {
   if (!is.numeric(probit)) {
-    stop('"probit" is not numeric')
+    stop('"probit" is not numeric.')
   }
 
   pnorm(probit, 5, 1) * 100

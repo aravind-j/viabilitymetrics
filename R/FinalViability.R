@@ -292,18 +292,18 @@ FinalViability <- function(initial, period, vcindex, vcdirect, mc, temp,
 
   # Check if initial is of type numeric with unit length
   if (!is.numeric(initial) || length(initial) != 1){
-    stop("'initial' should be a numeric vector of length 1")
+    stop("'initial' should be a numeric vector of length 1.")
   }
 
   # Check limits of initial viability
   if (FALSE %in% (findInterval(initial, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
-    stop('"initial" is beyond limits (0 < "initial" < 100)')
+    stop('"initial" is beyond limits (0 < "initial" < 100).')
   }
 
   # Check if period is of type numeric with unit length
   if (!is.numeric(period) || length(period) != 1){
-    stop("'period' should be a numeric vector of length 1")
+    stop("'period' should be a numeric vector of length 1.")
   }
 
   if (years == TRUE) {
@@ -329,45 +329,45 @@ StorageMC <- function(initial, final, period, vcindex, vcdirect, temp,
   chk <- c(missing(vcindex), missing(vcdirect))
   if (identical(chk, c(FALSE, FALSE))) {
     stop('Provide only either one of the two arguments\n',
-         '"vcindex" or "vcdirect" and not both')
+         '"vcindex" or "vcdirect" and not both.')
   }
 
   # Check if initial is of type numeric with unit length
   if (!is.numeric(initial) || length(initial) != 1){
-    stop("'initial' should be a numeric vector of length 1")
+    stop("'initial' should be a numeric vector of length 1.")
   }
 
   # Check limits of initial viability
   if (FALSE %in% (findInterval(initial, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
-    stop('"initial" is beyond limits (0 < "initial" < 100)')
+    stop('"initial" is beyond limits (0 < "initial" < 100).')
   }
 
   # Check if final is of type numeric with unit length
   if (!is.numeric(final) || length(final) != 1){
-    stop("'final' should be a numeric vector of length 1")
+    stop("'final' should be a numeric vector of length 1.")
   }
 
   # Check limits of final viability
   if (FALSE %in% (findInterval(final, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
-    stop('"final" is beyond limits (0 < "final" < 100)')
+    stop('"final" is beyond limits (0 < "final" < 100).')
   }
 
   # Check if period is of type numeric with unit length
   if (!is.numeric(period) || length(period) != 1){
-    stop("'period' should be a numeric vector of length 1")
+    stop("'period' should be a numeric vector of length 1.")
   }
 
   # Check if temp is of type numeric with unit length
   if (!is.numeric(temp) || length(temp) != 1){
-    stop("'temp' should be a numeric vector of length 1")
+    stop("'temp' should be a numeric vector of length 1.")
   }
 
   # Check limits of temperature
   if (FALSE %in% (findInterval(temp, c(-20, 90),
                                rightmost.closed = TRUE) == 1)) {
-    warning('"temp" is beyond limits (-20 < "temp" < 90)')
+    warning('"temp" is beyond limits (-20 < "temp" < 90).')
   }
   if (years == TRUE) {
     period <- period * 365
@@ -381,7 +381,7 @@ StorageMC <- function(initial, final, period, vcindex, vcdirect, temp,
   # Check if argument years is of type logical with unit length
   if (!missing(years)){
     if (!is.logical(years) || length(years) != 1){
-      stop("'years' should be a numeric vector of length 1")
+      stop("'years' should be a numeric vector of length 1.")
     }
   }
 
@@ -390,7 +390,7 @@ StorageMC <- function(initial, final, period, vcindex, vcdirect, temp,
     # Extract constants from vcindex
     # check if vcindex is an integer
     if (vcindex %% 1 != 0 && length(n) != 1) {
-      stop('"vcindex" is not an integer vector of unit length')
+      stop('"vcindex" is not an integer vector of unit length.')
     }
 
     # check if vcindex is present in viabilityconstants
@@ -413,11 +413,11 @@ StorageMC <- function(initial, final, period, vcindex, vcdirect, temp,
     # check if vcdirect is a numeric vector of length 4 with Ke, Cw, Ch, Cq
     if (length(vcdirect) != 4) {
       stop(paste0(c('"vcdirect" is not of length 4;', '\n',
-                    'All four seed viability constants are not specified')))
+                    'All four seed viability constants are not specified.')))
     } else {
       # check if vcdirect is numeric vector
       if (!is.numeric(vcdirect)) {
-        stop('"vcdirect" is not a numeric vector')
+        stop('"vcdirect" is not a numeric vector.')
       }
     }
 
@@ -448,50 +448,50 @@ StorageTemp <- function(initial, final, period, vcindex, vcdirect, mc,
   chk <- c(missing(vcindex), missing(vcdirect))
   if (identical(chk, c(FALSE, FALSE))) {
     stop('Provide only either one of the two arguments\n',
-         '"vcindex" or "vcdirect" and not both')
+         '"vcindex" or "vcdirect" and not both.')
   }
 
   # Check if initial is of type numeric with unit length
   if (!is.numeric(initial) || length(initial) != 1){
-    stop("'initial' should be a numeric vector of length 1")
+    stop("'initial' should be a numeric vector of length 1.")
   }
 
   # Check limits of initial viability
   if (FALSE %in% (findInterval(initial, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
-    stop('"initial" is beyond limits (0 < "initial" < 100)')
+    stop('"initial" is beyond limits (0 < "initial" < 100).')
   }
 
   # Check if final is of type numeric with unit length
   if (!is.numeric(final) || length(final) != 1){
-    stop("'final' should be a numeric vector of length 1")
+    stop("'final' should be a numeric vector of length 1.")
   }
 
   # Check limits of final viability
   if (FALSE %in% (findInterval(final, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
-    stop('"final" is beyond limits (0 < "final" < 100)')
+    stop('"final" is beyond limits (0 < "final" < 100).')
   }
 
   # Check if period is of type numeric with unit length
   if (!is.numeric(period) || length(period) != 1){
-    stop("'period' should be a numeric vector of length 1")
+    stop("'period' should be a numeric vector of length 1.")
   }
 
   # Check if mc is of type numeric with unit length
   if (!is.numeric(mc) || length(mc) != 1){
-    stop("'mc' should be a numeric vector of length 1")
+    stop("'mc' should be a numeric vector of length 1.")
   }
 
   #Check limits of moisture content
   if (FALSE %in% (findInterval(mc, c(0, 100), rightmost.closed = TRUE) == 1)) {
-    warning('"mc" is beyond limits (0 < "mc" < 100)')
+    warning('"mc" is beyond limits (0 < "mc" < 100).')
   }
 
   # Check if argument years is of type logical with unit length
   if(!missing(years)){
     if(!is.logical(years) || length(years) != 1){
-      stop("'years' should be a numeric vector of length 1")
+      stop("'years' should be a numeric vector of length 1.")
     }
   }
 
@@ -502,7 +502,7 @@ StorageTemp <- function(initial, final, period, vcindex, vcdirect, mc,
   # Check if argument years is of type logical with unit length
   if(!missing(years)){
     if(!is.logical(years) || length(years) != 1){
-      stop("'years' should be a numeric vector of length 1")
+      stop("'years' should be a numeric vector of length 1.")
     }
   }
 
@@ -517,7 +517,7 @@ StorageTemp <- function(initial, final, period, vcindex, vcdirect, mc,
     # Extract constants from vcindex
     # check if vcindex is an integer
     if (vcindex %% 1 != 0) {
-      stop('"vcindex" is not an integer')
+      stop('"vcindex" is not an integer.')
     }
 
     # check if vcindex is present in viabilityconstants
@@ -540,11 +540,11 @@ StorageTemp <- function(initial, final, period, vcindex, vcdirect, mc,
     # check if vcdirect is a numeric vector of length 4 with Ke, Cw, Ch, Cq
     if (length(vcdirect) != 4) {
       stop(paste0(c('"vcdirect" is not of length 4;', '\n',
-                    'All four seed viability constants are not specified')))
+                    'All four seed viability constants are not specified.')))
     } else {
       # check if vcdirect is numeric vector
       if (!is.numeric(vcdirect)) {
-        stop('"vcdirect" is not a numeric vector')
+        stop('"vcdirect" is not a numeric vector.')
       }
     }
 
@@ -579,24 +579,24 @@ StoragePeriod <- function(initial, final, vcindex, vcdirect, mc, temp,
 
   # Check if initial is of type numeric with unit length
   if (!is.numeric(initial) || length(initial) != 1){
-    stop("'initial' should be a numeric vector of length 1")
+    stop("'initial' should be a numeric vector of length 1.")
   }
 
   # Check limits of initial viability
   if (FALSE %in% (findInterval(initial, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
-    stop('"initial" is beyond limits (0 < "initial" < 100)')
+    stop('"initial" is beyond limits (0 < "initial" < 100).')
   }
 
   # Check if final is of type numeric with unit length
   if (!is.numeric(final) || length(final) != 1){
-    stop("'final' should be a numeric vector of length 1")
+    stop("'final' should be a numeric vector of length 1.")
   }
 
   # Check limits of final viability
   if (FALSE %in% (findInterval(final, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
-    stop('"final" is beyond limits (0 < "final" < 100)')
+    stop('"final" is beyond limits (0 < "final" < 100).')
   }
 
 
@@ -614,7 +614,7 @@ StoragePeriod <- function(initial, final, vcindex, vcdirect, mc, temp,
   }
 
   if (period < 1) {
-    warning("Negative storage period computed")
+    warning("Negative storage period computed.")
   }
   return(period)
 }

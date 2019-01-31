@@ -85,23 +85,23 @@ SeedEqMC <- function(oilcontent, rh, temp, basis = c("wet", "dry")){
 
   # Check if oilcontent is of type numeric
   if (!is.numeric(oilcontent)){
-    stop("'oilcontent' should be of type numeric")
+    stop("'oilcontent' should be of type numeric.")
   }
 
   # Check limits of oilcontent
   if (FALSE %in% (findInterval(oilcontent, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
-    warning('"oilcontent" is beyond limits (0 < "oilcontent" < 100)')
+    warning('"oilcontent" is beyond limits (0 < "oilcontent" < 100).')
   }
 
   # Check if rh is of type numeric
   if (!is.numeric(rh)){
-    stop("'rh' should be of type numeric")
+    stop("'rh' should be of type numeric.")
   }
 
   # Check limits of relative humidity
   if (FALSE %in% (findInterval(rh, c(0, 100), rightmost.closed = TRUE) == 1)) {
-    warning('"rh" is beyond limits (0 < "rh" < 100)')
+    warning('"rh" is beyond limits (0 < "rh" < 100).')
   }
 
   oc <- oilcontent / 100
@@ -124,23 +124,23 @@ EqRH <- function(oilcontent, mc, temp, basis = c("wet", "dry")){
 
   # Check if oilcontent is of type numeric
   if (!is.numeric(oilcontent)){
-    stop("'oilcontent' should be of type numeric")
+    stop("'oilcontent' should be of type numeric.")
   }
 
   # Check limits of oilcontent
   if (FALSE %in% (findInterval(oilcontent, c(0, 100),
                                rightmost.closed = TRUE) == 1)) {
-    warning('"oilcontent" is beyond limits (0 < "oilcontent" < 100)')
+    warning('"oilcontent" is beyond limits (0 < "oilcontent" < 100).')
   }
 
   # Check if moisture content is of type numeric
   if (!is.numeric(mc)){
-    stop("'mc' should be of type numeric")
+    stop("'mc' should be of type numeric.")
   }
 
   # Check limits of moisture content
   if (FALSE %in% (findInterval(mc, c(0, 100), rightmost.closed = TRUE) == 1)) {
-    warning('"mc" is beyond limits (0 < "mc" < 100)')
+    warning('"mc" is beyond limits (0 < "mc" < 100).')
   }
 
   if (basis == "wet") {

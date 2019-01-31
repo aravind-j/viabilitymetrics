@@ -136,18 +136,18 @@ Sigma <- function(vcindex, vcdirect, mc, temp, years = FALSE) {
   chk <- c(missing(vcindex), missing(vcdirect))
   if (identical(chk, c(FALSE, FALSE))) {
     stop('Provide only either one of the two arguments\n',
-         '"vcindex" or "vcdirect" and not both')
+         '"vcindex" or "vcdirect" and not both.')
   }
 
   # Check if temp is of type numeric with unit length
   if (!is.numeric(temp) || length(temp) != 1){
-    stop("'temp' should be a numeric vector of length 1")
+    stop("'temp' should be a numeric vector of length 1.")
   }
 
   # Check limits of temperature
   if (FALSE %in% (findInterval(temp, c(-20, 90),
                                rightmost.closed = TRUE) == 1)) {
-    warning('"temp" is beyond limits (-20 < "temp" < 90)')
+    warning('"temp" is beyond limits (-20 < "temp" < 90).')
   }
 
   # Check if mc is of type numeric with unit length
@@ -157,13 +157,13 @@ Sigma <- function(vcindex, vcdirect, mc, temp, years = FALSE) {
 
  #Check limits of moisture content
   if (FALSE %in% (findInterval(mc, c(0, 100), rightmost.closed = TRUE) == 1)) {
-    warning('"mc" is beyond limits (0 < "mc" < 100)')
+    warning('"mc" is beyond limits (0 < "mc" < 100).')
   }
 
   # Check if argument years is of type logical with unit length
   if (!missing(years)){
     if (!is.logical(years) || length(years) != 1){
-      stop("'years' should be a numeric vector of length 1")
+      stop("'years' should be a numeric vector of length 1.")
     }
   }
 
@@ -172,7 +172,7 @@ Sigma <- function(vcindex, vcdirect, mc, temp, years = FALSE) {
     # Extract constants from vcindex
     # check if vcindex is an integer
     if (vcindex %% 1 != 0 && length(n) != 1) {
-      stop('"vcindex" is not an integer vector of unit length')
+      stop('"vcindex" is not an integer vector of unit length.')
     }
 
     # check if vcindex is present in viabilityconstants
@@ -194,11 +194,11 @@ Sigma <- function(vcindex, vcdirect, mc, temp, years = FALSE) {
     # check if vcdirect is a numeric vector of length 4 with Ke, Cw, Ch, Cq
     if (length(vcdirect) != 4) {
       stop(paste0(c('"vcdirect" is not of length 4;', '\n',
-                    'All four seed viability constants are not specified')))
+                    'All four seed viability constants are not specified.')))
     } else {
       # check if vcdirect is numeric vector
       if (!is.numeric(vcdirect)) {
-        stop('"vcdirect" is not a numeric vector')
+        stop('"vcdirect" is not a numeric vector.')
       }
     }
 
