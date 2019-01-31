@@ -303,19 +303,12 @@ are not part of the ageing population due to several reasons.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a></span>(<span class='kw'>Rep</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>, <span class='fl'>1</span>,
-                         <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>2</span>, <span class='fl'>2</span>),
-                 <span class='kw'>period</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>4</span>, <span class='fl'>5</span>, <span class='fl'>6</span>, <span class='fl'>7</span>, <span class='fl'>8</span>, <span class='fl'>9</span>, <span class='fl'>10</span>,
-                            <span class='fl'>11</span>, <span class='fl'>12</span>, <span class='fl'>13</span>, <span class='fl'>14</span>, <span class='fl'>15</span>, <span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>4</span>, <span class='fl'>5</span>,
-                            <span class='fl'>6</span>, <span class='fl'>7</span>, <span class='fl'>8</span>, <span class='fl'>9</span>, <span class='fl'>10</span>, <span class='fl'>11</span>, <span class='fl'>12</span>, <span class='fl'>13</span>, <span class='fl'>14</span>, <span class='fl'>15</span>),
-                 <span class='kw'>sampsize</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>97</span>, <span class='fl'>100</span>, <span class='fl'>100</span>, <span class='fl'>100</span>, <span class='fl'>98</span>, <span class='fl'>100</span>, <span class='fl'>100</span>, <span class='fl'>100</span>,
-                              <span class='fl'>99</span>, <span class='fl'>98</span>, <span class='fl'>101</span>, <span class='fl'>100</span>, <span class='fl'>100</span>, <span class='fl'>101</span>, <span class='fl'>100</span>, <span class='fl'>100</span>,
-                              <span class='fl'>99</span>, <span class='fl'>97</span>, <span class='fl'>100</span>, <span class='fl'>97</span>, <span class='fl'>99</span>, <span class='fl'>98</span>, <span class='fl'>100</span>, <span class='fl'>98</span>, <span class='fl'>99</span>,
-                              <span class='fl'>99</span>, <span class='fl'>101</span>, <span class='fl'>98</span>, <span class='fl'>97</span>, <span class='fl'>97</span>),
-                 <span class='kw'>viabilitypercent</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>98</span>, <span class='fl'>96</span>, <span class='fl'>90</span>, <span class='fl'>82</span>, <span class='fl'>70</span>, <span class='fl'>54</span>, <span class='fl'>38</span>, <span class='fl'>24</span>,
-                                      <span class='fl'>12</span>, <span class='fl'>6</span>, <span class='fl'>2</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>98</span>, <span class='fl'>94</span>, <span class='fl'>85</span>,
-                                      <span class='fl'>72</span>, <span class='fl'>54</span>, <span class='fl'>35</span>, <span class='fl'>18</span>, <span class='fl'>8</span>, <span class='fl'>2</span>, <span class='fl'>0</span>,
-                                      <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>))
+    <pre class="examples"><div class='input'>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>seedsurvival</span>)
+<span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='no'>seedsurvival</span>[<span class='no'>seedsurvival</span>$<span class='no'>crop</span> <span class='kw'>==</span> <span class='st'>"Groundnut"</span> <span class='kw'>&amp;</span>
+                     <span class='no'>seedsurvival</span>$<span class='no'>mc</span> <span class='kw'>==</span> <span class='fl'>7</span> <span class='kw'>&amp;</span>
+                     <span class='no'>seedsurvival</span>$<span class='no'>temp</span> <span class='kw'>==</span> <span class='fl'>25</span>,
+                   <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"period"</span>, <span class='st'>"rep"</span>, <span class='st'>"viabilitypercent"</span>, <span class='st'>"sampsize"</span>)]
 
 <span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>df</span>$<span class='no'>period</span>, <span class='no'>df</span>$<span class='no'>viabilitypercent</span>)</div><div class='img'><img src='FitSigma-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>#----------------------------------------------------------------------------</span>
@@ -325,26 +318,26 @@ are not part of the ageing population due to several reasons.</p>
                    <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>, <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"period"</span>,
                    <span class='kw'>probit.method</span> <span class='kw'>=</span> <span class='st'>"glm"</span>)
 <span class='no'>model1a</span></div><div class='output co'>#&gt; Generalised linear model with probit link function.
-#&gt;        Ki    Sigma
-#&gt;  2.508514 2.265095</div><div class='output co'>#&gt; <span class='message'>WARNING: non-integer #successes in a binomial glm! </span></div><div class='input'><span class='co'># Raw model</span>
+#&gt;       Ki     Sigma
+#&gt;  2.40205 0.4500519</div><div class='output co'>#&gt; <span class='message'>WARNING: glm.fit: fitted probabilities numerically 0 or 1 occurred </span></div><div class='input'><span class='co'># Raw model</span>
 <span class='no'>model1a</span>$<span class='no'>model</span></div><div class='output co'>#&gt; 
 #&gt; Call:  glm(formula = frmla, family = binomial(link = "probit"), data = data, 
 #&gt;     weights = data$samp.size)
 #&gt; 
 #&gt; Coefficients:
 #&gt;    (Intercept)  storage.period  
-#&gt;         2.5085         -0.4415  
+#&gt;          2.402          -2.222  
 #&gt; 
 #&gt; Degrees of Freedom: 29 Total (i.e. Null);  28 Residual
-#&gt; Null Deviance:	    2289 
-#&gt; Residual Deviance: 57.99 	AIC: 143.2</div><div class='input'>
+#&gt; Null Deviance:	    343.2 
+#&gt; Residual Deviance: 6.974 	AIC: 22.12</div><div class='input'>
 <span class='co'># Model parameters</span>
-<span class='no'>model1a</span>$<span class='no'>parameters</span></div><div class='output co'>#&gt;      term   estimate  std.error statistic       p.value
-#&gt; 1      Ki  2.5085138 0.09300184  26.97273 3.087773e-160
-#&gt; 2 1/sigma -0.4414825 0.01484334 -29.74280 2.148691e-194</div><div class='input'>
+<span class='no'>model1a</span>$<span class='no'>parameters</span></div><div class='output co'>#&gt;      term  estimate std.error statistic      p.value
+#&gt; 1      Ki  2.402050 0.3853836  6.232880 4.579377e-10
+#&gt; 2 1/sigma -2.221966 0.3162077 -7.026919 2.111433e-12</div><div class='input'>
 <span class='co'># Model fit</span>
 <span class='no'>model1a</span>$<span class='no'>fit</span></div><div class='output co'>#&gt;   null.deviance df.null    logLik      AIC      BIC deviance df.residual
-#&gt; 1      2289.269      29 -69.61062 143.2212 146.0236 57.99261          28</div><div class='input'>
+#&gt; 1      343.1792      29 -9.061691 22.12338 24.92578 6.974084          28</div><div class='input'>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='co'># Generalised linear model with probit link function (with cv)</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
@@ -354,26 +347,27 @@ are not part of the ageing population due to several reasons.</p>
                    <span class='kw'>use.cv</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>control.viability</span> <span class='kw'>=</span> <span class='fl'>98</span>)
 <span class='no'>model1b</span></div><div class='output co'>#&gt; Generalised linear model with probit link function.
 #&gt; Control viability = 98%
-#&gt;        Ki    Sigma
-#&gt;  2.707179 2.144486</div><div class='output co'>#&gt; <span class='message'>WARNING: non-integer #successes in a binomial glm! </span></div><div class='input'><span class='co'># Raw model</span>
+#&gt;        Ki     Sigma
+#&gt;  2.453183 0.4457701</div><div class='output co'>#&gt; <span class='message'>WARNING: non-integer #successes in a binomial glm! </span>
+#&gt; <span class='message'>WARNING: glm.fit: fitted probabilities numerically 0 or 1 occurred </span></div><div class='input'><span class='co'># Raw model</span>
 <span class='no'>model1b</span>$<span class='no'>model</span></div><div class='output co'>#&gt; 
 #&gt; Call:  glm(formula = frmla, family = binomial(link = "probit"), data = data, 
 #&gt;     weights = data$samp.size)
 #&gt; 
 #&gt; Coefficients:
 #&gt;    (Intercept)  storage.period  
-#&gt;         2.7072         -0.4663  
+#&gt;          2.453          -2.243  
 #&gt; 
 #&gt; Degrees of Freedom: 29 Total (i.e. Null);  28 Residual
-#&gt; Null Deviance:	    2398 
-#&gt; Residual Deviance: 66.29 	AIC: 145.5</div><div class='input'>
+#&gt; Null Deviance:	    351.4 
+#&gt; Residual Deviance: 7.24 	AIC: 23.02</div><div class='input'>
 <span class='co'># Model parameters</span>
-<span class='no'>model1b</span>$<span class='no'>parameters</span></div><div class='output co'>#&gt;      term   estimate  std.error statistic       p.value
-#&gt; 1      Ki  2.7071787 0.09985659  27.11067 7.371153e-162
-#&gt; 2 1/sigma -0.4663122 0.01583184 -29.45407 1.116700e-190</div><div class='input'>
+<span class='no'>model1b</span>$<span class='no'>parameters</span></div><div class='output co'>#&gt;      term  estimate std.error statistic      p.value
+#&gt; 1      Ki  2.453183 0.3842330  6.384622 1.718217e-10
+#&gt; 2 1/sigma -2.243309 0.3144653 -7.133725 9.768865e-13</div><div class='input'>
 <span class='co'># Model fit</span>
 <span class='no'>model1b</span>$<span class='no'>fit</span></div><div class='output co'>#&gt;   null.deviance df.null    logLik      AIC      BIC deviance df.residual
-#&gt; 1      2397.983      29 -70.73896 145.4779 148.2803 66.29015          28</div><div class='input'>
+#&gt; 1      351.3935      29 -9.507642 23.01528 25.81768 7.239752          28</div><div class='input'>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='co'># Linear model after probit transformation (without cv)</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
@@ -381,25 +375,25 @@ are not part of the ageing population due to several reasons.</p>
                    <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>, <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"period"</span>,
                    <span class='kw'>probit.method</span> <span class='kw'>=</span> <span class='st'>"tflm"</span>)
 <span class='no'>model2a</span></div><div class='output co'>#&gt; Linear model after probit transformation.
-#&gt;       Ki    Sigma
-#&gt;  2.19973 2.590774</div><div class='input'><span class='co'># Raw model</span>
+#&gt;         Ki    Sigma
+#&gt;  -1.733721 12.77216</div><div class='input'><span class='co'># Raw model</span>
 <span class='no'>model2a</span>$<span class='no'>model</span></div><div class='output co'>#&gt; 
 #&gt; Call:
 #&gt; lm(formula = frmla, data = data)
 #&gt; 
 #&gt; Coefficients:
 #&gt;    (Intercept)  storage.period  
-#&gt;          2.200          -0.386  
+#&gt;        -1.7337         -0.0783  
 #&gt; </div><div class='input'>
 <span class='co'># Model parameters</span>
-<span class='no'>model2a</span>$<span class='no'>parameters</span></div><div class='output co'>#&gt;      term  estimate  std.error statistic      p.value
-#&gt; 1      Ki  2.199730 0.16943965  12.98238 2.276729e-13
-#&gt; 2 1/sigma -0.385985 0.01863588 -20.71193 1.617601e-18</div><div class='input'>
+<span class='no'>model2a</span>$<span class='no'>parameters</span></div><div class='output co'>#&gt;      term    estimate  std.error statistic      p.value
+#&gt; 1      Ki -1.73372097 0.24372038 -7.113566 9.693968e-08
+#&gt; 2 1/sigma -0.07829529 0.02680567 -2.920848 6.825874e-03</div><div class='input'>
 <span class='co'># Model fit</span>
-<span class='no'>model2a</span>$<span class='no'>fit</span></div><div class='output co'>#&gt;   r.squared adj.r.squared     sigma statistic      p.value df    logLik
-#&gt; 1 0.9387287     0.9365405 0.4410053  428.9841 1.617601e-18  2 -16.97231
-#&gt;        AIC      BIC deviance df.residual
-#&gt; 1 39.94463 44.14822   5.4456          28</div><div class='input'>
+<span class='no'>model2a</span>$<span class='no'>fit</span></div><div class='output co'>#&gt;   r.squared adj.r.squared     sigma statistic     p.value df    logLik      AIC
+#&gt; 1 0.2335351     0.2061614 0.6343379  8.531354 0.006825874  2 -27.87806 61.75611
+#&gt;        BIC deviance df.residual
+#&gt; 1 65.95971 11.26677          28</div><div class='input'>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='co'># Linear model after probit transformation (with cv)</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
@@ -409,25 +403,25 @@ are not part of the ageing population due to several reasons.</p>
                    <span class='kw'>use.cv</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>control.viability</span> <span class='kw'>=</span> <span class='fl'>98</span>)
 <span class='no'>model2b</span></div><div class='output co'>#&gt; Linear model after probit transformation.
 #&gt; Control viability = 98%
-#&gt;        Ki    Sigma
-#&gt;  2.244623 2.538959</div><div class='input'><span class='co'># Raw model</span>
+#&gt;         Ki    Sigma
+#&gt;  -1.769103 12.51672</div><div class='input'><span class='co'># Raw model</span>
 <span class='no'>model2b</span>$<span class='no'>model</span></div><div class='output co'>#&gt; 
 #&gt; Call:
 #&gt; lm(formula = frmla, data = data)
 #&gt; 
 #&gt; Coefficients:
 #&gt;    (Intercept)  storage.period  
-#&gt;         2.2446         -0.3939  
+#&gt;       -1.76910        -0.07989  
 #&gt; </div><div class='input'>
 <span class='co'># Model parameters</span>
-<span class='no'>model2b</span>$<span class='no'>parameters</span></div><div class='output co'>#&gt;      term   estimate std.error statistic      p.value
-#&gt; 1      Ki  2.2446230 0.1728976  12.98238 2.276729e-13
-#&gt; 2 1/sigma -0.3938622 0.0190162 -20.71193 1.617601e-18</div><div class='input'>
+<span class='no'>model2b</span>$<span class='no'>parameters</span></div><div class='output co'>#&gt;      term    estimate  std.error statistic      p.value
+#&gt; 1      Ki -1.76910303 0.24869426 -7.113566 9.693968e-08
+#&gt; 2 1/sigma -0.07989315 0.02735272 -2.920848 6.825874e-03</div><div class='input'>
 <span class='co'># Model fit</span>
-<span class='no'>model2b</span>$<span class='no'>fit</span></div><div class='output co'>#&gt;   r.squared adj.r.squared     sigma statistic      p.value df    logLik
-#&gt; 1 0.9387287     0.9365405 0.4500054  428.9841 1.617601e-18  2 -17.57839
-#&gt;        AIC      BIC deviance df.residual
-#&gt; 1 41.15679 45.36038 5.670137          28</div><div class='input'>
+<span class='no'>model2b</span>$<span class='no'>fit</span></div><div class='output co'>#&gt;   r.squared adj.r.squared     sigma statistic     p.value df    logLik      AIC
+#&gt; 1 0.2335351     0.2061614 0.6472835  8.531354 0.006825874  2 -28.48414 62.96828
+#&gt;        BIC deviance df.residual
+#&gt; 1 67.17187 11.73133          28</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

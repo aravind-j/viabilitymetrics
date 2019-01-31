@@ -30,19 +30,12 @@ The plot of the seed viability curve as an object of class
 \code{FitSigma} object as an object of class \code{ggplot}.
 }
 \examples{
-df <- data.frame(Rep = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                         2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
-                 period = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-                            11, 12, 13, 14, 15, 1, 2, 3, 4, 5,
-                            6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-                 sampsize = c(97, 100, 100, 100, 98, 100, 100, 100,
-                              99, 98, 101, 100, 100, 101, 100, 100,
-                              99, 97, 100, 97, 99, 98, 100, 98, 99,
-                              99, 101, 98, 97, 97),
-                 viabilitypercent = c(98, 96, 90, 82, 70, 54, 38, 24,
-                                      12, 6, 2, 0, 0, 0, 0, 98, 94, 85,
-                                      72, 54, 35, 18, 8, 2, 0,
-                                      0, 0, 0, 0, 0))
+
+data(seedsurvival)
+df <- seedsurvival[seedsurvival$crop == "Groundnut" &
+                     seedsurvival$mc == 7 &
+                     seedsurvival$temp == 25,
+                   c("period", "rep", "viabilitypercent", "sampsize")]
 
 plot(df$period, df$viabilitypercent)
 
