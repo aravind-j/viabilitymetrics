@@ -90,19 +90,26 @@ plot.FitSigma <- function(x, limits = TRUE, annotate = TRUE, ...){
   if (limits == TRUE) {
     Vplot <- Vplot + coord_cartesian(xlim = c(0, max(x$data$storage.period)),
                                      ylim = c(0, 100))
+    ypos <- 90
+  } else {
+    ypos <- pos(max(df$viability.percent, min(df$viability.percent)), 90)
+
   }
 
   if (annotate == TRUE) {
     Vplot <- Vplot + annotate("text", x = quantile(x$data$storage.period)[4],
-                   y = quantile(x$data$viability.percent,
-                                prob = seq(0, 1, length = 11),
-                                type = 5)[10],  parse = TRUE,
+                   y = ypos,  parse = TRUE,
                    label = paste("atop(K[i] == ", round(x$Ki, 2), ",",
                                  "~sigma == ", round(x$sigma, 2), ")",
                                  sep = ""))
   }
 
   return(Vplot)
+}
+
+
+pos <- function(max, min, percent) {
+  (percent * (max - min) / 100) + min
 }
 
 
