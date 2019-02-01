@@ -7,8 +7,7 @@
 \ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}}}
 \usage{
 FitSigma(data, viability.percent, samp.size, storage.period,
-  probit.method = c("glm", "tflm"), use.cv = FALSE,
-  control.viability = 100)
+  generalised = TRUE, use.cv = FALSE, control.viability = 100)
 }
 \arguments{
 \item{data}{A data frame with the seed viability data recorded periodically.
@@ -27,10 +26,10 @@ used for calculating viability percentages as a character string.}
 periods at which the viabilty percentages was recorded as a character
 string.}
 
-\item{probit.method}{The method to be used for fitting seed viability curve.
-Either as a generalised linear model with a probit link function
-(\code{"glm"}, recommended) or as a linear model with probit transformed
-viability percentages (\code{"tflm"}).}
+\item{generalised}{logical. If \code{TRUE} (recommended), the seed viability
+curve is fitted as a generalised linear model with a probit link function.
+If \code{TRUE}, it is fitted as a linear model with probit transformed
+viability percentages.}
 
 \item{use.cv}{logical. If \code{TRUE}, then the percentage value specified in
 the \code{control.viabilty} argument is incorporated as the control
@@ -43,13 +42,13 @@ is \code{FALSE}.}
 A list of class \code{FitSigma} with the following components:
   \item{data}{A data frame with the data used for computing the model.}
   \item{model}{The fitted model as an object of class \code{glm} (if
-  \code{probit.method = "glm"}) or \code{lm} (if \code{probit.method =
-  "lm"}).} \item{parameters}{A data.frame of parameter estimates, standard
-  errors and p value.} \item{fit}{A one-row data frame with estimates of
-  model fitness such as log likelyhoods, Akaike Information Criterion,
-  Bayesian Information Criterion, deviance and residual degrees of freedom.}
-  \item{Ki}{The estimated seed lot constant from the model.} \item{sigma}{The
-  estimated period of time to lose unit probit viability from the model.}
+  \code{generalised = TRUE}) or \code{lm} (if \code{generalised = FALSE}).}
+  \item{parameters}{A data.frame of parameter estimates, standard errors and
+  p value.} \item{fit}{A one-row data frame with estimates of model fitness
+  such as log likelyhoods, Akaike Information Criterion, Bayesian Information
+  Criterion, deviance and residual degrees of freedom.} \item{Ki}{The
+  estimated seed lot constant from the model.} \item{sigma}{The estimated
+  period of time to lose unit probit viability from the model.}
   \item{message}{Warning or error messages generated during fitting of model,
   if any.}
 }
@@ -139,7 +138,7 @@ plot(df$storageperiod, df$viabilitypercent)
 #----------------------------------------------------------------------------
 model1a <- FitSigma(data = df, viability.percent = "viabilitypercent",
                    samp.size = "sampsize", storage.period = "storageperiod",
-                   probit.method = "glm")
+                   generalised = TRUE)
 model1a
 # Raw model
 model1a$model
@@ -155,7 +154,7 @@ model1a$fit
 #----------------------------------------------------------------------------
 model1b <- FitSigma(data = df, viability.percent = "viabilitypercent",
                    samp.size = "sampsize", storage.period = "storageperiod",
-                   probit.method = "glm",
+                   generalised = TRUE,
                    use.cv = TRUE, control.viability = 98)
 model1b
 # Raw model
@@ -172,7 +171,7 @@ model1b$fit
 #----------------------------------------------------------------------------
 model2a <- FitSigma(data = df, viability.percent = "viabilitypercent",
                    samp.size = "sampsize", storage.period = "storageperiod",
-                   probit.method = "tflm")
+                   generalised = FALSE)
 model2a
 # Raw model
 model2a$model
@@ -188,7 +187,7 @@ model2a$fit
 #----------------------------------------------------------------------------
 model2b <- FitSigma(data = df, viability.percent = "viabilitypercent",
                    samp.size = "sampsize", storage.period = "storageperiod",
-                   probit.method = "tflm",
+                   generalised = FALSE,
                    use.cv = TRUE, control.viability = 98)
 model2b
 # Raw model

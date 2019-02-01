@@ -43,7 +43,7 @@ df <- seedsurvival[seedsurvival$crop == "Soybean" &
 #----------------------------------------------------------------------------
 model1a <- FitSigma(data = df, viability.percent = "viabilitypercent",
                    samp.size = "sampsize", storage.period = "storageperiod",
-                   probit.method = "glm")
+                   generalised = TRUE)
 plot(model1a)
 
 #----------------------------------------------------------------------------
@@ -51,7 +51,7 @@ plot(model1a)
 #----------------------------------------------------------------------------
 model1b <- FitSigma(data = df, viability.percent = "viabilitypercent",
                    samp.size = "sampsize", storage.period = "storageperiod",
-                   probit.method = "glm",
+                   generalised = TRUE,
                    use.cv = TRUE, control.viability = 98)
 plot(model1b)
 
@@ -60,7 +60,7 @@ plot(model1b)
 #----------------------------------------------------------------------------
 model2a <- FitSigma(data = df, viability.percent = "viabilitypercent",
                    samp.size = "sampsize", storage.period = "storageperiod",
-                   probit.method = "tflm")
+                   generalised = FALSE)
 plot(model2a)
 
 #----------------------------------------------------------------------------
@@ -68,7 +68,7 @@ plot(model2a)
 #----------------------------------------------------------------------------
 model2b <- FitSigma(data = df, viability.percent = "viabilitypercent",
                    samp.size = "sampsize", storage.period = "storageperiod",
-                   probit.method = "tflm",
+                   generalised = FALSE,
                    use.cv = TRUE, control.viability = 98)
 plot(model2b)
 

@@ -82,10 +82,10 @@
 #' @param storage.period The name of the column in \code{data} with the time
 #'   periods at which the viabilty percentages was recorded as a character
 #'   string.
-#' @param probit.method The method to be used for fitting seed viability curve.
-#'   Either as a generalised linear model with a probit link function
-#'   (\code{"glm"}, recommended) or as a linear model with probit transformed
-#'   viability percentages (\code{"tflm"}).
+#' @param generalised logical. If \code{TRUE} (recommended), the seed viability
+#'   curve is fitted as a generalised linear model with a probit link function.
+#'   If \code{TRUE}, it is fitted as a linear model with probit transformed
+#'   viability percentages.
 #' @param use.cv logical. If \code{TRUE}, then the percentage value specified in
 #'   the \code{control.viabilty} argument is incorporated as the control
 #'   viability parameter into the seed viability equation for fitting. Default
@@ -95,13 +95,13 @@
 #' @return A list of class \code{FitSigma} with the following components:
 #'   \item{data}{A data frame with the data used for computing the model.}
 #'   \item{model}{The fitted model as an object of class \code{glm} (if
-#'   \code{probit.method = "glm"}) or \code{lm} (if \code{probit.method =
-#'   "lm"}).} \item{parameters}{A data.frame of parameter estimates, standard
-#'   errors and p value.} \item{fit}{A one-row data frame with estimates of
-#'   model fitness such as log likelyhoods, Akaike Information Criterion,
-#'   Bayesian Information Criterion, deviance and residual degrees of freedom.}
-#'   \item{Ki}{The estimated seed lot constant from the model.} \item{sigma}{The
-#'   estimated period of time to lose unit probit viability from the model.}
+#'   \code{generalised = TRUE}) or \code{lm} (if \code{generalised = FALSE}).}
+#'   \item{parameters}{A data.frame of parameter estimates, standard errors and
+#'   p value.} \item{fit}{A one-row data frame with estimates of model fitness
+#'   such as log likelyhoods, Akaike Information Criterion, Bayesian Information
+#'   Criterion, deviance and residual degrees of freedom.} \item{Ki}{The
+#'   estimated seed lot constant from the model.} \item{sigma}{The estimated
+#'   period of time to lose unit probit viability from the model.}
 #'   \item{message}{Warning or error messages generated during fitting of model,
 #'   if any.}
 #' @importFrom broom tidy
@@ -130,7 +130,7 @@
 #' #----------------------------------------------------------------------------
 #' model1a <- FitSigma(data = df, viability.percent = "viabilitypercent",
 #'                    samp.size = "sampsize", storage.period = "storageperiod",
-#'                    probit.method = "glm")
+#'                    generalised = TRUE)
 #' model1a
 #' # Raw model
 #' model1a$model
@@ -146,7 +146,7 @@
 #' #----------------------------------------------------------------------------
 #' model1b <- FitSigma(data = df, viability.percent = "viabilitypercent",
 #'                    samp.size = "sampsize", storage.period = "storageperiod",
-#'                    probit.method = "glm",
+#'                    generalised = TRUE,
 #'                    use.cv = TRUE, control.viability = 98)
 #' model1b
 #' # Raw model
@@ -163,7 +163,7 @@
 #' #----------------------------------------------------------------------------
 #' model2a <- FitSigma(data = df, viability.percent = "viabilitypercent",
 #'                    samp.size = "sampsize", storage.period = "storageperiod",
-#'                    probit.method = "tflm")
+#'                    generalised = FALSE)
 #' model2a
 #' # Raw model
 #' model2a$model
@@ -179,7 +179,7 @@
 #' #----------------------------------------------------------------------------
 #' model2b <- FitSigma(data = df, viability.percent = "viabilitypercent",
 #'                    samp.size = "sampsize", storage.period = "storageperiod",
-#'                    probit.method = "tflm",
+#'                    generalised = FALSE,
 #'                    use.cv = TRUE, control.viability = 98)
 #' model2b
 #' # Raw model
@@ -192,7 +192,7 @@
 #' model2b$fit
 #'
 FitSigma <- function(data, viability.percent, samp.size, storage.period,
-                     probit.method = c("glm", "tflm"),
+                     generalised = TRUE,
                      use.cv = FALSE, control.viability = 100) {
     # Check if data.frame
     if (!is.data.frame(data)) {
@@ -250,6 +250,11 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
          ' (0 < "viability.percent" < 100).')
   }
 
+  # Check if argument generalised is of type logical with unit length
+  if (!is.logical(generalised) || length(generalised) != 1) {
+    stop("'generalised' should be a logical vector of length 1.")
+  }
+
   # Check if argument use.cv is of type logical with unit length
   if (!is.logical(use.cv) || length(use.cv) != 1) {
     stop("'use.cv' should be a logical vector of length 1.")
@@ -267,21 +272,18 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
     }
   }
 
-  # Check probit.method
-  probit.method <- match.arg(probit.method)
-
   data <- data.frame(storage.period = data[, c(storage.period)],
              viability.percent = data[, c(viability.percent)],
              samp.size = data[, c(samp.size)])
 
   data$viability.count <- (data$viability.percent * data$samp.size) / 100
 
-  if (probit.method == "glm") {
-    if(use.cv) {
+  if (generalised) { # GLM
+    if(use.cv) { # GLM with CV
       cvc <- control.viability / 100
       frmla <- formula(paste("(viability.count/samp.size)/", cvc,
                              " ~ storage.period", sep = ""))
-    } else {
+    } else { # GLM without CV
       frmla <- formula("viability.count/samp.size ~ storage.period")
     }
 
@@ -291,13 +293,13 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
                                weights = data$samp.size))
   }
 
-  if (probit.method == "tflm") {
-    if(use.cv) {
+  if (!generalised) { # LM
+    if(use.cv) { # GLM with CV
       cvc <- control.viability / 100
       frmla <- formula(paste("(Percent2NED(PercentAdjust",
                              "(viability.percent, samp.size)))/",
                              cvc, " ~ storage.period", sep = ""))
-    } else {
+    } else { # GLM without CV
       frmla <- formula(paste("Percent2NED(PercentAdjust",
                              "(viability.percent, samp.size))",
                              " ~ storage.period", sep = ""))
@@ -328,7 +330,7 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
               fit = fit, Ki = Ki, sigma = sigma,
               message = probit.model$message)
 
-  attr(out, "method") <- probit.method
+  attr(out, "method") <- ifelse(generalised, "glm", "tflm")
   attr(out, "cv") <- c(logical = use.cv, value = control.viability)
 
   class(out) <- "FitSigma"

@@ -55,7 +55,7 @@ model1a <- FitSigma.batch(data = df, group = "crop",
                           viability.percent = "viabilitypercent",
                           samp.size = "sampsize",
                           storage.period = "storageperiod",
-                          probit.method = "glm")
+                          generalised = TRUE)
 model1a
 
 #----------------------------------------------------------------------------
@@ -65,7 +65,7 @@ model1b <- FitSigma.batch(data = df, group = "crop",
                           viability.percent = "viabilitypercent",
                           samp.size = "sampsize",
                           storage.period = "storageperiod",
-                          probit.method = "glm",
+                          generalised = TRUE,
                           use.cv = TRUE, control.viability = 98)
 model1b
 
@@ -76,7 +76,7 @@ model2a <- FitSigma.batch(data = df, group = "crop",
                           viability.percent = "viabilitypercent",
                           samp.size = "sampsize",
                           storage.period = "storageperiod",
-                          probit.method = "tflm")
+                          generalised = FALSE)
 model2a
 
 #----------------------------------------------------------------------------
@@ -86,7 +86,7 @@ model2b <- FitSigma.batch(data = df, group = "crop",
                           viability.percent = "viabilitypercent",
                           samp.size = "sampsize",
                           storage.period = "storageperiod",
-                          probit.method = "tflm",
+                          generalised = FALSE,
                           use.cv = TRUE, control.viability = 98)
 model2b
 }
