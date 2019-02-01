@@ -25,8 +25,10 @@ and temperatures (0 °C, 10 °C and 25 °C).
 }
 \examples{
 
-library(ggplot2, quietly = TRUE)
+# Load ggplot2 package
+library(ggplot2)
 
+# Plot with seedsurvival dataset with ggplot2
 ggplot(data = seedsurvival, aes(x = storageperiod, y = viabilitypercent)) +
   geom_point(aes(colour = crop), alpha = 0.5) +
   labs(x = "Storage period (years)", y = "Viability (\%)") +
