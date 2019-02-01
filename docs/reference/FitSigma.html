@@ -167,8 +167,7 @@ lose unit probit viability
     </div>
 
     <pre class="usage"><span class='fu'>FitSigma</span>(<span class='no'>data</span>, <span class='no'>viability.percent</span>, <span class='no'>samp.size</span>, <span class='no'>storage.period</span>,
-  <span class='kw'>probit.method</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"glm"</span>, <span class='st'>"tflm"</span>), <span class='kw'>use.cv</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>control.viability</span> <span class='kw'>=</span> <span class='fl'>100</span>)</pre>
+  <span class='kw'>generalised</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>use.cv</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>control.viability</span> <span class='kw'>=</span> <span class='fl'>100</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -202,11 +201,11 @@ periods at which the viabilty percentages was recorded as a character
 string.</p></td>
     </tr>
     <tr>
-      <th>probit.method</th>
-      <td><p>The method to be used for fitting seed viability curve.
-Either as a generalised linear model with a probit link function
-(<code>"glm"</code>, recommended) or as a linear model with probit transformed
-viability percentages (<code>"tflm"</code>).</p></td>
+      <th>generalised</th>
+      <td><p>logical. If <code>TRUE</code> (recommended), the seed viability
+curve is fitted as a generalised linear model with a probit link function.
+If <code>TRUE</code>, it is fitted as a linear model with probit transformed
+viability percentages.</p></td>
     </tr>
     <tr>
       <th>use.cv</th>
@@ -226,13 +225,13 @@ is <code>FALSE</code>.</p></td>
     <p>A list of class <code>FitSigma</code> with the following components:</p>
 <dt>data</dt><dd><p>A data frame with the data used for computing the model.</p></dd>
   <dt>model</dt><dd><p>The fitted model as an object of class <code>glm</code> (if
-  <code>probit.method = "glm"</code>) or <code>lm</code> (if <code>probit.method =
-  "lm"</code>).</p></dd> <dt>parameters</dt><dd><p>A data.frame of parameter estimates, standard
-  errors and p value.</p></dd> <dt>fit</dt><dd><p>A one-row data frame with estimates of
-  model fitness such as log likelyhoods, Akaike Information Criterion,
-  Bayesian Information Criterion, deviance and residual degrees of freedom.</p></dd>
-  <dt>Ki</dt><dd><p>The estimated seed lot constant from the model.</p></dd> <dt>sigma</dt><dd><p>The
-  estimated period of time to lose unit probit viability from the model.</p></dd>
+  <code>generalised = TRUE</code>) or <code>lm</code> (if <code>generalised = FALSE</code>).</p></dd>
+  <dt>parameters</dt><dd><p>A data.frame of parameter estimates, standard errors and
+  p value.</p></dd> <dt>fit</dt><dd><p>A one-row data frame with estimates of model fitness
+  such as log likelyhoods, Akaike Information Criterion, Bayesian Information
+  Criterion, deviance and residual degrees of freedom.</p></dd> <dt>Ki</dt><dd><p>The
+  estimated seed lot constant from the model.</p></dd> <dt>sigma</dt><dd><p>The estimated
+  period of time to lose unit probit viability from the model.</p></dd>
   <dt>message</dt><dd><p>Warning or error messages generated during fitting of model,
   if any.</p></dd>
 
@@ -317,7 +316,7 @@ are not part of the ageing population due to several reasons.</p>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='no'>model1a</span> <span class='kw'>&lt;-</span> <span class='fu'>FitSigma</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>df</span>, <span class='kw'>viability.percent</span> <span class='kw'>=</span> <span class='st'>"viabilitypercent"</span>,
                    <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>, <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"storageperiod"</span>,
-                   <span class='kw'>probit.method</span> <span class='kw'>=</span> <span class='st'>"glm"</span>)
+                   <span class='kw'>generalised</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 <span class='no'>model1a</span></div><div class='output co'>#&gt; Generalised linear model with probit link function.
 #&gt;        Ki   Sigma
 #&gt;  2.373913 2.36206</div><div class='input'><span class='co'># Raw model</span>
@@ -344,7 +343,7 @@ are not part of the ageing population due to several reasons.</p>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='no'>model1b</span> <span class='kw'>&lt;-</span> <span class='fu'>FitSigma</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>df</span>, <span class='kw'>viability.percent</span> <span class='kw'>=</span> <span class='st'>"viabilitypercent"</span>,
                    <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>, <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"storageperiod"</span>,
-                   <span class='kw'>probit.method</span> <span class='kw'>=</span> <span class='st'>"glm"</span>,
+                   <span class='kw'>generalised</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
                    <span class='kw'>use.cv</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>control.viability</span> <span class='kw'>=</span> <span class='fl'>98</span>)
 <span class='no'>model1b</span></div><div class='output co'>#&gt; Generalised linear model with probit link function.
 #&gt; Control viability = 98%
@@ -373,7 +372,7 @@ are not part of the ageing population due to several reasons.</p>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='no'>model2a</span> <span class='kw'>&lt;-</span> <span class='fu'>FitSigma</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>df</span>, <span class='kw'>viability.percent</span> <span class='kw'>=</span> <span class='st'>"viabilitypercent"</span>,
                    <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>, <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"storageperiod"</span>,
-                   <span class='kw'>probit.method</span> <span class='kw'>=</span> <span class='st'>"tflm"</span>)
+                   <span class='kw'>generalised</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 <span class='no'>model2a</span></div><div class='output co'>#&gt; Linear model after probit transformation.
 #&gt;        Ki    Sigma
 #&gt;  2.014134 2.810871</div><div class='input'><span class='co'># Raw model</span>
@@ -399,7 +398,7 @@ are not part of the ageing population due to several reasons.</p>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='no'>model2b</span> <span class='kw'>&lt;-</span> <span class='fu'>FitSigma</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>df</span>, <span class='kw'>viability.percent</span> <span class='kw'>=</span> <span class='st'>"viabilitypercent"</span>,
                    <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>, <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"storageperiod"</span>,
-                   <span class='kw'>probit.method</span> <span class='kw'>=</span> <span class='st'>"tflm"</span>,
+                   <span class='kw'>generalised</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
                    <span class='kw'>use.cv</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>control.viability</span> <span class='kw'>=</span> <span class='fl'>98</span>)
 <span class='no'>model2b</span></div><div class='output co'>#&gt; Linear model after probit transformation.
 #&gt; Control viability = 98%

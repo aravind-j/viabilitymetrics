@@ -210,14 +210,14 @@ the plot. Default is <code>TRUE</code>.</p></td>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='no'>model1a</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='FitSigma.html'>FitSigma</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>df</span>, <span class='kw'>viability.percent</span> <span class='kw'>=</span> <span class='st'>"viabilitypercent"</span>,
                    <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>, <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"storageperiod"</span>,
-                   <span class='kw'>probit.method</span> <span class='kw'>=</span> <span class='st'>"glm"</span>)
+                   <span class='kw'>generalised</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 <span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model1a</span>)</div><div class='img'><img src='plot.FitSigma-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='co'># Generalised linear model with probit link function (with cv)</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='no'>model1b</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='FitSigma.html'>FitSigma</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>df</span>, <span class='kw'>viability.percent</span> <span class='kw'>=</span> <span class='st'>"viabilitypercent"</span>,
                    <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>, <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"storageperiod"</span>,
-                   <span class='kw'>probit.method</span> <span class='kw'>=</span> <span class='st'>"glm"</span>,
+                   <span class='kw'>generalised</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
                    <span class='kw'>use.cv</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>control.viability</span> <span class='kw'>=</span> <span class='fl'>98</span>)
 <span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model1b</span>)</div><div class='img'><img src='plot.FitSigma-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>#----------------------------------------------------------------------------</span>
@@ -225,14 +225,14 @@ the plot. Default is <code>TRUE</code>.</p></td>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='no'>model2a</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='FitSigma.html'>FitSigma</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>df</span>, <span class='kw'>viability.percent</span> <span class='kw'>=</span> <span class='st'>"viabilitypercent"</span>,
                    <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>, <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"storageperiod"</span>,
-                   <span class='kw'>probit.method</span> <span class='kw'>=</span> <span class='st'>"tflm"</span>)
+                   <span class='kw'>generalised</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 <span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model2a</span>)</div><div class='img'><img src='plot.FitSigma-3.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='co'># Linear model after probit transformation (with cv)</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='no'>model2b</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='FitSigma.html'>FitSigma</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>df</span>, <span class='kw'>viability.percent</span> <span class='kw'>=</span> <span class='st'>"viabilitypercent"</span>,
                    <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>, <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"storageperiod"</span>,
-                   <span class='kw'>probit.method</span> <span class='kw'>=</span> <span class='st'>"tflm"</span>,
+                   <span class='kw'>generalised</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
                    <span class='kw'>use.cv</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>control.viability</span> <span class='kw'>=</span> <span class='fl'>98</span>)
 <span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model2b</span>)</div><div class='img'><img src='plot.FitSigma-4.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
