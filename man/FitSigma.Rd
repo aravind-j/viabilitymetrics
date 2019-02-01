@@ -126,18 +126,19 @@ are not part of the ageing population due to several reasons.
 \examples{
 
 data(seedsurvival)
-df <- seedsurvival[seedsurvival$crop == "Groundnut" &
-                     seedsurvival$mc == 7 &
-                     seedsurvival$temp == 25,
-                   c("period", "rep", "viabilitypercent", "sampsize")]
+df <- seedsurvival[seedsurvival$crop == "Soybean" &
+                     seedsurvival$moistruecontent == 7 &
+                     seedsurvival$temperature == 25,
+                   c("storageperiod", "rep",
+                     "viabilitypercent", "sampsize")]
 
-plot(df$period, df$viabilitypercent)
+plot(df$storageperiod, df$viabilitypercent)
 
 #----------------------------------------------------------------------------
 # Generalised linear model with probit link function (without cv)
 #----------------------------------------------------------------------------
 model1a <- FitSigma(data = df, viability.percent = "viabilitypercent",
-                   samp.size = "sampsize", storage.period = "period",
+                   samp.size = "sampsize", storage.period = "storageperiod",
                    probit.method = "glm")
 model1a
 # Raw model
@@ -153,7 +154,7 @@ model1a$fit
 # Generalised linear model with probit link function (with cv)
 #----------------------------------------------------------------------------
 model1b <- FitSigma(data = df, viability.percent = "viabilitypercent",
-                   samp.size = "sampsize", storage.period = "period",
+                   samp.size = "sampsize", storage.period = "storageperiod",
                    probit.method = "glm",
                    use.cv = TRUE, control.viability = 98)
 model1b
@@ -170,7 +171,7 @@ model1b$fit
 # Linear model after probit transformation (without cv)
 #----------------------------------------------------------------------------
 model2a <- FitSigma(data = df, viability.percent = "viabilitypercent",
-                   samp.size = "sampsize", storage.period = "period",
+                   samp.size = "sampsize", storage.period = "storageperiod",
                    probit.method = "tflm")
 model2a
 # Raw model
@@ -186,7 +187,7 @@ model2a$fit
 # Linear model after probit transformation (with cv)
 #----------------------------------------------------------------------------
 model2b <- FitSigma(data = df, viability.percent = "viabilitypercent",
-                   samp.size = "sampsize", storage.period = "period",
+                   samp.size = "sampsize", storage.period = "storageperiod",
                    probit.method = "tflm",
                    use.cv = TRUE, control.viability = 98)
 model2b

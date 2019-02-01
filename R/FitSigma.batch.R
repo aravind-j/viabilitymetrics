@@ -33,16 +33,22 @@
 #' @examples
 #'
 #' data(seedsurvival)
-#' df <- seedsurvival[seedsurvival$mc == 7 & seedsurvival$temp == 25,
-#'                    c("crop", "period", "rep",
+#' df <- seedsurvival[seedsurvival$moistruecontent == 7 &
+#'                      seedsurvival$temperature == 25,
+#'                    c("crop", "storageperiod", "rep",
 #'                      "viabilitypercent", "sampsize")]
+#'
+#' plot(df$storageperiod, df$viabilitypercent, col = df$crop)
+#' legend(10, 60, legend=levels(df$crop),
+#'        col = c("black", "red", "green"), pch = 1)
 #'
 #' #----------------------------------------------------------------------------
 #' # Generalised linear model with probit link function (without cv)
 #' #----------------------------------------------------------------------------
 #' model1a <- FitSigma.batch(data = df, group = "crop",
 #'                           viability.percent = "viabilitypercent",
-#'                           samp.size = "sampsize", storage.period = "period",
+#'                           samp.size = "sampsize",
+#'                           storage.period = "storageperiod",
 #'                           probit.method = "glm")
 #' model1a
 #'
@@ -51,7 +57,8 @@
 #' #----------------------------------------------------------------------------
 #' model1b <- FitSigma.batch(data = df, group = "crop",
 #'                           viability.percent = "viabilitypercent",
-#'                           samp.size = "sampsize", storage.period = "period",
+#'                           samp.size = "sampsize",
+#'                           storage.period = "storageperiod",
 #'                           probit.method = "glm",
 #'                           use.cv = TRUE, control.viability = 98)
 #' model1b
@@ -61,7 +68,8 @@
 #' #----------------------------------------------------------------------------
 #' model2a <- FitSigma.batch(data = df, group = "crop",
 #'                           viability.percent = "viabilitypercent",
-#'                           samp.size = "sampsize", storage.period = "period",
+#'                           samp.size = "sampsize",
+#'                           storage.period = "storageperiod",
 #'                           probit.method = "tflm")
 #' model2a
 #'
@@ -70,7 +78,8 @@
 #' #----------------------------------------------------------------------------
 #' model2b <- FitSigma.batch(data = df, group = "crop",
 #'                           viability.percent = "viabilitypercent",
-#'                           samp.size = "sampsize", storage.period = "period",
+#'                           samp.size = "sampsize",
+#'                           storage.period = "storageperiod",
 #'                           probit.method = "tflm",
 #'                           use.cv = TRUE, control.viability = 98)
 #' model2b

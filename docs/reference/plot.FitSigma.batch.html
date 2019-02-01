@@ -198,72 +198,51 @@ produced instead of a single plot with multiple curves. Default is
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>df1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/data.frame'>data.frame</a></span>(<span class='kw'>period</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>15</span>)
-<span class='no'>df1</span>$<span class='no'>sampsize</span> <span class='kw'>&lt;-</span> <span class='fl'>50</span>
+    <pre class="examples"><div class='input'>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='no'>seedsurvival</span>)
+<span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='no'>seedsurvival</span>[<span class='no'>seedsurvival</span>$<span class='no'>moistruecontent</span> <span class='kw'>==</span> <span class='fl'>7</span> <span class='kw'>&amp;</span>
+                     <span class='no'>seedsurvival</span>$<span class='no'>temperature</span> <span class='kw'>==</span> <span class='fl'>25</span>,
+                   <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"crop"</span>, <span class='st'>"storageperiod"</span>, <span class='st'>"rep"</span>,
+                     <span class='st'>"viabilitypercent"</span>, <span class='st'>"sampsize"</span>)]
 
-<span class='no'>df3</span> <span class='kw'>&lt;-</span> <span class='no'>df2</span> <span class='kw'>&lt;-</span> <span class='no'>df1</span>
-
-<span class='no'>df1</span>$<span class='no'>crop</span> <span class='kw'>&lt;-</span> <span class='st'>"Wheat"</span>
-<span class='no'>df1</span>$<span class='no'>vcindex</span> <span class='kw'>&lt;-</span> <span class='fl'>136</span>
-<span class='no'>df2</span>$<span class='no'>crop</span> <span class='kw'>&lt;-</span> <span class='st'>"Soybean"</span>
-<span class='no'>df2</span>$<span class='no'>vcindex</span> <span class='kw'>&lt;-</span> <span class='fl'>59</span>
-<span class='no'>df3</span>$<span class='no'>crop</span> <span class='kw'>&lt;-</span> <span class='st'>"Tomato"</span>
-<span class='no'>df3</span>$<span class='no'>vcindex</span> <span class='kw'>&lt;-</span> <span class='fl'>78</span>
-
-<span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/cbind'>rbind</a></span>(<span class='no'>df1</span>, <span class='no'>df2</span>, <span class='no'>df3</span>)
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/rm'>rm</a></span>(<span class='no'>df1</span>, <span class='no'>df2</span>, <span class='no'>df3</span>)
-
-<span class='no'>df</span>$<span class='no'>viabilitypercent</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/mapply'>mapply</a></span>(<span class='no'>FinalViability</span>, <span class='kw'>period</span> <span class='kw'>=</span> <span class='no'>df</span>$<span class='no'>period</span>,
-                              <span class='kw'>vcindex</span> <span class='kw'>=</span> <span class='no'>df</span>$<span class='no'>vcindex</span>,
-                              <span class='kw'>MoreArgs</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(<span class='kw'>initial</span> <span class='kw'>=</span> <span class='fu'><a href='Percent2Probit.html'>PercentAdjust</a></span>(<span class='fl'>100</span>, <span class='fl'>50</span>),
-                                              <span class='kw'>mc</span> <span class='kw'>=</span> <span class='fl'>7</span>, <span class='kw'>temp</span> <span class='kw'>=</span> <span class='fl'>25</span>,
-                                              <span class='kw'>years</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>),
-                              <span class='kw'>SIMPLIFY</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
-
-<span class='no'>df</span>$<span class='no'>viabilitypercent</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/Round'>round</a></span>(<span class='no'>df</span>$<span class='no'>viabilitypercent</span>)
-<span class='no'>df</span>$<span class='no'>viabilitypercent</span>[<span class='no'>df</span>$<span class='no'>viabilitypercent</span> <span class='kw'>==</span> <span class='fl'>99</span>] <span class='kw'>&lt;-</span> <span class='fl'>100</span>
-<span class='no'>df</span>$<span class='no'>crop</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/factor'>as.factor</a></span>(<span class='no'>df</span>$<span class='no'>crop</span>)
-
-<span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='no'>df</span>[, <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"crop"</span>, <span class='st'>"period"</span>, <span class='st'>"viabilitypercent"</span>, <span class='st'>"sampsize"</span>)]
-<span class='no'>df</span>[<span class='no'>df</span>$<span class='no'>crop</span> <span class='kw'>==</span> <span class='st'>"Wheat"</span>,]$<span class='no'>viabilitypercent</span> <span class='kw'>&lt;-</span> <span class='no'>df</span>[<span class='no'>df</span>$<span class='no'>crop</span> <span class='kw'>==</span> <span class='st'>"Wheat"</span>,]$<span class='no'>viabilitypercent</span> - <span class='fl'>2</span>
-
-
-<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>df</span>$<span class='no'>period</span>, <span class='no'>df</span>$<span class='no'>viabilitypercent</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='no'>df</span>$<span class='no'>crop</span>)</div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/legend'>legend</a></span>(<span class='fl'>10</span>, <span class='fl'>60</span>, <span class='kw'>legend</span><span class='kw'>=</span><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/levels'>levels</a></span>(<span class='no'>df</span>$<span class='no'>crop</span>),
-       <span class='kw'>col</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"black"</span>, <span class='st'>"red"</span>, <span class='st'>"green"</span>), <span class='kw'>pch</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='img'><img src='plot.FitSigma.batch-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='co'># Generalised linear model with probit link function (without cv)</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='no'>model1a</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='FitSigma.batch.html'>FitSigma.batch</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>df</span>, <span class='kw'>group</span> <span class='kw'>=</span> <span class='st'>"crop"</span>,
                           <span class='kw'>viability.percent</span> <span class='kw'>=</span> <span class='st'>"viabilitypercent"</span>,
-                          <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>, <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"period"</span>,
+                          <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>,
+                          <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"storageperiod"</span>,
                           <span class='kw'>probit.method</span> <span class='kw'>=</span> <span class='st'>"glm"</span>)
-<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model1a</span>)</div><div class='img'><img src='plot.FitSigma.batch-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model1a</span>, <span class='kw'>grid</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='plot.FitSigma.batch-3.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model1a</span>)</div><div class='img'><img src='plot.FitSigma.batch-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model1a</span>, <span class='kw'>grid</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='plot.FitSigma.batch-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='co'># Generalised linear model with probit link function (with cv)</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='no'>model1b</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='FitSigma.batch.html'>FitSigma.batch</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>df</span>, <span class='kw'>group</span> <span class='kw'>=</span> <span class='st'>"crop"</span>,
                           <span class='kw'>viability.percent</span> <span class='kw'>=</span> <span class='st'>"viabilitypercent"</span>,
-                          <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>, <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"period"</span>,
+                          <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>,
+                          <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"storageperiod"</span>,
                           <span class='kw'>probit.method</span> <span class='kw'>=</span> <span class='st'>"glm"</span>,
                           <span class='kw'>use.cv</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>control.viability</span> <span class='kw'>=</span> <span class='fl'>98</span>)
-<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model1b</span>)</div><div class='img'><img src='plot.FitSigma.batch-4.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model1b</span>, <span class='kw'>grid</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='plot.FitSigma.batch-5.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model1b</span>)</div><div class='img'><img src='plot.FitSigma.batch-3.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model1b</span>, <span class='kw'>grid</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='plot.FitSigma.batch-4.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='co'># Linear model after probit transformation (without cv)</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='no'>model2a</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='FitSigma.batch.html'>FitSigma.batch</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>df</span>, <span class='kw'>group</span> <span class='kw'>=</span> <span class='st'>"crop"</span>,
                           <span class='kw'>viability.percent</span> <span class='kw'>=</span> <span class='st'>"viabilitypercent"</span>,
-                          <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>, <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"period"</span>,
+                          <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>,
+                          <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"storageperiod"</span>,
                           <span class='kw'>probit.method</span> <span class='kw'>=</span> <span class='st'>"tflm"</span>)
-<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model2a</span>)</div><div class='img'><img src='plot.FitSigma.batch-6.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model2a</span>, <span class='kw'>grid</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='plot.FitSigma.batch-7.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model2a</span>)</div><div class='img'><img src='plot.FitSigma.batch-5.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model2a</span>, <span class='kw'>grid</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='plot.FitSigma.batch-6.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='co'># Linear model after probit transformation (with cv)</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='no'>model2b</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='FitSigma.batch.html'>FitSigma.batch</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>df</span>, <span class='kw'>group</span> <span class='kw'>=</span> <span class='st'>"crop"</span>,
                           <span class='kw'>viability.percent</span> <span class='kw'>=</span> <span class='st'>"viabilitypercent"</span>,
-                          <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>, <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"period"</span>,
+                          <span class='kw'>samp.size</span> <span class='kw'>=</span> <span class='st'>"sampsize"</span>,
+                          <span class='kw'>storage.period</span> <span class='kw'>=</span> <span class='st'>"storageperiod"</span>,
                           <span class='kw'>probit.method</span> <span class='kw'>=</span> <span class='st'>"tflm"</span>,
                           <span class='kw'>use.cv</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>control.viability</span> <span class='kw'>=</span> <span class='fl'>98</span>)
-<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model2b</span>)</div><div class='img'><img src='plot.FitSigma.batch-8.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model2b</span>, <span class='kw'>grid</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='plot.FitSigma.batch-9.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model2b</span>)</div><div class='img'><img src='plot.FitSigma.batch-7.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>model2b</span>, <span class='kw'>grid</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='plot.FitSigma.batch-8.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

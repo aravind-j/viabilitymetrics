@@ -24,46 +24,20 @@
 #' @export
 #'
 #' @examples
-#' df1 <- data.frame(period = 1:15)
-#' df1$sampsize <- 50
 #'
-#' df3 <- df2 <- df1
-#'
-#' df1$crop <- "Wheat"
-#' df1$vcindex <- 136
-#' df2$crop <- "Soybean"
-#' df2$vcindex <- 59
-#' df3$crop <- "Tomato"
-#' df3$vcindex <- 78
-#'
-#' df <- rbind(df1, df2, df3)
-#' rm(df1, df2, df3)
-#'
-#' df$viabilitypercent <- mapply(FinalViability, period = df$period,
-#'                               vcindex = df$vcindex,
-#'                               MoreArgs = list(initial = PercentAdjust(100, 50),
-#'                                               mc = 7, temp = 25,
-#'                                               years = TRUE),
-#'                               SIMPLIFY = TRUE)
-#'
-#' df$viabilitypercent <- round(df$viabilitypercent)
-#' df$viabilitypercent[df$viabilitypercent == 99] <- 100
-#' df$crop <- as.factor(df$crop)
-#'
-#' df <- df[, c("crop", "period", "viabilitypercent", "sampsize")]
-#' df[df$crop == "Wheat",]$viabilitypercent <- df[df$crop == "Wheat",]$viabilitypercent - 2
-#'
-#'
-#' plot(df$period, df$viabilitypercent, col = df$crop)
-#' legend(10, 60, legend=levels(df$crop),
-#'        col = c("black", "red", "green"), pch = 1)
+#' data(seedsurvival)
+#' df <- seedsurvival[seedsurvival$moistruecontent == 7 &
+#'                      seedsurvival$temperature == 25,
+#'                    c("crop", "storageperiod", "rep",
+#'                      "viabilitypercent", "sampsize")]
 #'
 #' #----------------------------------------------------------------------------
 #' # Generalised linear model with probit link function (without cv)
 #' #----------------------------------------------------------------------------
 #' model1a <- FitSigma.batch(data = df, group = "crop",
 #'                           viability.percent = "viabilitypercent",
-#'                           samp.size = "sampsize", storage.period = "period",
+#'                           samp.size = "sampsize",
+#'                           storage.period = "storageperiod",
 #'                           probit.method = "glm")
 #' plot(model1a)
 #' plot(model1a, grid = TRUE)
@@ -73,7 +47,8 @@
 #' #----------------------------------------------------------------------------
 #' model1b <- FitSigma.batch(data = df, group = "crop",
 #'                           viability.percent = "viabilitypercent",
-#'                           samp.size = "sampsize", storage.period = "period",
+#'                           samp.size = "sampsize",
+#'                           storage.period = "storageperiod",
 #'                           probit.method = "glm",
 #'                           use.cv = TRUE, control.viability = 98)
 #' plot(model1b)
@@ -84,7 +59,8 @@
 #' #----------------------------------------------------------------------------
 #' model2a <- FitSigma.batch(data = df, group = "crop",
 #'                           viability.percent = "viabilitypercent",
-#'                           samp.size = "sampsize", storage.period = "period",
+#'                           samp.size = "sampsize",
+#'                           storage.period = "storageperiod",
 #'                           probit.method = "tflm")
 #' plot(model2a)
 #' plot(model2a, grid = TRUE)
@@ -94,7 +70,8 @@
 #' #----------------------------------------------------------------------------
 #' model2b <- FitSigma.batch(data = df, group = "crop",
 #'                           viability.percent = "viabilitypercent",
-#'                           samp.size = "sampsize", storage.period = "period",
+#'                           samp.size = "sampsize",
+#'                           storage.period = "storageperiod",
 #'                           probit.method = "tflm",
 #'                           use.cv = TRUE, control.viability = 98)
 #' plot(model2b)

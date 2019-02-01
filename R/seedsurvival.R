@@ -7,22 +7,25 @@
 #' \if{latex}{\figure{seedsurvival.pdf}}
 #'
 #' @format A data frame with 7 columns: \describe{ \item{crop}{The crop name.}
-#'   \item{mc}{The moisture content (\%).} \item{temp}{The temperature (°C).}
-#'   \item{period}{The year at which viability was recorded.} \item{rep}{The
-#'   replication.} \item{viabilitypercent}{The viability percentage value
-#'   recorded.} \item{sampsize}{The sample size used for estimating viability
-#'   percentage.} }
+#'   \item{moistruecontent}{The moisture content (\%).} \item{temperature}{The
+#'   temperature (°C).} \item{storageperiod}{The period of storage, i.e. the
+#'   year at which viability was recorded.} \item{rep}{The replication.}
+#'   \item{viabilitypercent}{The viability percentage value recorded.}
+#'   \item{sampsize}{The sample size used for estimating viability percentage.}
+#'   }
 #'
 #' @encoding UTF-8
 #'
 #' @examples
 #'
-#' library(ggplot2, quietly = TRUE)
+#' # Load ggplot2 package
+#' library(ggplot2)
 #'
-#' ggplot(data = seedsurvival, aes(x = period, y = viabilitypercent)) +
+#' # Plot with seedsurvival dataset with ggplot2
+#' ggplot(data = seedsurvival, aes(x = storageperiod, y = viabilitypercent)) +
 #'   geom_point(aes(colour = crop), alpha = 0.5) +
 #'   labs(x = "Storage period (years)", y = "Viability (%)") +
-#'   facet_grid(crop + mc ~ temp) +
+#'   facet_grid(crop + moistruecontent ~ temperature) +
 #'   theme_bw() +
 #'   theme(axis.text = element_text(colour = "black"),
 #'         legend.title = element_blank())
