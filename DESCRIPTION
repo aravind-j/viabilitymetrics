@@ -21,13 +21,13 @@ Authors@R: c(
     person("ICAR-NBGPR",
            role = "cph",
 		       comment = c(url = "www.nbpgr.ernet.in")))
-Description: An implementation of viability equations of Ellis and Roberts 
-    (1980) <doi:10/gcshwj> and Mead and Grey (1999) <doi:10/gcsgt7> for seed
-    viability curve fitting and calculation of several seed viability metrics
-    such as storage period, final viability, storage moisture content, storage
-    temperature and days to loose one probit viablity. The package further
-    includes various conversions and transformations associated with seed
-    viability calculations.
+Description: An implementation of the improved seed viability equations of 
+    Ellis and Roberts (1980) <doi:10/gcshwj> and its modification by Mead and 
+    Grey (1999) <doi:10/gcsgt7> for seed viability curve fitting and 
+    calculation of several seed viability metrics such as storage period, final 
+    viability, storage moisture content, storage temperature and days to loose 
+    one probit viablity. The package further includes various conversions and 
+    transformations associated with seed viability calculations.
 Copyright: 2017-2018, ICAR-NBPGR
 License: GPL-2 | GPL-3
 Encoding: UTF-8
