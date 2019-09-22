@@ -8,21 +8,25 @@
 
 <title>Viability constants — viabilityconstants • viabilitymetrics</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -38,13 +42,14 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Viability constants — viabilityconstants" />
 
+<meta property="og:title" content="Viability constants — viabilityconstants" />
 <meta property="og:description" content="A dataset of the known species-specific seed viability constants estimated
 from the 'improved seed viability equation' of
 Ellis and Roberts (1980)
 ." />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -67,6 +72,7 @@ Ellis and Roberts (1980)
 
   gtag('config', 'UA-116693474-2');
 </script>
+
 
   </head>
 
@@ -119,7 +125,6 @@ Ellis and Roberts (1980)
   </a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/viabilitymetrics">
@@ -141,6 +146,7 @@ Ellis and Roberts (1980)
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -152,16 +158,15 @@ Ellis and Roberts (1980)
     </div>
 
     <div class="ref-description">
-    
     <p>A dataset of the known species-specific seed viability constants estimated
 from the 'improved seed viability equation' of
 Ellis and Roberts (1980)
 .</p>
-    
     </div>
 
     <pre class="usage"><span class='no'>viabilityconstants</span></pre>
-        
+
+
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>A data frame with 7 columns:</p><dl class='dl-horizontal'>
@@ -176,21 +181,19 @@ Ellis and Roberts (1980)
   <i>C<sub>H</sub></i></p></dd> <dt>Cq</dt><dd><p>The
   species-specific temperature constant
   <i>C<sub>Q</sub></i></p></dd>
-  <dt>Reference</dt><dd><p>Source of the data.</p></dd> </dl>
-    
+  <dt>Reference</dt><dd><p>Source of the data.</p></dd> 
+</dl>
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>Primarily from Hong et al. (1996)
 ,
   updated with more species. The source for each record is mentioned in the
   <strong>Reference</strong> column.</p>
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Various functions such as <code><a href='Sigma.html'>Sigma</a></code>, <code><a href='FinalViability.html'>StorageMC</a></code> use
 the viability constants from this dataset for computation through the
 argument <code>vcindex</code>.</p>
-    
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     <p>Viability constants derived from storage experiment at a single
@@ -198,7 +201,6 @@ argument <code>vcindex</code>.</p>
   <i>C<sub>H</sub></i> and
   <i>C<sub>Q</sub></i> are the universal
   temperature coefficients (0.0329 and 0.000478 respectively).</p>
-    
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Ali TS (2014).
@@ -267,7 +269,7 @@ argument <code>vcindex</code>.</p>
 &#8220;The quantification of ageing and survival in orthodox seeds.&#8221;
 <em>Seed Science and Technology</em>.<br /><br /> Fantinatti JB, Usberti R (2007).
 &#8220;Seed viability constants for <em>Eucalyptus grandis</em>.&#8221;
-<em>Pesquisa Agropecuaria Brasileira</em>, <b>42</b>(1), 111--117.<br /><br /> Ghaderi FF, Soltani A, Sadeghipour HR (2010).
+<em>Pesquisa Agropecuaria Brasileira</em>, <b>42</b>(1), 111--117.<br /><br /> Ghaderi-Far F, Soltani A, Sadeghipour HR (2010).
 &#8220;Determination of seed viability constants in medicinal pumpkin (<em>Cucurbita pepo</em> L. subsp. <em>pepo</em>. convar. <em>pepo</em> var. <em>styriaca</em> Greb), borago (<em>Borago officinalis</em> L.) and black cumin (<em>Nigella sativa</em> L.).&#8221;
 <em>Journal of Plant Production (Journal of Agricultural Sciences and Natural Resources)</em>, <b>17</b>(3), 53--66.<br /><br /> Hay FR, Mead A, Manger K, Wilson FJ (2003).
 &#8220;One-step analysis of seed storage data and the longevity of <em>Arabidopsis thaliana</em> seeds.&#8221;
@@ -319,18 +321,17 @@ Ph.D. thesis, Universidade Estadual do Oeste do Parana.<br /><br /> Kebreab E, M
 <em>Crop Science</em>, <b>29</b>(2), 471--476.<br /><br /> Zewdie M, Ellis RH (1991).
 &#8220;Response of tef and niger seed longevity to storage temperature and moisture.&#8221;
 <em>Seed Science and Technology</em>, <b>19</b>(2), 319--329.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'># Soybean</span>
-<span class='no'>viabilityconstants</span>[<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/grep'>grepl</a></span>(<span class='st'>"glycine"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>viabilityconstants</span>$<span class='no'>Species</span>,
+<span class='no'>viabilityconstants</span>[<span class='fu'><a href='https://rdrr.io/r/base/grep.html'>grepl</a></span>(<span class='st'>"glycine"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>viabilityconstants</span>$<span class='no'>Species</span>,
                          <span class='kw'>ignore.case</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>),]</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 2 x 7</span><span>
 #&gt;   Index Species        Ke    Cw     Ch      Cq Reference                        
 #&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                            
 #&gt; </span><span style='color: #555555;'>1</span><span>    59 Glycine max  7.52  4.09 0.032</span><span style='text-decoration: underline;'>9</span><span> 4.78</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Ellis et al., 1982; Dickie et al~
 #&gt; </span><span style='color: #555555;'>2</span><span>    60 Glycine max  7.29  4.00 0.029</span><span style='text-decoration: underline;'>5</span><span> 4.91</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Ellis, 1988                      </div><div class='input'><span class='co'># Rice</span>
-<span class='no'>viabilityconstants</span>[<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/grep'>grepl</a></span>(<span class='st'>"oryza"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>viabilityconstants</span>$<span class='no'>Species</span>,
+<span class='no'>viabilityconstants</span>[<span class='fu'><a href='https://rdrr.io/r/base/grep.html'>grepl</a></span>(<span class='st'>"oryza"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>viabilityconstants</span>$<span class='no'>Species</span>,
                          <span class='kw'>ignore.case</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>),]</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 8 x 7</span><span>
 #&gt;   Index Species               Ke    Cw     Ch      Cq Reference                 
 #&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                     
@@ -342,36 +343,30 @@ Ph.D. thesis, Universidade Estadual do Oeste do Parana.<br /><br /> Kebreab E, M
 #&gt; </span><span style='color: #555555;'>6</span><span>    90 Oryza sativa ssp.~  8.42  4.90 0.032</span><span style='text-decoration: underline;'>9</span><span> 4.78</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Ellis et al., 1992        
 #&gt; </span><span style='color: #555555;'>7</span><span>    91 Oryza sativa ssp.~  6.63  5.51 0.032</span><span style='text-decoration: underline;'>9</span><span> 4.78</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Bam et al., 2008          
 #&gt; </span><span style='color: #555555;'>8</span><span>    92 Oryza sativa ssp.~  8.74  4.90 0.032</span><span style='text-decoration: underline;'>9</span><span> 4.78</span><span style='color: #555555;'>e</span><span style='color: #BB0000;'>-4</span><span> Ellis et al., 1992        </div><div class='input'><span class='co'># Wheat</span>
-<span class='no'>viabilityconstants</span>[<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/grep'>grepl</a></span>(<span class='st'>"triticum"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>viabilityconstants</span>$<span class='no'>Species</span>,
+<span class='no'>viabilityconstants</span>[<span class='fu'><a href='https://rdrr.io/r/base/grep.html'>grepl</a></span>(<span class='st'>"triticum"</span>, <span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>viabilityconstants</span>$<span class='no'>Species</span>,
                          <span class='kw'>ignore.case</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>),]</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 2 x 7</span><span>
 #&gt;   Index Species               Ke    Cw     Ch       Cq Reference         
 #&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>             
 #&gt; </span><span style='color: #555555;'>1</span><span>   136 Triticum aestivum   9.04  5.18 0.035</span><span style='text-decoration: underline;'>1</span><span> 0.000</span><span style='text-decoration: underline;'>475</span><span> Ellis et al., 2007
-#&gt; </span><span style='color: #555555;'>2</span><span>   137 Triticum aestivum*  9.42  5.86 0.032</span><span style='text-decoration: underline;'>9</span><span> 0.000</span><span style='text-decoration: underline;'>478</span><span> Ellis et al., 1990</div></span><span class='co'># NOT RUN {</span>
+#&gt; </span><span style='color: #555555;'>2</span><span>   137 Triticum aestivum*  9.42  5.86 0.032</span><span style='text-decoration: underline;'>9</span><span> 0.000</span><span style='text-decoration: underline;'>478</span><span> Ellis et al., 1990</div><div class='input'><span class='co'># \dontrun{</span>
 <span class='co'># View dataset</span>
-<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/View'>View</a></span>(<span class='no'>viabilityconstants</span>)
-<span class='co'># }</span><div class='input'>
-</div></pre>
+<span class='fu'><a href='https://rdrr.io/r/utils/View.html'>View</a></span>(<span class='no'>viabilityconstants</span>)
+<span class='co'># }</span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      
       <li><a href="#format">Format</a></li>
-
       <li><a href="#source">Source</a></li>
-
       <li><a href="#details">Details</a></li>
-
       <li><a href="#note">Note</a></li>
-
       <li><a href="#references">References</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -379,8 +374,9 @@ Ph.D. thesis, Universidade Estadual do Oeste do Parana.<br /><br /> Kebreab E, M
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.0.</p>
 </div>
+
       </footer>
    </div>
 
@@ -403,6 +399,8 @@ Ph.D. thesis, Universidade Estadual do Oeste do Parana.<br /><br /> Kebreab E, M
 </script>
 
 
+
   </body>
 </html>
+
 

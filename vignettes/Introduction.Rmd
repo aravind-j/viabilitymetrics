@@ -23,12 +23,13 @@ output:
   pdf_document:
     dev: cairo_pdf
     fig_caption: no
+    toc: no
   html_document:
     df_print: paged
+    toc: yes
 csl: frontiers.csl
 bibliography: REFERENCES.bib
 link-citations: yes
-toc: no
 vignette: |
   %\VignetteIndexEntry{Introduction}
   %\usepackage[utf8]{inputenc}
@@ -72,7 +73,9 @@ knitr::opts_chunk$set(
     \vspace{-20pt}
 \end{wrapfigure}
 
-## Overview <img src="https://raw.githubusercontent.com/aravind-j/viabilitymetrics/master/inst/extdata/viabilitymetrics.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
+<img src="https://raw.githubusercontent.com/aravind-j/viabilitymetrics/master/inst/extdata/viabilitymetrics.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
+
+## Overview
 
 The package `viabilitymetrics`..............
 

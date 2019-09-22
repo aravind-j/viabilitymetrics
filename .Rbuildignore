@@ -12,6 +12,7 @@
 ^vignettes/Introduction\.tex$
 ^vignettes/Introduction\.aux$
 ^vignettes/Introduction\.out$
+^vignettes/Introduction\.log$
 ^README\.utf8.Rmd$
 ^README\.Rmd$
 ^README\.html$

@@ -21,7 +21,7 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org
 [![Project Status:
 WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2019--01--30-yellowgreen.svg)](/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2019--09--22-yellowgreen.svg)](/commits/master)
 <!-- [![Rdoc](http://www.rdocumentation.org/badges/version/viabilitymetrics)](http://www.rdocumentation.org/packages/viabilitymetrics) -->
 <!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963) -->
 [![Analytics](https://pro-pulsar-193905.appspot.com/UA-116693474-1/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
@@ -30,16 +30,17 @@ WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org
 
 ## Description
 
-<!-- An implementation of viability equations of Ellis and Roberts (1980) [<doi:10/gcshwj>](https://doi.org/10/gcshwj) and Mead and Grey (1999) [<doi:10/gcsgt7>](https://doi.org/10/gcsgt7) for seed viability curve fitting and calculation of several seed viability metrics such as storage period, final viability, storage moisture content, storage temperature and days to loose one probit viablity. The package further includes various conversions and transformations associated with seed viability calculations. -->
+<!-- An implementation of the improved seed viability equations of Ellis and Roberts (1980) [<doi:10/gcshwj>](https://doi.org/10/gcshwj) and its modification by Mead and Grey (1999) [<doi:10/gcsgt7>](https://doi.org/10/gcsgt7) for seed viability curve fitting and calculation of several seed viability metrics such as storage period, final viability, storage moisture content, storage temperature and days to loose one probit viablity. The package further includes various conversions and transformations associated with seed viability calculations. -->
 
-An implementation of viability equations of Ellis and Roberts (1980)
-\<<a href='https://doi.org/10/gcshwj'>doi:10/gcshwj</a>\> and Mead and
-Grey (1999) \<<a href='https://doi.org/10/gcsgt7'>doi:10/gcsgt7</a>\>
-for seed viability curve fitting and calculation of several seed
-viability metrics such as storage period, final viability, storage
-moisture content, storage temperature and days to loose one probit
-viablity. The package further includes various conversions and
-transformations associated with seed viability calculations.
+An implementation of the improved seed viability equations of Ellis and
+Roberts (1980) \<<a href='https://doi.org/10/gcshwj'>doi:10/gcshwj</a>\>
+and its modification by Mead and Grey (1999)
+\<<a href='https://doi.org/10/gcsgt7'>doi:10/gcsgt7</a>\> for seed
+viability curve fitting and calculation of several seed viability
+metrics such as storage period, final viability, storage moisture
+content, storage temperature and days to loose one probit viablity. The
+package further includes various conversions and transformations
+associated with seed viability calculations.
 
 ## Installation
 
