@@ -38,7 +38,7 @@
 #'                           viability.percent = "viabilitypercent",
 #'                           samp.size = "sampsize",
 #'                           storage.period = "storageperiod",
-#'                           generalised = TRUE)
+#'                           generalised.model = TRUE)
 #' plot(model1a)
 #' plot(model1a, grid = TRUE)
 #'
@@ -49,7 +49,7 @@
 #'                           viability.percent = "viabilitypercent",
 #'                           samp.size = "sampsize",
 #'                           storage.period = "storageperiod",
-#'                           generalised = TRUE,
+#'                           generalised.model = TRUE,
 #'                           use.cv = TRUE, control.viability = 98)
 #' plot(model1b)
 #' plot(model1b, grid = TRUE)
@@ -61,7 +61,7 @@
 #'                           viability.percent = "viabilitypercent",
 #'                           samp.size = "sampsize",
 #'                           storage.period = "storageperiod",
-#'                           generalised = FALSE)
+#'                           generalised.model = FALSE)
 #' plot(model2a)
 #' plot(model2a, grid = TRUE)
 #'
@@ -72,7 +72,7 @@
 #'                           viability.percent = "viabilitypercent",
 #'                           samp.size = "sampsize",
 #'                           storage.period = "storageperiod",
-#'                           generalised = FALSE,
+#'                           generalised.model = FALSE,
 #'                           use.cv = TRUE, control.viability = 98)
 #' plot(model2b)
 #' plot(model2b, grid = TRUE)

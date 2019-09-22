@@ -82,7 +82,7 @@
 #' @param storage.period The name of the column in \code{data} with the time
 #'   periods at which the viabilty percentages was recorded as a character
 #'   string.
-#' @param generalised logical. If \code{TRUE} (recommended), the seed viability
+#' @param generalised.model logical. If \code{TRUE} (recommended), the seed viability
 #'   curve is fitted as a generalised linear model with a probit link function.
 #'   If \code{TRUE}, it is fitted as a linear model with probit transformed
 #'   viability percentages.
@@ -95,7 +95,7 @@
 #' @return A list of class \code{FitSigma} with the following components:
 #'   \item{data}{A data frame with the data used for computing the model.}
 #'   \item{model}{The fitted model as an object of class \code{glm} (if
-#'   \code{generalised = TRUE}) or \code{lm} (if \code{generalised = FALSE}).}
+#'   \code{generalised.model = TRUE}) or \code{lm} (if \code{generalised.model = FALSE}).}
 #'   \item{parameters}{A data.frame of parameter estimates, standard errors and
 #'   p value.} \item{fit}{A one-row data frame with estimates of model fitness
 #'   such as log likelyhoods, Akaike Information Criterion, Bayesian Information
@@ -130,7 +130,7 @@
 #' #----------------------------------------------------------------------------
 #' model1a <- FitSigma(data = df, viability.percent = "viabilitypercent",
 #'                    samp.size = "sampsize", storage.period = "storageperiod",
-#'                    generalised = TRUE)
+#'                    generalised.model = TRUE)
 #' model1a
 #' # Raw model
 #' model1a$model
@@ -146,7 +146,7 @@
 #' #----------------------------------------------------------------------------
 #' model1b <- FitSigma(data = df, viability.percent = "viabilitypercent",
 #'                    samp.size = "sampsize", storage.period = "storageperiod",
-#'                    generalised = TRUE,
+#'                    generalised.model = TRUE,
 #'                    use.cv = TRUE, control.viability = 98)
 #' model1b
 #' # Raw model
@@ -163,7 +163,7 @@
 #' #----------------------------------------------------------------------------
 #' model2a <- FitSigma(data = df, viability.percent = "viabilitypercent",
 #'                    samp.size = "sampsize", storage.period = "storageperiod",
-#'                    generalised = FALSE)
+#'                    generalised.model = FALSE)
 #' model2a
 #' # Raw model
 #' model2a$model
@@ -179,7 +179,7 @@
 #' #----------------------------------------------------------------------------
 #' model2b <- FitSigma(data = df, viability.percent = "viabilitypercent",
 #'                    samp.size = "sampsize", storage.period = "storageperiod",
-#'                    generalised = FALSE,
+#'                    generalised.model = FALSE,
 #'                    use.cv = TRUE, control.viability = 98)
 #' model2b
 #' # Raw model
@@ -192,7 +192,7 @@
 #' model2b$fit
 #'
 FitSigma <- function(data, viability.percent, samp.size, storage.period,
-                     generalised = TRUE,
+                     generalised.model = TRUE,
                      use.cv = FALSE, control.viability = 100) {
     # Check if data.frame
     if (!is.data.frame(data)) {
@@ -247,12 +247,12 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
   if (any(!findInterval(data[, viability.percent], c(0, 100),
                         rightmost.closed = TRUE) == 1)) {
     stop('Data in "viability.percent" is not within range',
-         ' (0 < "viability.percent" < 100).')
+         ' (0 <= "viability.percent" <= 100).')
   }
 
-  # Check if argument generalised is of type logical with unit length
-  if (!is.logical(generalised) || length(generalised) != 1) {
-    stop("'generalised' should be a logical vector of length 1.")
+  # Check if argument generalised.model is of type logical with unit length
+  if (!is.logical(generalised.model) || length(generalised.model) != 1) {
+    stop("'generalised.model' should be a logical vector of length 1.")
   }
 
   # Check if argument use.cv is of type logical with unit length
@@ -278,7 +278,7 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
 
   data$viability.count <- (data$viability.percent * data$samp.size) / 100
 
-  if (generalised) { # GLM
+  if (generalised.model) { # GLM
     if(use.cv) { # GLM with CV
       cvc <- control.viability / 100
       frmla <- formula(paste("(viability.count/samp.size)/", cvc,
@@ -293,13 +293,13 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
                                weights = data$samp.size))
   }
 
-  if (!generalised) { # LM
-    if(use.cv) { # GLM with CV
+  if (!generalised.model) { # LM
+    if(use.cv) { # LM with CV
       cvc <- control.viability / 100
       frmla <- formula(paste("(Percent2NED(PercentAdjust",
                              "(viability.percent, samp.size)))/",
                              cvc, " ~ storage.period", sep = ""))
-    } else { # GLM without CV
+    } else { # LM without CV
       frmla <- formula(paste("Percent2NED(PercentAdjust",
                              "(viability.percent, samp.size))",
                              " ~ storage.period", sep = ""))
@@ -330,7 +330,7 @@ FitSigma <- function(data, viability.percent, samp.size, storage.period,
               fit = fit, Ki = Ki, sigma = sigma,
               message = probit.model$message)
 
-  attr(out, "method") <- ifelse(generalised, "glm", "tflm")
+  attr(out, "method") <- ifelse(generalised.model, "glm", "tflm")
   attr(out, "cv") <- c(logical = use.cv, value = control.viability)
 
   class(out) <- "FitSigma"

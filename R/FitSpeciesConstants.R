@@ -1,5 +1,8 @@
 
 #' @import gnm
+#' @import minpack.lm
+#' @importFrom broom glance
+#' @importFrom broom tidy
 FitSpeciesConstants <- function(data, storage.mc, storage.t,
                                 viability.percent, samp.size,
                                 storage.period, one.step = TRUE,
@@ -93,9 +96,6 @@ FitSpeciesConstants <- function(data, storage.mc, storage.t,
          ' (0 < "viability.percent" < 100).')
   }
 
-  # Check probit.method
-  probit.method <- match.arg(probit.method)
-
   # Check if argument one.step is of type logical with unit length
   if (!is.logical(one.step) || length(one.step) != 1) {
     stop("'one.step' should be a logical vector of length 1.")
@@ -131,6 +131,14 @@ FitSpeciesConstants <- function(data, storage.mc, storage.t,
   }
 
   if (universal.temp.constants) {
+
+    if (length(unique(data[, storage.t])) != 1) {
+      stop("When 'universal.temp.constants == TRUE', values in 'storage.t'",
+           " should be unique.")
+    } else {
+      stemp <- unique(data[, storage.t])
+    }
+
     data <- data.frame(mc = data[, storage.mc],
                        storage.period = data[, c(storage.period)],
                        viability.percent = data[, c(viability.percent)],
@@ -149,6 +157,11 @@ FitSpeciesConstants <- function(data, storage.mc, storage.t,
   if (one.step == TRUE) { # One step fitting
 
 
+    if (generalised.model){ # GLM
+
+    } else { # LM
+
+    }
 
 
     # gnm(cbind(viability.count, samp.size - viability.count) ~ FitSC.nonlin(p = storage.period,
@@ -160,92 +173,67 @@ FitSpeciesConstants <- function(data, storage.mc, storage.t,
   } else { # Two step fitting
 
     # Step 1 : Fetch sigmas
+    # [with & without cv]
+    # [with glm or lm]
     #----------------------
     data$mc_temp <- interaction(as.factor(data$mc), as.factor(data$temp),
                                 sep = "_")
 
-    # FitSigma.batch(data = data, group = "mc_temp",
-    #                viability.percent = "viability.percent",
-    #                samp.size = "samp.size",
-    #                storage.period = "storage.period")
+    sigmadf <- FitSigma.batch(data = data, group = "mc_temp",
+                              viability.percent = "viability.percent",
+                              samp.size = "samp.size",
+                              storage.period = "storage.period",
+                              generalised.model = generalised.model,
+                              use.cv = use.cv,
+                              control.viability = control.viability)
+
+    sigmadf <- sigmadf$models
+    sigmadf$mc <- as.numeric(gsub("_\\d+", "", sigmadf$group))
+    sigmadf$temp <- as.numeric(gsub("\\d+_", "", sigmadf$group))
+    sigmadf$temp2 <- sigmadf$temp ^ 2
+
+    # Step 2 : Fetch species constants
+    # [with & without quadratic temp]
+    # [with & without universal temp]
+    #---------------------------------
+
+    if (temp.quadratic) { # With quadratic temp
+      if (!universal.temp.constants) { # without universal temp coefficients
+        frmla <- as.formula("log10(sigma) ~ log10(mc) + temp + square(temp)")
+      } else { # With universal temp coefficients
+        frmla <- as.formula("log10(sigma) ~ log10(mc)")
+      }
+    } else { # Without quadratic temp
+      frmla <- as.formula("log10(sigma) ~ log10(mc) + temp")
+    }
+
+
+    spmodel <- withWE(lm(formula = frmla, data = sigmadf))
+
+    # procession of sp model
+    # special procession of model with universal sp constants
 
 
   }
 
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Function of class "nonlin" for gnm
-FitSC.nonlin <- function(p, mc, temp) {
-
-  list(predictors = list(ke = 1, cw = 1, ch = 1, cq = 1),
-       variables = list(substitute(p), substitute(mc), substitute(temp)),
-       term = function(predLabels, varLabels) {
-         sprintf("%s / (10 ^ (%s - (%s * log10(%s)) - (%s * %s) - (%s * ((%s) ^ 2))))",
-                 varLabels[1], predLabels[1],
-                 predLabels[2], varLabels[2],
-                 predLabels[3], varLabels[3],
-                 predLabels[4], varLabels[3])
-         })
-
-}
-class(FitSC.nonlin) <- "nonlin"
-
-FitSC.nonlin(p, mc, temp)$term(c("ke", "cw", "ch", "cq"),
-                               c("p", "mc", "temp"))
-
-# constraints ?
-# - LHS: 0-100% OR 0-CV%
-# start ?
-
-# Function for plotting
-FitSC.fun <- function(p, mc, temp, ki, ke, cw, ch, cq) {
-
-  NED2Percent(ki - (p / (10 ^ (ke - (cw * log(mc))
-                               - (ch * temp) - (cq * (temp ^ 2) )))))
+return(out)
 
 }
 
-# model without t^2
-
-# Function of class "nonlin" for gnm
-FitSC.nonlin2 <- function(p, mc, temp) {
-
-  list(predictors = list(ke = 1, cw = 1, ch = 1, cq = 1),
-       variables = list(substitute(p), substitute(mc), substitute(temp)),
-       term = function(predLabels, varLabels) {
-         sprintf("%s / (10 ^ (%s - (%s * log10(%s)) - (%s * %s)))",
-                 varLabels[1], predLabels[1],
-                 predLabels[2], varLabels[2],
-                 predLabels[3], varLabels[3])
-       })
-
-}
-class(FitSC.nonlin2) <- "nonlin"
-
-FitSC.nonlin2(p, mc, temp)$term(c("ke", "cw", "ch", "cq"),
-                               c("p", "mc", "temp"))
-
-# model without any t
 
 
-#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

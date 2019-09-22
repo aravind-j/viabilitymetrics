@@ -49,7 +49,7 @@
 #'                           viability.percent = "viabilitypercent",
 #'                           samp.size = "sampsize",
 #'                           storage.period = "storageperiod",
-#'                           generalised = TRUE)
+#'                           generalised.model = TRUE)
 #' model1a
 #'
 #' #----------------------------------------------------------------------------
@@ -59,7 +59,7 @@
 #'                           viability.percent = "viabilitypercent",
 #'                           samp.size = "sampsize",
 #'                           storage.period = "storageperiod",
-#'                           generalised = TRUE,
+#'                           generalised.model = TRUE,
 #'                           use.cv = TRUE, control.viability = 98)
 #' model1b
 #'
@@ -70,7 +70,7 @@
 #'                           viability.percent = "viabilitypercent",
 #'                           samp.size = "sampsize",
 #'                           storage.period = "storageperiod",
-#'                           generalised = FALSE)
+#'                           generalised.model = FALSE)
 #' model2a
 #'
 #' #----------------------------------------------------------------------------
@@ -80,7 +80,7 @@
 #'                           viability.percent = "viabilitypercent",
 #'                           samp.size = "sampsize",
 #'                           storage.period = "storageperiod",
-#'                           generalised = FALSE,
+#'                           generalised.model = FALSE,
 #'                           use.cv = TRUE, control.viability = 98)
 #' model2b
 FitSigma.batch <- function(data, group, ...) {

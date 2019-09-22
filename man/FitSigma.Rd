@@ -7,7 +7,7 @@
 \ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}}}
 \usage{
 FitSigma(data, viability.percent, samp.size, storage.period,
-  generalised = TRUE, use.cv = FALSE, control.viability = 100)
+  generalised.model = TRUE, use.cv = FALSE, control.viability = 100)
 }
 \arguments{
 \item{data}{A data frame with the seed viability data recorded periodically.
@@ -26,7 +26,7 @@ used for calculating viability percentages as a character string.}
 periods at which the viabilty percentages was recorded as a character
 string.}
 
-\item{generalised}{logical. If \code{TRUE} (recommended), the seed viability
+\item{generalised.model}{logical. If \code{TRUE} (recommended), the seed viability
 curve is fitted as a generalised linear model with a probit link function.
 If \code{TRUE}, it is fitted as a linear model with probit transformed
 viability percentages.}
@@ -42,7 +42,7 @@ is \code{FALSE}.}
 A list of class \code{FitSigma} with the following components:
   \item{data}{A data frame with the data used for computing the model.}
   \item{model}{The fitted model as an object of class \code{glm} (if
-  \code{generalised = TRUE}) or \code{lm} (if \code{generalised = FALSE}).}
+  \code{generalised.model = TRUE}) or \code{lm} (if \code{generalised.model = FALSE}).}
   \item{parameters}{A data.frame of parameter estimates, standard errors and
   p value.} \item{fit}{A one-row data frame with estimates of model fitness
   such as log likelyhoods, Akaike Information Criterion, Bayesian Information
@@ -138,7 +138,7 @@ plot(df$storageperiod, df$viabilitypercent)
 #----------------------------------------------------------------------------
 model1a <- FitSigma(data = df, viability.percent = "viabilitypercent",
                    samp.size = "sampsize", storage.period = "storageperiod",
-                   generalised = TRUE)
+                   generalised.model = TRUE)
 model1a
 # Raw model
 model1a$model
@@ -154,7 +154,7 @@ model1a$fit
 #----------------------------------------------------------------------------
 model1b <- FitSigma(data = df, viability.percent = "viabilitypercent",
                    samp.size = "sampsize", storage.period = "storageperiod",
-                   generalised = TRUE,
+                   generalised.model = TRUE,
                    use.cv = TRUE, control.viability = 98)
 model1b
 # Raw model
@@ -171,7 +171,7 @@ model1b$fit
 #----------------------------------------------------------------------------
 model2a <- FitSigma(data = df, viability.percent = "viabilitypercent",
                    samp.size = "sampsize", storage.period = "storageperiod",
-                   generalised = FALSE)
+                   generalised.model = FALSE)
 model2a
 # Raw model
 model2a$model
@@ -187,7 +187,7 @@ model2a$fit
 #----------------------------------------------------------------------------
 model2b <- FitSigma(data = df, viability.percent = "viabilitypercent",
                    samp.size = "sampsize", storage.period = "storageperiod",
-                   generalised = FALSE,
+                   generalised.model = FALSE,
                    use.cv = TRUE, control.viability = 98)
 model2b
 # Raw model

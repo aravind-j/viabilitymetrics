@@ -2,10 +2,30 @@
 #'
 #' Not exported. Strictly internal
 #'
+#' @section Warning(s)
+#' Returns the value along with the warning message(s).
+#'
+#' @section Error
+#' Returns NA as the value along with the error message.
+#'
 #' @keywords internal
 #'
 #' @param expr The expression to be evaluated.
-#
+#'
+#' @examples
+#' foo <- function(){
+#'   warning("oops")
+#'   1}
+#'
+#' foo <- function(){
+#'   warning("oops")
+#'   warning("again oops")
+#'   1}
+#'
+#' foo <- function(){
+#'   warning("oops")
+#   log("a")}
+#'
 withWE <- function(expr) {
   myWarnings <- NULL
   myError <- NULL
@@ -15,13 +35,14 @@ withWE <- function(expr) {
     invokeRestart("muffleWarning")
   }
 
-  val <- withCallingHandlers(tryCatch(expr, error = function(e) e),
+  val <- withCallingHandlers(tryCatch(expr,error = function(e) e),
                              warning = wHandler)
 
   if(!is.null(myWarnings)) {
     myWarnings <- paste("WARNING:", myWarnings)
-    message <- paste(myWarnings, myError,
-                     collapse = "\n")
+    message <- myWarnings
+    # message <- paste(myWarnings, myError,
+    #                   collapse = "\n")
   } else {
     message <- NA
   }
@@ -30,8 +51,9 @@ withWE <- function(expr) {
 
   if("simpleError" %in% class(out$value)) {
     out$message <- paste("ERROR:", conditionMessage(out$value))
-    out$value <- NULL
+    out$value <- NA
   }
 
+  message(paste(out$message, "\n"))
   return(out)
 }
