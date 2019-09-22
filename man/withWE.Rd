@@ -12,4 +12,38 @@ withWE(expr)
 \description{
 Not exported. Strictly internal
 }
+\section{Warning(s)}{
+
+Returns the value along with the warning message(s).
+}
+
+\section{Error}{
+
+Returns NA as the value along with the error message.
+}
+
+\examples{
+
+foo <- function(){
+  warning("oops")
+}
+
+withWE(foo)
+
+foo <- function(){
+  warning("oops")
+  warning("again oops")
+  1
+}
+
+withWE(foo)
+
+foo <- function(){
+  warning("oops")
+  log("a")
+}
+
+withWE(foo)
+
+}
 \keyword{internal}

@@ -2,29 +2,39 @@
 #'
 #' Not exported. Strictly internal
 #'
-#' @section Warning(s)
-#' Returns the value along with the warning message(s).
-#'
-#' @section Error
-#' Returns NA as the value along with the error message.
 #'
 #' @keywords internal
 #'
 #' @param expr The expression to be evaluated.
 #'
+#' @section Warning(s):
+#' Returns the value along with the warning message(s).
+#'
+#' @section Error:
+#' Returns NA as the value along with the error message.
+#'
 #' @examples
+#'
 #' foo <- function(){
 #'   warning("oops")
-#'   1}
+#' }
+#'
+#' withWE(foo)
 #'
 #' foo <- function(){
 #'   warning("oops")
 #'   warning("again oops")
-#'   1}
+#'   1
+#' }
+#'
+#' withWE(foo)
 #'
 #' foo <- function(){
 #'   warning("oops")
-#   log("a")}
+#'   log("a")
+#' }
+#'
+#' withWE(foo)
 #'
 withWE <- function(expr) {
   myWarnings <- NULL
