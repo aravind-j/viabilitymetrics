@@ -3,6 +3,8 @@
 #' @import minpack.lm
 #' @importFrom broom glance
 #' @importFrom broom tidy
+#' @importFrom stats as.formula
+#' @importFrom stats df
 FitSpeciesConstants <- function(data, storage.mc, storage.t,
                                 viability.percent, samp.size,
                                 storage.period, one.step = TRUE,
