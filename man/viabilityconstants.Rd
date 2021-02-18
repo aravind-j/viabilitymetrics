@@ -4,7 +4,8 @@
 \name{viabilityconstants}
 \alias{viabilityconstants}
 \title{Viability constants}
-\format{A data frame with 7 columns: \describe{ \item{Index}{A unique index
+\format{
+A data frame with 7 columns: \describe{ \item{Index}{A unique index
   value, called by the \code{vcindex} argument in different functions.}
   \item{Species}{The species for which the constants were estimated.}
   \item{Ke}{The species-specific moisture constant
@@ -15,7 +16,8 @@
   \ifelse{html}{\out{<i>C<sub>H</sub></i>}}{\eqn{C_{H}}}} \item{Cq}{The
   species-specific temperature constant
   \ifelse{html}{\out{<i>C<sub>Q</sub></i>}}{\eqn{C_{Q}}}}
-  \item{Reference}{Source of the data.} }}
+  \item{Reference}{Source of the data.} }
+}
 \source{
 Primarily from \insertCite{hong_seed_1996;textual}{viabilitymetrics},
   updated with more species. The source for each record is mentioned in the

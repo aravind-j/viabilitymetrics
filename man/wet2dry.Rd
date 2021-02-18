@@ -102,7 +102,7 @@ MoistureNomograph(min = 0, max = 100, basis = "dry", horiz = FALSE)
 nom <- MoistureNomograph(min = 0, max = 50, basis = "wet", horiz = TRUE)
 library(ggplot2)
 nom + geom_hline(aes(yintercept=30), colour = "red")
-p <- "Scale for converting moisture content values\\nbetween dry and wet basis"
+p <- "Scale for converting moisture content values\nbetween dry and wet basis"
 cap <- "based on Cromarty et al., 1982"
 nom + labs(title  = p, caption = cap) +
   theme(plot.title = element_text(hjust = 0.5))

@@ -6,8 +6,15 @@
 \ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}} and
 \ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}}}
 \usage{
-FitSigma(data, viability.percent, samp.size, storage.period,
-  generalised.model = TRUE, use.cv = FALSE, control.viability = 100)
+FitSigma(
+  data,
+  viability.percent,
+  samp.size,
+  storage.period,
+  generalised.model = TRUE,
+  use.cv = FALSE,
+  control.viability = 100
+)
 }
 \arguments{
 \item{data}{A data frame with the seed viability data recorded periodically.

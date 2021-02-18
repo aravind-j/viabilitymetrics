@@ -5,13 +5,15 @@
 \name{seedsurvival}
 \alias{seedsurvival}
 \title{Seed survival dataset}
-\format{A data frame with 7 columns: \describe{ \item{crop}{The crop name.}
+\format{
+A data frame with 7 columns: \describe{ \item{crop}{The crop name.}
   \item{moistruecontent}{The moisture content (\%).} \item{temperature}{The
   temperature (°C).} \item{storageperiod}{The period of storage, i.e. the
   year at which viability was recorded.} \item{rep}{The replication.}
   \item{viabilitypercent}{The viability percentage value recorded.}
   \item{sampsize}{The sample size used for estimating viability percentage.}
-  }}
+  }
+}
 \usage{
 seedsurvival
 }
