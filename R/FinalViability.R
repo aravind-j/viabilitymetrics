@@ -285,7 +285,7 @@
 #'
 
 
-#' @name FinalViability
+#' @rdname FinalViability
 #' @export
 FinalViability <- function(initial, period, vcindex, vcdirect, mc, temp,
                            years = FALSE) {
@@ -321,7 +321,7 @@ FinalViability <- function(initial, period, vcindex, vcdirect, mc, temp,
 
 }
 
-#' @name FinalViability
+#' @rdname FinalViability
 #' @export
 StorageMC <- function(initial, final, period, vcindex, vcdirect, temp,
                       years = FALSE) {
@@ -439,7 +439,7 @@ StorageMC <- function(initial, final, period, vcindex, vcdirect, temp,
 }
 
 
-#' @name FinalViability
+#' @rdname FinalViability
 #' @export
 StorageTemp <- function(initial, final, period, vcindex, vcdirect, mc,
                         years = FALSE, unit = c("celsius", "fahrenheit")) {
@@ -572,7 +572,7 @@ StorageTemp <- function(initial, final, period, vcindex, vcdirect, mc,
 }
 
 
-#' @name FinalViability
+#' @rdname FinalViability
 #' @export
 StoragePeriod <- function(initial, final, vcindex, vcdirect, mc, temp,
                           years = FALSE) {

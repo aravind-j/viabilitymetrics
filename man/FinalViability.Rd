@@ -8,13 +8,20 @@
 \alias{StoragePeriod}
 \title{Predict variables from the seed viability equation}
 \usage{
-FinalViability(initial, period, vcindex, vcdirect, mc, temp,
-  years = FALSE)
+FinalViability(initial, period, vcindex, vcdirect, mc, temp, years = FALSE)
 
 StorageMC(initial, final, period, vcindex, vcdirect, temp, years = FALSE)
 
-StorageTemp(initial, final, period, vcindex, vcdirect, mc, years = FALSE,
-  unit = c("celsius", "fahrenheit"))
+StorageTemp(
+  initial,
+  final,
+  period,
+  vcindex,
+  vcdirect,
+  mc,
+  years = FALSE,
+  unit = c("celsius", "fahrenheit")
+)
 
 StoragePeriod(initial, final, vcindex, vcdirect, mc, temp, years = FALSE)
 }
