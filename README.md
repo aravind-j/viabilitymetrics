@@ -19,10 +19,10 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org
 [![develVersion](https://img.shields.io/badge/devel%20version-0.0.0.9100-orange.svg)](https://github.com/aravind-j/viabilitymetrics)
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/viabilitymetrics/total.svg)] -->
 [![Project Status:
-WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
-[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2019--09--22-yellowgreen.svg)](/commits/master)
-<!-- [![Rdoc](http://www.rdocumentation.org/badges/version/viabilitymetrics)](http://www.rdocumentation.org/packages/viabilitymetrics) -->
+WIP](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2021--02--18-yellowgreen.svg)](/commits/master)
+<!-- [![Rdoc](https://www.rdocumentation.org/badges/version/viabilitymetrics)](https://www.rdocumentation.org/packages/viabilitymetrics) -->
 <!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963) -->
 [![Analytics](https://pro-pulsar-193905.appspot.com/UA-116693474-1/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
 
@@ -92,9 +92,8 @@ citation("viabilitymetrics")
 
 To cite the R package 'viabilitymetrics' in publications use:
 
-  Aravind, J., Radhamani, J., Vimala Devi, S., Jacob, S. R., and
-  Kalyani Srinivasan (2019).  viabilitymetrics: Seed Viability
-  Calculations and Curve Fitting. R package version 0.0.0.9100,
+  Aravind, J., Radhamani, J., Vimala Devi, S., Jacob, S. R., and Kalyani Srinivasan (2021).
+  viabilitymetrics: Seed Viability Calculations and Curve Fitting. R package version 0.0.0.9100,
   https://aravind-j.github.io/viabilitymetrics/.
 
 A BibTeX entry for LaTeX users is
@@ -102,12 +101,11 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {viabilitymetrics: Seed Viability Calculations and Curve Fitting},
     author = {J. Aravind and J. Radhamani and S. {Vimala Devi} and Sherry Rachel Jacob and {Kalyani Srinivasan}},
-    year = {2019},
+    year = {2021},
     note = {R package version 0.0.0.9100},
     note = {https://aravind-j.github.io/viabilitymetrics/},
   }
 
-This free and open-source software implements academic research by
-the authors and co-workers. If you use it, please support the
-project by citing the package.
+This free and open-source software implements academic research by the authors and co-workers. If you use
+it, please support the project by citing the package.
 ```
