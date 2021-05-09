@@ -26,7 +26,7 @@ Description: An implementation of the improved seed viability equations of
     Grey (1999) <doi:10/gcsgt7> for seed viability curve fitting and 
     calculation of several seed viability metrics such as storage period, final 
     viability, storage moisture content, storage temperature and days to loose 
-    one probit viablity. The package further includes various conversions and 
+    one probit viability. The package further includes various conversions and 
     transformations associated with seed viability calculations.
 Copyright: 2017-2021, ICAR-NBPGR
 License: GPL-2 | GPL-3
