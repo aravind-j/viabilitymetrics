@@ -2,10 +2,8 @@
 % Please edit documentation in R/FitSigma.batch.R
 \name{FitSigma.batch}
 \alias{FitSigma.batch}
-\title{Seed viability curve fitting to estimate multiple values of
-\ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}} and
-\ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}} according to a grouping
-variable}
+\title{Seed viability curve fitting to estimate multiple values of \mjseqn{K_{i}}
+and \mjseqn{\sigma} according to a grouping variable}
 \usage{
 FitSigma.batch(data, group, ...)
 }
@@ -26,15 +24,12 @@ a character string.}
 A list of class \code{FitSigma.batch} with the following components:
   \item{data}{A data frame with the data used for computing the models.}
   \item{models}{A data frame with the group-wise values of model parameters,
-  \ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}} and
-  \ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}} and the fit statistics.}
+  \mjseqn{K_{i}} and \mjseqn{\sigma} and the fit statistics.}
 }
 \description{
 Fit seed viability/survival curve to estimate multiple values of the seed lot
-constant (\ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}}) and the
-period to lose unit probit viability
-(\ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}}) according to a grouping
-variable.
+constant (\mjseqn{K_{i}}) and the period to lose unit probit viability
+(\mjseqn{\sigma}) according to a grouping variable. \loadmathjax
 }
 \examples{
 

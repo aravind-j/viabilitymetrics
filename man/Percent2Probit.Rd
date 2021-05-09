@@ -40,41 +40,31 @@ The transformed value.
 These functions transform data between percentage, probit and Normal
 Equivalent Deviate (NED)
 \insertCite{bliss_method_1934,finney_probit_1952}{viabilitymetrics}.
+\loadmathjax
 }
 \details{
 Probit transformation can be used to transform a sigmoid curve of percentage
 data to a linear one. The probit transformation is defined as
-\ifelse{html}{\out{NED + 5}}{\eqn{NED + 5}}. However the two terms probit and
-NED are used interchangeably in literature.
+\mjseqn{\textrm{NED} + 5}. However the two terms probit and NED are used
+interchangeably in literature.
 
-NED function
-(\ifelse{html}{\out{<i>&Phi;<sup>-1</sup></i>}}{\eqn{\Phi^{-1}}}) is is the
-inverse of the cumulative distribution function
-(\ifelse{html}{\out{<i>&Phi;</i>}}{\eqn{\Phi}}) of the standard normal
-distribution (\ifelse{html}{\out{<em>z &sim; N(0,1)</em>}}{\eqn{z\sim
-N(0,1)}}) or the quantile function associated with the standard normal
-distribution.
+NED function (\mjseqn{\Phi^{-1}}) is is the inverse of the cumulative
+distribution function (\mjseqn{\Phi}) of the standard normal distribution
+(\mjseqn{z\sim N(0,1)}) or the quantile function associated with the standard
+normal distribution.
 
-For percentage \ifelse{html}{\out{<i>p</i>}}{\eqn{p}},
+For percentage \mjseqn{p},
 
-\ifelse{html}{\out{<p style="text-align: center;">NED<em>(p)=
-&Phi;<sup>-1</sup>(p) = &radic;<span style="text-decoration:
-overline;">2</span></em> erf<sup>-1</sup><em>
-(2p-1)</em></p>}}{\deqn{\textrm{NED}(p)=\Phi^{-1}(p)=
-\sqrt{2}~\textrm{erf}^{-1}(2p-1)}}
+\mjsdeqn{\textrm{NED}(p)=\Phi^{-1}(p)= \sqrt{2}~\textrm{erf}^{-1}(2p-1)}
 
 and
 
-\ifelse{html}{\out{<p style="text-align: center;">probit<em>(p) =</em>
-NED<em>(p) + 5</em></p>}}{\deqn{\textrm{probit}(p)=\textrm{NED}(p)+5}}
+\mjsdeqn{\textrm{probit}(p)=\textrm{NED}(p)+5}
 
 The \code{PercentAdjust} function adjusts the percentage values of 0 and 100
-to \ifelse{html}{\out{100 &times; [ <sup>0.25</sup> &frasl;
-<sub><i>n</i></sub> ]}}{\eqn{100\times \frac{0.25}{n}}} and
-\ifelse{html}{\out{100 &times; [ <sup>(<i>n</i> &minus; 0.25)</sup> &frasl;
-<sub><i>n</i></sub> ]}}{\eqn{100\times \frac{n-0.25}{n}}} respectively,
-according to the sample size \ifelse{html}{\out{<i>n</i>}}{\eqn{n}} to avoid
-infinity values during probit transformation
+to \mjseqn{100\times \dfrac{0.25}{n}} and \mjseqn{100\times
+\dfrac{n-0.25}{n}} respectively, according to the sample size \mjseqn{n} to
+avoid infinity values during probit transformation
 \insertCite{miller_estimation_1944}{viabilitymetrics}.
 }
 \examples{

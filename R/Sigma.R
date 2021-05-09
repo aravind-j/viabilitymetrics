@@ -1,56 +1,38 @@
 #' Period to lose unit probit viability
 #'
 #' \code{Sigma} calculates the period to lose one probit viability
-#' (\ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}}) under storage at a given
-#' moisture content and temperature.
+#' (\mjseqn{\sigma}) under storage at a given moisture content and temperature.
+#' \loadmathjax
 #'
 #' This function computes the period to lose one probit viability
-#' (\ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}}) according to the improved
-#' seed viability equation of
+#' (\mjseqn{\sigma}) according to the improved seed viability equation of
 #' \insertCite{ellis_improved_1980;textual}{viabilitymetrics} as follows.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>v = K<sub>i</sub>
-#' &minus; [ <sup>p</sup> &frasl; <sub>&sigma;</sub> ]
-#' </em></p>}}{\deqn{v=K_{i}-\frac{p}{\sigma}}}
+#' \mjsdeqn{v=K_{i}-\frac{p}{\sigma}}
 #'
 #' or
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>v = K<sub>i</sub>
-#' &minus; <big>(</big><sup>1</sup> &frasl;
-#' <sub>&sigma;</sub><big>)</big>&sdot;p</em></p>}}{\deqn{v=K_{i}-\left (
-#' \frac{1}{\sigma} \right )\cdot p}}
+#' \mjsdeqn{v=K_{i}-\left ( \frac{1}{\sigma} \right )\cdot p}
 #'
-#' Where, \ifelse{html}{\out{<i>v</i>}}{\eqn{v}} is the probit percentage
-#' viability at storage time \ifelse{html}{\out{<i>p</i>}}{\eqn{p}} (final
-#' viability),  \ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}} is the
-#' probit percentage viability of the seedlot at the beginning of storage
-#' (seedlot constant) and
-#' \ifelse{html}{\out{<em><sup>1</sup>&frasl;<sub>&sigma;</sub></em>}}{\eqn{\frac{1}{\sigma}}}
-#' is the slope.
+#' Where, \mjseqn{v} is the probit percentage viability at storage time
+#' \mjseqn{p} (final viability),  \mjseqn{K_{i}} is the probit percentage
+#' viability of the seedlot at the beginning of storage (seedlot constant) and
+#' \mjseqn{\frac{1}{\sigma}} is the slope.
 #'
 #' Germination percentages plotted against storage times yield a sigmoid seed
 #' survival curve which is converted to a linear relationship by the probit
-#' transformation with slope \ifelse{html}{\out{<i><sup>1</sup> &frasl;
-#' <sub>&sigma;</sub></i>}}{\eqn{\frac{1}{\sigma}}}.
+#' transformation with slope \mjseqn{\frac{1}{\sigma}}.
 #'
 #' The slope is determined as follows.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>&sigma; = 10</em><sup>
-#' <em>K<sub>E</sub> &minus; C<sub>W</sub></em> log<em>m &minus; C<sub>H</sub>t
-#' &minus; C<sub>Q</sub>t<sup>2</sup></em></sup></p>}}{\deqn{\sigma =
-#' 10^{K_{E}-C_{W}\log{m}-C_{H}t-C_{Q}t^2}}}
+#' \mjsdeqn{\sigma = 10^{K_{E}-C_{W}\log{m}-C_{H}t-C_{Q}t^2}}
 #'
-#' Where, \ifelse{html}{\out{<i>v</i>}}{\eqn{v}} is the probit percentage
-#' viability at storage time \ifelse{html}{\out{<i>p</i>}}{\eqn{p}} (final
-#' viability), \ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}} is the
-#' probit percentage viability of the seedlot at the beginning of storage
-#' (seedlot constant), \ifelse{html}{\out{<i>m</i>}}{\eqn{m}} is the moisture
-#' content (fresh weight basis), \ifelse{html}{\out{<i>t</i>}}{\eqn{t}} is the
-#' temperature and \ifelse{html}{\out{<i>K<sub>E</sub></i>}}{\eqn{K_{E}}},
-#' \ifelse{html}{\out{<i>C<sub>W</sub></i>}}{\eqn{C_{W}}},
-#' \ifelse{html}{\out{<i>C<sub>H</sub></i>}}{\eqn{C_{H}}} and
-#' \ifelse{html}{\out{<i>C<sub>Q</sub></i>}}{\eqn{C_{Q}}} are the
-#' species-specific seed viability constants.
+#' Where, \mjseqn{v} is the probit percentage viability at storage time
+#' \mjseqn{p} (final viability), \mjseqn{K_{i}} is the probit percentage
+#' viability of the seedlot at the beginning of storage (seedlot constant),
+#' \mjseqn{m} is the moisture content (fresh weight basis), \mjseqn{t} is the
+#' temperature and \mjseqn{K_{E}}, \mjseqn{C_{W}}, \mjseqn{C_{H}} and
+#' \mjseqn{C_{Q}} are the species-specific seed viability constants.
 #'
 #' The value of the species-specific seed viability constants can be specified
 #' either directly in the argument \code{vcdirect} or as the index value of the
@@ -65,11 +47,8 @@
 #'   constants to be used from the \code{viabilityconstants} dataset in the
 #'   package.
 #' @param vcdirect A numeric vector of length 4 with the four viability
-#'   constants \emph{viz.}:
-#'   \ifelse{html}{\out{<i>K<sub>E</sub></i>}}{\eqn{K_{E}}},
-#'   \ifelse{html}{\out{<i>C<sub>W</sub></i>}}{\eqn{C_{W}}},
-#'   \ifelse{html}{\out{<i>C<sub>H</sub></i>}}{\eqn{C_{H}}} and
-#'   \ifelse{html}{\out{<i>C<sub>Q</sub></i>}}{\eqn{C_{Q}}}.
+#'   constants \emph{viz.}: \mjseqn{K_{E}}, \mjseqn{C_{W}}, \mjseqn{C_{H}} and
+#'   \mjseqn{C_{Q}}.
 #' @param mc Moisture content.
 #' @param temp Temperature in °C.
 #' @param years If \code{TRUE}, returns the output period in years instead of

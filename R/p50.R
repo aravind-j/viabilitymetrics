@@ -1,43 +1,32 @@
 #' Half-viability period
 #'
 #' \code{P50} computes the half-viability period, which is the time taken for
-#' 50\% of the seeds to lose viability.
+#' 50\% of the seeds to lose viability. \loadmathjax
 #'
-#' The period to lose 50\% viability
-#' (\ifelse{html}{\out{<em>P<sub>50</sub></em>}}{\eqn{P_{50}}}) is computed
-#' according to the relationship between probit percentage viabilities and time
-#' of storage described by \insertCite{ellis_improved_1980;textual}{viabilitymetrics} as follows.
+#' The period to lose 50\% viability (\mjseqn{P_{50}}) is computed according to
+#' the relationship between probit percentage viabilities and time of storage
+#' described by \insertCite{ellis_improved_1980;textual}{viabilitymetrics} as
+#' follows.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>v = K<sub>i</sub>
-#' &minus; [ <sup>p</sup> &frasl; <sub>&sigma;</sub> ]
-#' </em></p>}}{\deqn{v=K_{i}-\frac{p}{\sigma}}}
+#' \mjsdeqn{v=K_{i}-\frac{p}{\sigma}}
 #'
 #' or
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>v = K<sub>i</sub>
-#' &minus; <big>(</big><sup>1</sup> &frasl;
-#' <sub>&sigma;</sub><big>)</big>&sdot;p</em></p>}}{\deqn{v=K_{i}-\left (
-#' \frac{1}{\sigma} \right )\cdot p}}
+#' \mjsdeqn{v=K_{i}-\left ( \frac{1}{\sigma} \right )\cdot p}
 #'
-#' Where, \ifelse{html}{\out{<i>v</i>}}{\eqn{v}} is the probit percentage
-#' viability at storage time \ifelse{html}{\out{<i>p</i>}}{\eqn{p}} (final
-#' viability),  \ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}} is the
-#' probit percentage viability of the seedlot at the beginning of storage
-#' (seedlot constant) and
-#' \ifelse{html}{\out{<em><sup>1</sup>&frasl;<sub>&sigma;</sub></em>}}{\eqn{\frac{1}{\sigma}}}
-#' is the slope.
+#' Where, \mjseqn{v} is the probit percentage viability at storage time
+#' \mjseqn{p} (final viability),  \mjseqn{K_{i}} is the probit percentage
+#' viability of the seedlot at the beginning of storage (seedlot constant) and
+#' \mjseqn{\dfrac{1}{\sigma}} is the slope.
 #'
 #' Germination percentages plotted against storage times yield a sigmoid seed
 #' survival curve which is converted to a linear relationship by the probit
-#' transformation with slope \ifelse{html}{\out{<i><sup>1</sup> &frasl;
-#' <sub>&sigma;</sub></i>}}{\eqn{\frac{1}{\sigma}}}.
+#' transformation with slope \mjseqn{\dfrac{1}{\sigma}}.
 #'
-#' When \ifelse{html}{\out{<i>v</i>}}{\eqn{v}} = 0 (equivalent to 50\%
-#' viability), \ifelse{html}{\out{<em>P<sub>50</sub></em>}}{\eqn{P_{50}}} can be
+#' When \mjseqn{v} = 0 (equivalent to 50\% viability), \mjseqn{P_{50}} can be
 #' computed as follows.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>P<sub>50</sub> =
-#' K<sub>i</sub> &times; &sigma;</em></p>}}{\deqn{P_{50} = K_{i} \times \sigma}}
+#' \mjsdeqn{P_{50} = K_{i} \times \sigma}
 #'
 #' If the initial viablity (\code{initial}) is beyond limits (0-100 \%, an error
 #' is issued.

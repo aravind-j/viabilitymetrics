@@ -2,9 +2,7 @@
 % Please edit documentation in R/FitSigma.R
 \name{FitSigma}
 \alias{FitSigma}
-\title{Seed viability curve fitting to estimate
-\ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}} and
-\ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}}}
+\title{Seed viability curve fitting to estimate \mjseqn{K_{i}} and \mjseqn{\sigma}}
 \usage{
 FitSigma(
   data,
@@ -33,10 +31,10 @@ used for calculating viability percentages as a character string.}
 periods at which the viabilty percentages was recorded as a character
 string.}
 
-\item{generalised.model}{logical. If \code{TRUE} (recommended), the seed viability
-curve is fitted as a generalised linear model with a probit link function.
-If \code{TRUE}, it is fitted as a linear model with probit transformed
-viability percentages.}
+\item{generalised.model}{logical. If \code{TRUE} (recommended), the seed
+viability curve is fitted as a generalised linear model with a probit link
+function. If \code{TRUE}, it is fitted as a linear model with probit
+transformed viability percentages.}
 
 \item{use.cv}{logical. If \code{TRUE}, then the percentage value specified in
 the \code{control.viabilty} argument is incorporated as the control
@@ -49,66 +47,51 @@ is \code{FALSE}.}
 A list of class \code{FitSigma} with the following components:
   \item{data}{A data frame with the data used for computing the model.}
   \item{model}{The fitted model as an object of class \code{glm} (if
-  \code{generalised.model = TRUE}) or \code{lm} (if \code{generalised.model = FALSE}).}
-  \item{parameters}{A data.frame of parameter estimates, standard errors and
-  p value.} \item{fit}{A one-row data frame with estimates of model fitness
-  such as log likelyhoods, Akaike Information Criterion, Bayesian Information
-  Criterion, deviance and residual degrees of freedom.} \item{Ki}{The
-  estimated seed lot constant from the model.} \item{sigma}{The estimated
-  period of time to lose unit probit viability from the model.}
+  \code{generalised.model = TRUE}) or \code{lm} (if \code{generalised.model =
+  FALSE}).} \item{parameters}{A data.frame of parameter estimates, standard
+  errors and p value.} \item{fit}{A one-row data frame with estimates of
+  model fitness such as log likelyhoods, Akaike Information Criterion,
+  Bayesian Information Criterion, deviance and residual degrees of freedom.}
+  \item{Ki}{The estimated seed lot constant from the model.} \item{sigma}{The
+  estimated period of time to lose unit probit viability from the model.}
   \item{message}{Warning or error messages generated during fitting of model,
   if any.}
 }
 \description{
 Fit seed viability/survival curve to estimate the seed lot constant
-(\ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}}) and the period to
-lose unit probit viability
-(\ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}}).
+(\mjseqn{K_{i}}) and the period to lose unit probit viability
+(\mjseqn{\sigma}). \loadmathjax
 }
 \details{
 This function fits seed survival data to the following seed viability
 equation \insertCite{ellis_improved_1980}{viabilitymetrics} which models the
 relationship between probit percentage viability and time period of storage.
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>v = K<sub>i</sub>
-&minus; [ <sup>p</sup> &frasl; <sub>&sigma;</sub> ]
-</em></p>}}{\deqn{v=K_{i}-\frac{p}{\sigma}}}
+\mjsdeqn{v=K_{i}-\frac{p}{\sigma}}
 
 or
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>v = K<sub>i</sub>
-&minus; <big>(</big><sup>1</sup> &frasl;
-<sub>&sigma;</sub><big>)</big>&sdot;p</em></p>}}{\deqn{v=K_{i}-\left (
-\frac{1}{\sigma} \right )\cdot p}}
+\mjsdeqn{v=K_{i}-\left ( \frac{1}{\sigma} \right )\cdot p}
 
-Where, \ifelse{html}{\out{<i>v</i>}}{\eqn{v}} is the probit percentage
-viability at storage time \ifelse{html}{\out{<i>p</i>}}{\eqn{p}} (final
-viability),  \ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}} is the
-probit percentage viability of the seedlot at the beginning of storage
-(seedlot constant) and
-\ifelse{html}{\out{<em><sup>1</sup>&frasl;<sub>&sigma;</sub></em>}}{\eqn{\frac{1}{\sigma}}}
-is the slope.
+Where, \mjseqn{v} is the probit percentage viability at storage time
+\mjseqn{p} (final viability),  \mjseqn{K_{i}} is the probit percentage
+viability of the seedlot at the beginning of storage (seedlot constant) and
+\mjseqn{\frac{1}{\sigma}} is the slope.
 
 The above equation may be expressed as a generalized linear model (GLM) with
 a probit (cumulative normal distribution) link function as follows
 \insertCite{hay_modelling_2014}{viabilitymetrics}.
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>y = &phi;(v) =
-&phi;<big>(</big>K<sub>i</sub> &minus; (<sup>1</sup> &frasl;
-<sub>&sigma;</sub>) <big>)</big></em></p>}}{\deqn{y = \phi(v) = \phi\left (
-K_{i}-\left ( \frac{1}{\sigma} \right )p \right )}}
+\mjsdeqn{y = \phi(v) = \phi\left ( K_{i}-\left ( \frac{1}{\sigma} \right )p
+\right )}
 
-Where, \ifelse{html}{\out{<i>y</i>}}{\eqn{y}} is the proportion of seeds
-viabile after time period \ifelse{html}{\out{<i>p</i>}}{\eqn{p}} and the link
-function is
-\ifelse{html}{\out{<em>&phi;<sup>-1</sup></em>}}{\eqn{\phi^{-1}}}, the
-inverse of the cumulative normal distribution function.
+Where, \mjseqn{y} is the proportion of seeds viabile after time period
+\mjseqn{p} and the link function is \mjseqn{\phi^{-1}}, the inverse of the
+cumulative normal distribution function.
 
-The parameters estimated are the intercept
-\ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}}, theoretical viability
-of the seeds at the start of storage or the seed lot constant, and the slope
-\ifelse{html}{\out{<i>&minus;&sigma;<sup>-1</sup></i>}}{\eqn{-\sigma^{-1}}},
-where \ifelse{html}{\out{<i>&sigma;</i>}}{\eqn{\sigma}} is the standard
+The parameters estimated are the intercept \mjseqn{K_{i}}, theoretical
+viability of the seeds at the start of storage or the seed lot constant, and
+the slope \mjseqn{-\sigma^{-1}}, where \mjseqn{\sigma} is the standard
 deviation of the normal distribution of seed deaths in time or the period of
 time to lose unit probit viability.
 
@@ -117,17 +100,14 @@ model to fit the modified model suggested by
 \insertCite{mead_prediction_1999}{viabilitymetrics}. The modified model is as
 follows.
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>y = C<sub>v</sub>
-&times; &phi;(v) = C<sub>v</sub> &times;  &phi;<big>(</big>K<sub>i</sub>
-&minus; (<sup>1</sup> &frasl; <sub>&sigma;</sub>)
-<big>)</big></em></p>}}{\deqn{y = C_{v} \times \phi(v) = C_{v} \times
-\phi\left (K_{i}-\left ( \frac{1}{\sigma} \right )p \right )}}
+\mjsdeqn{y = C_{v} \times \phi(v) = C_{v} \times \phi\left (K_{i}-\left (
+\frac{1}{\sigma} \right )p \right )}
 
-Where, \ifelse{html}{\out{<i>C<sub>v</sub></i>}}{\eqn{C_{v}}} is the control
-viability parameter which is the proportion of respondent seeds. This
-excludes the bias due to seeds of the ageing population that have already
-lost viability at the start of storage and those non-respondent seeds that
-are not part of the ageing population due to several reasons.
+Where, \mjseqn{C_{v}} is the control viability parameter which is the
+proportion of respondent seeds. This excludes the bias due to seeds of the
+ageing population that have already lost viability at the start of storage
+and those non-respondent seeds that are not part of the ageing population due
+to several reasons.
 }
 \examples{
 

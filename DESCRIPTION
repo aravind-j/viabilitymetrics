@@ -41,6 +41,7 @@ Imports:
     dplyr,
     ggplot2,
     gnm,
+    mathjaxr,
     minpack.lm,
     plyr,
     Rdpack
@@ -48,7 +49,9 @@ Suggests:
     knitr,
     rmarkdown,
     pander
-RdMacros: Rdpack
+RdMacros:
+    mathjaxr,
+    Rdpack
 URL: https://github.com/aravind-j/viabilitymetrics,
     https://aravind-j.github.io/viabilitymetrics/
 BugReports: https://github.com/aravind-j/viabilitymetrics/issues

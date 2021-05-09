@@ -35,7 +35,7 @@ Compute the following metrics:\describe{\item{\code{SeedEqMC}}{The seed
 equilibrium moisture content from known environmental conditions and oil
 content.} \item{\code{EqRH}}{The equilibrium relative humidity of the seed
 storage environment from seed equilibrium moisture content, oil content and
-temperature.} }
+temperature.} } \loadmathjax
 }
 \details{
 This relationship between seed equilibrium moisture content, seed oil
@@ -43,20 +43,14 @@ content, the  equilibrium relative humidity and temperature of the storage
 environment was described by
 \insertCite{cromarty_design_1982;textual}{viabilitymetrics} as follows.
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>(1-R) = e
-<sup>&minus;<big>[</big> <sup>[ <sup>(Me &times; (1.1 + T&frasl;90))</sup>
-&frasl; (1 &minus; D<sub>o</sub>) ]<sup>2</sup></sup> &frasl;
-<sub>440</sub><big> ]</big></sup></em></p>}}{\deqn{(1-R) = \textrm{e}^{-\left
-( \frac{\left [ \frac{M_{e} \times (1.1 + \frac{T}{90})}{1 - D_{O}} \right
-]^{2}}{440} \right )}}}
+\mjsdeqn{(1-R) = \textrm{e}^{-\left( {\bigg[ \frac{M_{e} \times \big(1.1 +
+\frac{T}{90} \big)}{1 - D_{O}} \bigg]^{2}}\bigg/{440} \right)}}
 
-Where, \ifelse{html}{\out{<i>R</i>}}{\eqn{R}} is the relative humidity
-expressed as decimal, \ifelse{html}{\out{<i>M<sub>e</sub></i>}}{\eqn{M_{e}}}
-is the equilibrium percentage moisture content (dry basis),
-\ifelse{html}{\out{<i>T</i>}}{\eqn{T}} is the temperature in °C of air or the
-seed equilibrium, \ifelse{html}{\out{<i>D<sub>O</sub></i>}}{\eqn{D_{O}}} is
-the oil content of seed (dry basis) expressed as decimal and
-\ifelse{html}{\out{<i>e</i>}}{\eqn{e}} is the mathematical constant 2.718282.
+Where, \mjseqn{R} is the relative humidity expressed as decimal,
+\mjseqn{M_{e}} is the equilibrium percentage moisture content (dry basis),
+\mjseqn{T} is the temperature in °C of air or the seed equilibrium,
+\mjseqn{D_{O}} is the oil content of seed (dry basis) expressed as decimal
+and \mjseqn{e} is the mathematical constant 2.718282.
 
 For values of oil content (\code{oilcontent}), relative humidity (\code{rh})
 and seed equilibrium moisture content (\code{mc}) beyond the limits of 0-100

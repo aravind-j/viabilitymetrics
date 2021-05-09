@@ -36,11 +36,8 @@ constants to be used from the \code{viabilityconstants} dataset in the
 package.}
 
 \item{vcdirect}{A numeric vector of length 4 with the four viability
-constants \emph{viz.}:
-\ifelse{html}{\out{<i>K<sub>E</sub></i>}}{\eqn{K_{E}}},
-\ifelse{html}{\out{<i>C<sub>W</sub></i>}}{\eqn{C_{W}}},
-\ifelse{html}{\out{<i>C<sub>H</sub></i>}}{\eqn{C_{H}}} and
-\ifelse{html}{\out{<i>C<sub>Q</sub></i>}}{\eqn{C_{Q}}}.}
+constants \emph{viz.}: \mjseqn{K_{E}}, \mjseqn{C_{W}}, \mjseqn{C_{H}} and
+\mjseqn{C_{Q}}.}
 
 \item{mc}{Moisture content.}
 
@@ -74,7 +71,7 @@ the final viability and the storage conditions (seed moisture content and
 temperature).} \item{\code{StorageMC}}{Compute the storage moisture content
 to give final viability at a particular storage temperature.}
 \item{\code{StorageTemp}}{Compute the storage temperature to give final
-viability at a particular storage temperature.} }
+viability at a particular storage temperature.} } \loadmathjax
 }
 \details{
 The improved seed viability equation of
@@ -82,75 +79,42 @@ The improved seed viability equation of
 between final viability, storage period and storage environment conditions as
 follows.
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>v = K<sub>i</sub>
-&minus; [ <sup>p</sup> &frasl; <sub>&sigma;</sub> ]
-</em></p>}}{\deqn{v=K_{i}-\frac{p}{\sigma}}}
+\mjsdeqn{v=K_{i}-\frac{p}{\sigma}}
 
 or
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>v = K<sub>i</sub>
-&minus; <big>(</big><sup>1</sup> &frasl;
-<sub>&sigma;</sub><big>)</big>&sdot;p</em></p>}}{\deqn{v=K_{i}-\left (
-\frac{1}{\sigma} \right )\cdot p}}
+\mjsdeqn{v=K_{i}-\left ( \frac{1}{\sigma} \right )\cdot p}
 
-Where, \ifelse{html}{\out{<i>v</i>}}{\eqn{v}} is the probit percentage
-viability at storage time \ifelse{html}{\out{<i>p</i>}}{\eqn{p}} (final
-viability),  \ifelse{html}{\out{<i>K<sub>i</sub></i>}}{\eqn{K_{i}}} is the
-probit percentage viability of the seedlot at the beginning of storage
-(seedlot constant) and
-\ifelse{html}{\out{<em><sup>1</sup>&frasl;<sub>&sigma;</sub></em>}}{\eqn{\frac{1}{\sigma}}}
-is the slope.
+Where, \mjseqn{v} is the probit percentage viability at storage time
+\mjseqn{p} (final viability),  \mjseqn{K_{i}} is the probit percentage
+viability of the seedlot at the beginning of storage (seedlot constant) and
+\mjseqn{\dfrac{1}{\sigma}} is the slope.
 
 Germination percentages plotted against storage times yield a sigmoid seed
 survival curve which is converted to a linear relationship by the probit
-transformation with slope \ifelse{html}{\out{<i><sup>1</sup> &frasl;
-<sub>&sigma;</sub></i>}}{\eqn{\frac{1}{\sigma}}}.
+transformation with slope \mjseqn{\dfrac{1}{\sigma}}.
 
 The slope is determined as follows.
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>&sigma; = 10</em><sup>
-<em>K<sub>E</sub> &minus; C<sub>W</sub></em> log<em>m &minus; C<sub>H</sub>t
-&minus; C<sub>Q</sub>t<sup>2</sup></em></sup></p>}}{\deqn{\sigma =
-10^{K_{E}-C_{W}\log{m}-C_{H}t-C_{Q}t^2}}}
+\mjsdeqn{\sigma = 10^{K_{E}-C_{W}\log{m}-C_{H}t-C_{Q}t^2}}
 
-Where, \ifelse{html}{\out{<i>m</i>}}{\eqn{m}} is the moisture content (fresh
-weight basis), \ifelse{html}{\out{<i>t</i>}}{\eqn{t}} is the temperature and
-\ifelse{html}{\out{<i>K<sub>E</sub></i>}}{\eqn{K_{E}}},
-\ifelse{html}{\out{<i>C<sub>W</sub></i>}}{\eqn{C_{W}}},
-\ifelse{html}{\out{<i>C<sub>H</sub></i>}}{\eqn{C_{H}}} and
-\ifelse{html}{\out{<i>C<sub>Q</sub></i>}}{\eqn{C_{Q}}} are the
-species-specific seed viability constants.
+Where, \mjseqn{m} is the moisture content (fresh weight basis), \mjseqn{t} is
+the temperature and \mjseqn{K_{E}}, \mjseqn{C_{W}}, \mjseqn{C_{H}} and
+\mjseqn{C_{Q}} are the species-specific seed viability constants.
 
-On the basis of the the improved seed viability equation,
-\ifelse{html}{\out{<i>v</i>}}{\eqn{v}},
-\ifelse{html}{\out{<i>p</i>}}{\eqn{p}},
-\ifelse{html}{\out{<i>m</i>}}{\eqn{m}} and
-\ifelse{html}{\out{<i>t</i>}}{\eqn{t}} can be estimated as follows.
+On the basis of the the improved seed viability equation, \mjseqn{v},
+\mjseqn{p}, \mjseqn{m} and \mjseqn{t} can be estimated as follows.
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>v = K<sub>i</sub>
-&minus; [ <sup>p</sup> &frasl; <sub>&sigma;</sub> ]
-</em></p>}}{\deqn{v=K_{i}-\frac{p}{\sigma}}}
+\mjsdeqn{v=K_{i}-\frac{p}{\sigma}}
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>p =
-&sigma;(K<sub>i</sub>-v)</em></p>}}{\deqn{p = \sigma(K_{i}-v)}}
+\mjsdeqn{p = \sigma(K_{i}-v)}
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>m =
-10<sup><big>[</big><sup><big>[</big>K<sub>E</sub> &minus; C<sub>H</sub>t
-&minus; C<sub>Q</sub>t<sup>2</sup> &minus; log<big>(</big><sup> p</sup>
-&frasl; <sub>(K<sub>i</sub> &minus; v)</sub><big>)</big><big>]</big></sup>
-&frasl; <sub>C<sub>W</sub></sub><big>]</big></sup></em></p>}}{\deqn{m =
-10^{\left [ \frac{K_{E}-C_{H}t-C_{Q}t^{2}-\log\left ( \frac{p}{K_{i}-v}
-\right )}{C_{W}} \right ]}}}
+\mjsdeqn{m = 10^{\left[ {\left( K_{E} - C_{H}t - C_{Q}t^{2} -\log \left(
+\frac{p}{K_{i}-v} \right) \right) } \bigg/ {C_{W}} \right]}}
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>t =
-<sup><big>[</big>&minus;C<sub>H</sub> &plusmn;
-&radic;<big>[</big>C<sub>H</sub><sup>2</sup> &minus;
-4C<sub>Q</sub><big>(</big>C<sub>W</sub>logm &minus; K<sub>E</sub> +
-log<big>(</big><sup>p</sup> &frasl; <sub>(K<sub>i</sub> &minus;
-v)</sub><big>)</big><big>)</big><big>]</big><big>]</big></sup> &frasl; <sub>
-2C<sub>Q</sub></sub></em></p>}}{\deqn{t = \frac{-C_{H} \pm
-\sqrt{C_{H}^{2}-4C_{Q}\left ( C_{W}\log{m}-K_{E}+ \log\left (
-\frac{p}{K_{i}-v} \right ) \right )}}{2C_{Q}}}}
+\mjsdeqn{t = \frac{-C_{H} \pm \sqrt{C_{H}^{2}-4C_{Q}\left (
+C_{W}\log{m}-K_{E}+ \log\left ( \frac{p}{K_{i}-v} \right ) \right
+)}}{2C_{Q}}}
 
 The value of the species-specific seed viability constants can be specified
 either directly in the arguement  \code{vcdirect} or as the index value of

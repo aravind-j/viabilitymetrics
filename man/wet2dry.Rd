@@ -26,46 +26,33 @@ MoistureNomograph(min, max, basis = c("wet", "dry"), horiz = FALSE)
 }
 \value{
 For \code{wet2dry} and \code{dry2wet}, the converted moisture content
-  (\%).
+(\%).
 
-  For \code{MoistureNomograph}, the nomograph as an object of class
-  \code{ggplot}.
+For \code{MoistureNomograph}, the nomograph as an object of class
+\code{ggplot}.
 }
 \description{
 These functions convert from moisture content determined on wet/fresh weight
 basis to equivalent value on dry weight basis and back.
 \code{MoistureNomograph} plots the nomograph for these conversions.
+\loadmathjax
 }
 \details{
 Conversions between moisture content (\%) determined on wet weight basis
-\ifelse{html}{\out{<i>MC<sub>wb</sub></i>}}{\eqn{MC_{wb}}} and that on dry
-weight basis \ifelse{html}{\out{<i>MC<sub>db</sub></i>}}{\eqn{MC_{db}}} are
-computed based on the formulae
+\mjseqn{MC_{wb}} and that on dry weight basis \mjseqn{MC_{db}} are computed
+based on the formulae
 \insertCite{cromarty_design_1982;textual}{viabilitymetrics} as follows.
 
-\ifelse{html}{\out{<p style="text-align: center;"><i>MC<sub>db</sub> =
-<sup>100 &times; MC<sub>wb</sub></sup> &frasl; <sub>100 &minus;
-MC<sub>wb</sub></sub></i></p>}}{\deqn{MC_{db} = \frac{100 \times
-MC_{wb}}{100-MC_{wb}}}}
+\mjsdeqn{MC_{db} = \frac{100 \times MC_{wb}}{100-MC_{wb}}}
 
-\ifelse{html}{\out{<p style="text-align: center;"><i>MC<sub>wb</sub> =
-<sup>100 &times; MC<sub>db</sub></sup> &frasl; <sub>100 +
-MC<sub>db</sub></sub></i></p>}}{\deqn{MC_{wb} = \frac{100 \times
-MC_{db}}{100+MC_{db}}}}
+\mjsdeqn{MC_{wb} = \frac{100 \times MC_{db}}{100+MC_{db}}}
 
-\ifelse{html}{\out{<p style="text-align: center;"><i>MC<sub>wb</sub> =
-<sup>[wi &minus; w<sub>f</sub>]</sup> &frasl;
-<sub>w<sub>i</sub></sub></i></p>}}{\deqn{MC_{wb} =
-\frac{w_{i}-w_{f}}{w_{i}}}}
+\mjsdeqn{MC_{wb} = \frac{w_{i}-w_{f}}{w_{i}}}
 
-\ifelse{html}{\out{<p style="text-align: center;"><i>MC<sub>db</sub> =
-<sup>[wi &minus; w<sub>f</sub>]</sup> &frasl;
-<sub>w<sub>f</sub></sub></i></p>}}{\deqn{MC_{db} =
-\frac{w_{i}-w_{f}}{w_{f}}}}
+\mjsdeqn{MC_{db} = \frac{w_{i}-w_{f}}{w_{f}}}
 
-Where, \ifelse{html}{\out{w<i><sub>i</sub></i>}}{\eqn{w_{i}}} is the initial
-weight and \ifelse{html}{\out{w<i><sub>f</sub></i>}}{\eqn{w_{f}}} is the
-final weight.
+Where, \mjseqn{w_{i}} is the initial weight and \mjseqn{w_{f}} is the final
+weight.
 
 If the moisture content (\code{mc}) for conversion is beyond limits (0-50 \%
 for \code{wet2dry} and 0-100 \% for \code{dry2wet}), a warning is issued.
